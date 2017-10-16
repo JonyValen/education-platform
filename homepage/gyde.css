@@ -1,0 +1,146 @@
+body{
+  margin:none;
+  padding: none;
+  font-family:"Lato";
+}
+
+.nav{
+  background-color:black;
+  color:white;
+  list-style: none;
+  text-align: right;
+  padding:18px 0 20px 0px;
+
+}
+
+.nav > li{
+   display: inline-block;
+   padding-right:50px;
+
+}
+
+.nav>li>a{
+  text-decoration: none;
+  color:white;
+}
+
+
+.nav > li >a:hover{
+  color:#c1c1c1;
+}
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.search-bar{
+  float: left;
+  padding-left: 30px;
+  padding-top: 2px;
+
+}
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+
+.logo{
+  color:white;
+  float:left;
+  padding-left: 20px;
+  font-family:'Cedarville Cursive';
+  font-size: 30px;
+  font-weight:bold;
+  margin-top:-20px;
+  font-weight: lighter;
+
+}
+
+.logo>a{
+  text-decoration: none;
+  color:white;
+}
+
+.banner-box{
+  margin-right: 75px;
+  margin-top: -20px;
+  width:auto;
+  height:330px;
+  padding-left: 10px;
+  border: 1.5px solid black;
+  margin-left:75px;
+  border-top: none;
+}
+
+.picture-box{
+  border: 1.5px solid black;
+  height:200px;
+  width:200px;
+  position:relative;
+  top: -280px;
+  left:120px;
+}
+
+.box-two{
+  width:300px;
+  height:70px;
+  border: 1.5px solid black;
+  margin-left: 75px;
+  margin-top: -190px;
+}
+.connect{
+  text-align: center;
+  font-size: 24px;
+  font-family:"Lato";
+}
+
+.box-two > a{
+  text-decoration: none;
+  color:black;
+}
+
+
+.box-three{
+  width:300px;
+  height:250px;
+  border: 1.5px solid black;
+  margin-left: 75px;
+  margin-top: 10px;
+}
+
+.intro{
+  text-align: center;
+  font-size: 24px;
+  text-decoration: underline;
+  font-family: 'Lato', serif;
+}
+
+.box-four{
+  width:300px;
+  height:250px;
+  border: 1.5px solid black;
+  margin-left: 75px;
+  margin-top: 10px;
+}
+
+.box-five{
+  width:700px;
+  height:300px;
+  border: 1.5px solid black;
+  margin-left: auto;
+  margin-top: -600px;
+  margin-right: 75px;
+}
+
+
+.box-inside-five{
+  width: 700px;
+  height:50px;
+  border: 1.5px solid black;
+  float:right;
+  margin-top: -303px;
+  margin-right: 40px;
+  padding-left: 35px;
+
+}
