@@ -1,0 +1,257 @@
+body{
+  margin:none;
+  padding: none;
+  font-family:"Lato";
+}
+
+.nav{
+  background-color:black;
+  color:white;
+  list-style: none;
+  text-align: right;
+  padding:18px 0 20px 0px;
+  margin-top: -10px;
+
+}
+
+.nav > li{
+   display: inline-block;
+   padding-right:50px;
+   color: white;
+}
+
+.nav>li>a{
+  text-decoration: none;
+  color:white;
+}
+
+.nav > li >a:hover{
+  color:#c1c1c1;
+}
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.search-bar{
+  float: left;
+  padding-left: 30px;
+  padding-top: 2px;
+}
+.search-bar input{
+  width: 400px;
+  height: 30px;
+}
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+
+.logo{
+  color:white;
+  float:left;
+  padding-left: 20px;
+  font-family:'Cedarville Cursive';
+  font-size: 30px;
+  font-weight:bold;
+  margin-top:-20px;
+  font-weight: lighter;
+
+}
+
+.logo>a{
+  text-decoration: none;
+  color:white;
+}
+
+
+.button-row >li{
+  display: inline-block;
+  vertical-align: bottom;
+  padding-top: 281px;
+  margin-right: -1px;
+}
+
+.button-row>li>button{
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 29px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Lato";
+  width: 200;
+}
+
+.box-about>li{
+  display: inline-block;
+  vertical-align: bottom;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.box-about{
+text-align: center;
+text: bold;
+}
+
+.box-about>li>button{
+  background-color: none; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 29px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Lato";
+  width: 200;
+}
+
+
+.banner-box{
+  margin-right: 75px;
+  margin-top: -20px;
+  width:auto;
+  height:330px;
+  padding-left: 10px;
+  border: 1.5px solid black;
+  margin-left:75px;
+  border-top: none;
+  position: relative;
+}
+
+.picture-box{
+  border: 1.5px solid black;
+  height:200px;
+  width:200px;
+  position:relative;
+  top: -280px;
+  left:120px;
+}
+
+.connect{
+  text-align: center;
+  font-size: 24px;
+  font-family:"Lato";
+}
+
+.intro{
+  text-align: center;
+  font-size: 24px;
+  text-decoration: underline;
+  font-family: 'Lato', serif;
+}
+
+.box-main{
+  width:1100px;
+  height:600px;
+  border: 1.5px solid black;
+  margin-left: 75px;
+  margin-top: -180px;
+  margin-right: 75px;
+}
+.box-upper-tab{
+  width: 1065px;
+  height:60px;
+  border: 1.5px solid black;
+  border-top: none;
+  float:left;
+  margin-top: -601px;
+  margin-left: 75px;
+  margin-right: 75px;
+  padding-left: 35px;
+}
+.box-about{
+  width: 200px;
+  height:600px;
+  border: 1.5px solid black;
+  float:left;
+  margin-top: -603px;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  margin-left: 75px;
+  margin-right: 75px;
+  padding-left: 35px;
+}
+.tabs{
+  margin-top: 30;
+  padding-bottom: 25;
+}
+.box-full-name{
+  width:775px;
+  height:60px;
+  border: 1.5px solid black;
+  margin-left: auto;
+  margin-top: -520px;
+  margin-right: 705px;
+  margin-left: 355px;
+}
+.box-DOB{
+  width:775px;
+  height:60px;
+  border: 1.5px solid black;
+  margin-top: 10px;
+  margin-right: 705px;
+  margin-left: 355px;
+}
+.box-current-address{
+  width:775px;
+  height:60px;
+  border: 1.5px solid black;
+  margin-top: 10px;
+  margin-right: 705px;
+  margin-left: 355px;
+}
+.box-email-address{
+  width:775px;
+  height:60px;
+  border: 1.5px solid black;
+  margin-left: 355px;
+  margin-top: 10px;
+  margin-right: 705px;
+}
+
+.box-gyde-address{
+  width:775px;
+  height:60px;
+  border: 1.5px solid black;
+  margin-left: 355px;
+  margin-top: 10px;
+  margin-right: 705px;
+}
+.box-fav-intellectual{
+  width:775px;
+  height:60px;
+  border: 1.5px solid black;
+  margin-left: 355px;
+  margin-top: 10px;
+  margin-right: 705px;
+}
+.box-resume{
+  width:235px;
+  height:60px;
+  border: 1.5px solid black;
+  margin-left: 355px;
+  margin-top: 10px;
+  margin-right: 705px;
+}
+.box-linkdin-address{
+  width:525px;
+  height:60px;
+  border: 1.5px solid black;
+  margin-left: 605px;
+  margin-top: -63px;
+  margin-right: 705px;
+}
+.text_place_holder{
+  margin-left: 25;
+}
+
+.linkdin_place_holder{
+  margin-left: 25;
+}
