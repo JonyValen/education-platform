@@ -1,0 +1,261 @@
+body{
+  margin:none;
+  padding: none;
+  font-family:"Lato";
+}
+
+.nav{
+  background-color:black;
+  color:white;
+  list-style: none;
+  text-align: right;
+  padding:18px 0 20px 0px;
+  margin-top: -10px;
+
+}
+
+.nav > li{
+   display: inline-block;
+   padding-right:50px;
+   color: white;
+
+}
+
+.nav>li>a{
+  text-decoration: none;
+  color:white;
+}
+
+
+.nav > li >a:hover{
+  color:#c1c1c1;
+}
+
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.search-bar{
+  float: left;
+  padding-left: 30px;
+  padding-top: 0px;
+  margin-top:-5px;
+}
+.search-bar input{
+  width: 400px;
+  height: 30px;
+}
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+
+.logo{
+  color:white;
+  float:left;
+  padding-left: 20px;
+  font-family:'Cedarville Cursive';
+  font-size: 30px;
+  font-weight:bold;
+  margin-top:-20px;
+  font-weight: lighter;
+
+}
+
+.logo>a{
+  text-decoration: none;
+  color:white;
+}
+
+
+.button-row >li{
+  display: inline-block;
+  vertical-align: bottom;
+  padding-top: 281px;
+  margin-right: -1px;
+}
+
+.button-row>li>button{
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 29px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Lato";
+  width: 200;
+}
+
+
+.banner-box{
+  margin-right: 75px;
+  margin-top: -20px;
+  width:auto;
+  height:330px;
+  padding-left: 10px;
+  border: 1.5px solid black;
+  margin-left:75px;
+  border-top: none;
+  position: relative;
+}
+
+.picture-box{
+  border: 1.5px solid black;
+  height:200px;
+  width:200px;
+  position:relative;
+  top: -280px;
+  left:120px;
+}
+
+.box-two{
+  width:350px;
+  height:70px;
+  border: 1.5px solid black;
+  margin-left: 75px;
+  margin-top: -190px;
+}
+.connect{
+  text-align: center;
+  font-size: 24px;
+  font-family:"Lato";
+}
+
+.box-two > a{
+  text-decoration: none;
+  color:black;
+}
+
+
+.box-three{
+  width:350px;
+  height:250px;
+  border: 1.5px solid black;
+  margin-left: 75px;
+  margin-top: 10px;
+}
+
+.intro{
+  text-align: center;
+  font-size: 24px;
+  text-decoration: underline;
+  font-family: 'Lato', serif;
+}
+
+.gyde_box{
+  text-align: center;
+  font-size: 24px;
+  text-decoration: underline;
+  font-family: 'Lato', serif;
+}
+
+.box-four{
+  width:350px;
+  height:250px;
+  border: 1.5px solid black;
+  margin-left: 75px;
+  margin-top: 10px;
+}
+
+.gyde-search{
+  float: left;
+  padding-left: 50px;
+  padding-top: 130px;
+}
+
+.gyde-search input{
+  width: 290px;
+  height: 30px;
+}
+
+.box-five{
+  width:800px;
+  height:400px;
+  border: 1.5px solid black;
+  margin-left: auto;
+  margin-top: -600px;
+  margin-right: 75px;
+}
+
+
+.box-inside-five{
+  width: 765px;
+  height:70px;
+  border: 1.5px solid black;
+  float:right;
+  margin-top: -425px;
+  margin-right: 75px;
+  padding-left: 35px;
+}
+
+.box-contributions{
+  width: 230px;
+  height:70px;
+  border: 1.5px solid black;
+  border-left: none;
+  border-top: none;
+  border-bottom:none;
+  float:left;
+  margin-top: -425px;
+  margin-left: 55px;
+  padding-left: 35px;
+}
+
+.box-attachments{
+  width: 230px;
+  height:70px;
+  border: 1.5px solid black;
+  border-left: none;
+  border-top: none;
+  border-bottom:none;
+  float:left;
+  margin-top: -425px;
+  margin-left: 319px;
+  padding-left: 35px;
+}
+
+.box-tags{
+  width: 230px;
+  height:70px;
+  border: 1.5px  none;
+  float:left;
+  margin-top: -425px;
+  margin-left: 588px;
+  padding-left: 35px;
+}
+
+.bottom-post-box{
+  width: 765px;
+  height:70px;
+  border: 1.5px solid black;
+  border-left: none;
+  border-right: none;
+  border-bottom:none;
+  float:right;
+  margin-top: -95px;
+  margin-right: 75px;
+  padding-left: 35px;
+}
+
+.privacy-button{
+  width: 100px;
+  height:50px;
+  border: 1.5px solid black;
+  float:right;
+  margin-top: -85px;
+  margin-right: 105px;
+  padding-left: 55px;
+}
+
+.post-button{
+  width: 0px;
+  height:50px;
+  border: 1.5px solid black;
+  float:right;
+  margin-top: -85px;
+  margin-right: 270px;
+  padding-left: 185px;
+}
