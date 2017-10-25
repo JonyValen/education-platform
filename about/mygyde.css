@@ -92,9 +92,7 @@ input[type=text]:focus {
 }
 .box-upper-tab>li>button{
   background-color: #F5F5F5;
-  width: 6em;
-  height: 3em;
-  margin-top: -.23em;
+  width: 5em;
 }
 .box-upper-tab>li>button:hover{
   background-color: lightgrey;
@@ -232,13 +230,28 @@ input[type=text]:focus {
   margin-left: 22.1875em;
 }
 
-.box-DOB{
+.box-month{
   width:48.4375em;
   height:3.75em;
   border:0.09375em solid none;
   margin-top: 0.625em;
   margin-right: 44.0625em;
   margin-left: 22.1875em;
+}
+.box-day{
+  width:48.4375em;
+  height:3.75em;
+  border:0.09375em solid none;
+  margin-top: -3.625em;
+  margin-left: 36.7875em;
+}
+.box-year{
+  width:48.4375em;
+  height:3.75em;
+  border:0.09375em solid none;
+  margin-top: -3.8em;
+  margin-right: -6.0625em;
+  margin-left: 51.4875em;
 }
 .box-current-address{
   width:48.4375em;
