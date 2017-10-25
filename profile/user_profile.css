@@ -9,16 +9,15 @@ body{
   color:white;
   list-style: none;
   text-align: right;
-  padding:18px 0 20px 0px;
-  margin-top: -10px;
+  padding:1.5em 0 1.25em 0px;
+  margin-top: -0.625em;
 
 }
 
 .nav > li{
    display: inline-block;
-   padding-right:50px;
+   padding-right:3.125em;
    color: white;
-
 }
 
 .nav>li>a{
@@ -26,26 +25,21 @@ body{
   color:white;
 }
 
-
 .nav > li >a:hover{
   color:#c1c1c1;
 }
 
 input[type=text] {
-    width: 130px;
+    width: 8.125em;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 .search-bar{
   float: left;
-  padding-left: 30px;
-  padding-top: 0px;
-  margin-top:-5px;
+  padding-left: 1.875em;
+  padding-top: 0.125em;
 }
-.search-bar input{
-  width: 400px;
-  height: 30px;
-}
+
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
     width: 100%;
@@ -54,11 +48,11 @@ input[type=text]:focus {
 .logo{
   color:white;
   float:left;
-  padding-left: 20px;
+  padding-left: 1.25em;
   font-family:'Cedarville Cursive';
-  font-size: 30px;
+  font-size: 1.875em;
   font-weight:bold;
-  margin-top:-20px;
+  margin-top:-.85em;
   font-weight: lighter;
 
 }
@@ -67,7 +61,6 @@ input[type=text]:focus {
   text-decoration: none;
   color:white;
 }
-
 
 .button-row >li{
   display: inline-block;
