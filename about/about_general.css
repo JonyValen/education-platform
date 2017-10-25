@@ -55,7 +55,7 @@ input[type=text]:focus {
   font-family:'Cedarville Cursive';
   font-size: 1.875em;
   font-weight:bold;
-  margin-top:-1.25em;
+  margin-top:-.85em;
   font-weight: lighter;
 
 }
@@ -163,12 +163,6 @@ input[type=text]:focus {
   left:7.5em;
 }
 
-.connect{
-  text-align: center;
-  font-size: 1.5em;
-  font-family:"Lato";
-}
-
 .intro{
   text-align: center;
   font-size: 1.5em;
@@ -225,9 +219,9 @@ input[type=text]:focus {
   height:3.75em;
   border: 0.09375em solid none;
   padding-left: 22.6375em;
-  margin-top: -3.9em;
+  margin-top: -3.75em;
   margin-right: 44.0625em;
-  margin-left: 22.1875em;
+  margin-left: 18.1875em;
 }
 .DOB{
   border: 2px black;
@@ -303,7 +297,7 @@ input[type=text]:focus {
   width:32.8125em;
   height:3.75em;
   border: 0.09375em solid none;
-  margin-left: 37.8125em;
+  margin-left: 34.8125em;
   margin-top: -3.9375em;
   margin-right: 44.0625em;
 }
