@@ -40,7 +40,8 @@ input[type=text] {
   padding-top: 0.125em;
 }
 
-/* When the input field gets focus, change its width to 100% */
+/* When the input field gets focus,
+change its width to 100% */
 input[type=text]:focus {
     width: 100%;
 }
@@ -185,4 +186,49 @@ input[type=text]:focus {
   margin-left: 4.6875em;
   margin-right: 4.6875em;
   padding-left: 2.1875em;
+}
+
+
+.upload{
+  margin-top: 1em;
+}
+
+.education-row-info{
+  margin-top: -33em;
+  margin-left: 21.5em;
+  height: 2em;
+  border-bottom: 1px solid black;
+  width: 50em;
+}
+.education-row-outcome{
+  margin-top: -2.4em;
+  margin-left: 65em;
+}
+.add-general-courses{
+  height: 1.4em;
+  width: 22em;
+  margin-left: 21.5em;
+  margin-top: 3em;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.add-advanced-courses{
+  height: 1.4em;
+  width: 22em;
+  margin-left: 49.5em;
+  margin-top: -1.5em;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.add-button{
+  float: left;
+  margin-top: -29.25em;
+}
+.add-button{
+  float: left;
+  margin-top: -29.25em;
+}
+.add-button-click{
+  text-decoration: none;
+  color: black;
 }
