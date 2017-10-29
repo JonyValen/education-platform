@@ -17,11 +17,44 @@ router.get("/register", function(req, res){
 
 
 router.post("/register", function(req, res){
+    var first = req.body.first;
+    var last = req.body.last;
+    var dob = req.body.month + "/" + req.body.day + "/" + req.body.year;
+    var address = req.body.address;
+    console.log(req.body);
+    var phone = Number(req.body.phone);
+    var email = req.body.email;
+    var password = req.body.password;
+    var gender = req.body.gender;
+    var role = req.body.role;
+
     Student.register(new Student({username: req.body.email }), req.body.password, function(err, user){
         if(err){
             console.log(err);
             return res.render("root");
         }
+    
+        var newStudent = {
+            first: first,
+            last: last,
+            dob: dob,
+            address: address,
+            phone: phone,
+            email: email,
+            password: password,
+            gender: gender,
+            role: role
+        };
+        
+        Student.create(newStudent, function(err, newStudent){
+            if(err){
+                console.log(err);
+            }else{
+                newStudent.save();
+                res.redirect("/home");
+            }
+        });
+        
         passport.authenticate("local")(req, res, function(){
             res.redirect("/home");
         });

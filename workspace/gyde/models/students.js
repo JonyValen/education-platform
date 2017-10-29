@@ -5,10 +5,11 @@ var passportLocalMongooseEmail = require('passport-local-mongoose-email');
 var studentSchema = mongoose.Schema({
     first: String,
     last: String,
+    dob: String,
+    address: String,
     phone: Number,
     email: String,
     password: String,
-    birthday: String,
     gender: String,
     role: String
 });
