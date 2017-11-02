@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <link rel="stylesheet" type="text/css" href="About-Education-Tabs.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+
+  <meta charset = "utf-8">
+
+
+  <title>GYDE.COM</title>
+</head>
+   
+<body>
+
+    <div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Contributors')">Contributions</button>
+  <button class="tablinks" onclick="openTab(event, 'Attachments')">Attachments</button>
+  <button class="tablinks" onclick="openTab(event, 'Tags')">Tags</button>
+</div>
+
+<div id="Contributors" class="tabcontent">
+  <h3>Contributors</h3>
+  <p>This is the ccontributions page.</p>
+</div>
+
+<div id="Attachments" class="tabcontent">
+  <h3>Attachments</h3>
+  <p>This is the attachments section.</p> 
+</div>
+
+<div id="Tags" class="tabcontent">
+  <h3>TAGS</h3>
+  <p>This is the tags section.</p>
+</div>
+
+<Script> function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</Script>
+   </body>
+</html>
