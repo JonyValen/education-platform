@@ -70,24 +70,45 @@
 </div>
 
 <!-- Write your comments here -->
-<div class = "box-inside-five">
+
+
+<div class="post-tabs">
+  <button class="tablinks" onclick="openTab(event, 'Contributors')">Contribute</button><!--
+  --><button class="tablinks" onclick="openTab(event, 'Attachments')">Attachments</button><!--
+  --><button class="tablinks" onclick="openTab(event, 'Tags')">Tags</button>
 </div>
 
-<div class="box-contributions">
-</div>
-<div class="box-attachments">
-</div>
-<div class="box-tags">
+<div id="Contributors" class="tabcontent">
+  <p>This is the contributors page.</p>
 </div>
 
-<div class = "bottom-post-box">
+<div id="Attachments" class="tabcontent">
+  <p>This is the attachments section.</p>
 </div>
 
-<div class = "privacy-button">
+<div id="Tags" class="tabcontent">
+  <p>This is the tags section.</p>
 </div>
 
-<div class = "post-button">
-</div>
+
+<Script> function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</Script>
+
 
 </body>
 </html>

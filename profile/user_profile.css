@@ -165,60 +165,15 @@ input[type=text]:focus {
 }
 
 .box-five{
-  width:800px;
-  height:400px;
+  width:51em;
+  height:25em;
   border: 1.5px solid black;
   margin-left: auto;
-  margin-top: -600px;
-  margin-right: 75px;
+  margin-top: -37em;
+  margin-right: 4.67em;
 }
 
 
-.box-inside-five{
-  width: 765px;
-  height:70px;
-  border: 1.5px solid black;
-  float:right;
-  margin-top: -425px;
-  margin-right: 75px;
-  padding-left: 35px;
-}
-
-.box-contributions{
-  width: 230px;
-  height:70px;
-  border: 1.5px solid black;
-  border-left: none;
-  border-top: none;
-  border-bottom:none;
-  float:left;
-  margin-top: -425px;
-  margin-left: 55px;
-  padding-left: 35px;
-}
-
-.box-attachments{
-  width: 230px;
-  height:70px;
-  border: 1.5px solid black;
-  border-left: none;
-  border-top: none;
-  border-bottom:none;
-  float:left;
-  margin-top: -425px;
-  margin-left: 319px;
-  padding-left: 35px;
-}
-
-.box-tags{
-  width: 230px;
-  height:70px;
-  border: 1.5px  none;
-  float:left;
-  margin-top: -425px;
-  margin-left: 588px;
-  padding-left: 35px;
-}
 
 .bottom-post-box{
   width: 765px;
@@ -251,4 +206,44 @@ input[type=text]:focus {
   margin-top: -85px;
   margin-right: 270px;
   padding-left: 185px;
+}
+
+/* Style the buttons inside the tab */
+
+
+div.post-tab button {
+    background-color: inherit;
+    border-top: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.post-tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.post-tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+    width: 51em;
+    height: 20em;
+    margin-left: 28.5em;
+    margin-top: -21.1em;
+}
+
+.tablinks {
+    width: 25.1em;
+    height: 5em;
+    display: inline-block;
+    margin-top: -36.56em;
+    margin-right: -4em;
+    margin-left: 3.6em;
 }
