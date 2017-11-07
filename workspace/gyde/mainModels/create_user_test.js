@@ -1,5 +1,5 @@
 const assert = require('assert');
-const User = require('../main/user');
+const User = require('../mainModels/user');
 
 const bruin = new User({
 	firstName: "Jack",
