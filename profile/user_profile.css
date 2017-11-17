@@ -1,7 +1,8 @@
 body{
-  margin:none;
+  margin: 8px;
   padding: none;
   font-family:"Lato";
+ 
 }
 
 .nav{
@@ -80,8 +81,8 @@ input[type=text]:focus {
   font-size: 16px;
   font-family: "Lato";
   width: 200;
+  
 }
-
 
 .banner-box{
   margin-right: 75px;
@@ -99,7 +100,7 @@ input[type=text]:focus {
   border: 1.5px solid black;
   height:200px;
   width:200px;
-  position:relative;
+  position: relative;
   top: -280px;
   left:120px;
 }
@@ -121,7 +122,6 @@ input[type=text]:focus {
   text-decoration: none;
   color:black;
 }
-
 
 .box-three{
   width:350px;
@@ -165,90 +165,171 @@ input[type=text]:focus {
 }
 
 .box-five{
-  width:800px;
-  height:400px;
+  width: 85em;
+  height: 50em;
   border: 1.5px solid black;
   margin-left: auto;
-  margin-top: -600px;
-  margin-right: 75px;
-}
-
-
-.box-inside-five{
-  width: 765px;
-  height:70px;
-  border: 1.5px solid black;
-  float:right;
-  margin-top: -425px;
-  margin-right: 75px;
-  padding-left: 35px;
-}
-
-.box-contributions{
-  width: 230px;
-  height:70px;
-  border: 1.5px solid black;
-  border-left: none;
-  border-top: none;
-  border-bottom:none;
-  float:left;
-  margin-top: -425px;
-  margin-left: 55px;
-  padding-left: 35px;
-}
-
-.box-attachments{
-  width: 230px;
-  height:70px;
-  border: 1.5px solid black;
-  border-left: none;
-  border-top: none;
-  border-bottom:none;
-  float:left;
-  margin-top: -425px;
-  margin-left: 319px;
-  padding-left: 35px;
-}
-
-.box-tags{
-  width: 230px;
-  height:70px;
-  border: 1.5px  none;
-  float:left;
-  margin-top: -425px;
-  margin-left: 588px;
-  padding-left: 35px;
+  margin-top: -37.4em;
+  margin-right: 4em;
+  position: relative;
 }
 
 .bottom-post-box{
   width: 765px;
-  height:70px;
-  border: 1.5px solid black;
-  border-left: none;
-  border-right: none;
-  border-bottom:none;
-  float:right;
+  height: 70px;
+  float: right;
   margin-top: -95px;
   margin-right: 75px;
   padding-left: 35px;
 }
 
-.privacy-button{
-  width: 100px;
-  height:50px;
+.privacy, .dropdown2{
+  width: 10em;
+  height: 50px;
   border: 1.5px solid black;
-  float:right;
-  margin-top: -85px;
-  margin-right: 105px;
-  padding-left: 55px;
+  float: right ;
+  margin-top: -90em;
+  margin-right: 51em;
+  }
+
+.post, .dropdown1{
+  width: 10em;
+  height: 50px;
+  border: 1.5px solid black;
+  float: right;
+  margin-top: -90em;
+  margin-right: 40em;
+  }
+
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
 }
 
-.post-button{
-  width: 0px;
-  height:50px;
-  border: 1.5px solid black;
-  float:right;
-  margin-top: -85px;
-  margin-right: 270px;
-  padding-left: 185px;
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    border-top: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    width: 25.1em;
+    height: 5em;
+    transition: 0.3s;
+    margin-right: -4em;
+    margin-left: 3.6em;
+    position: relative;
+    left: 10em;
+  }
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
 }
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+    width: 51em;
+    height: 20em
+    margin-left 28.5em;
+    margin-top: 11.1em;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    position: relative;
+	top: -10em;
+}
+
+/* Dropdown CSS */
+
+/* Position properties */
+
+ {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #000000;
+ }
+
+ {
+  display: block;
+  position: relative;
+  float: left;
+  background: #000000;
+}
+
+
+/* Hide the sub menus. */
+
+li ul { display: none; }
+
+ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+}
+
+ul li a:hover { background: #2c3e50; }
+
+/* Displays the dropdown menu on hover */
+
+li:hover > ul {
+  display: block;
+  position: absolute;
+}
+
+li:hover li { float: none; }
+
+li:hover a { background: #000000; }
+
+li:hover li a:hover { background: #000000; }
+
+.main-navigation li ul li { border-top: 0; }
+
+/* Displays second level dropdown menus to the right of the first level dropdown menu. */
+
+ul ul ul, submenu2 {
+  left: 100%;
+  top: 0;
+}
+
+/* Clearfix */
+
+ul:before,
+ul:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+ul:after { clear: both; }
+
+
+
+
+
+
+  
+/*Editing guides*/
+
+div {
+ border: 5px solid blue;
+
+    }
+
+p {
+    border: 5px solid red;
+}
+
+

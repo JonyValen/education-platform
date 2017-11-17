@@ -5,8 +5,46 @@
     <link rel="stylesheet" type="text/css" href="user_profile.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+      <meta charset = "utf-8">
+      
+<Script> function openTab(evt, tabName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}</Script>
 
-  <meta charset = "utf-8">
+<script>
+var list = document.getElementById('demo');
+
+function changeText2(e) {
+
+ e.which = e.which || e.keyCode;
+
+ if(e.which == 13) {
+
+     var newtag = document.getElementById('newtag').value;
+      var entry = document.createElement('li');
+      entry.appendChild(document.createTextNode(newtag));
+      list.appendChild(entry);
+  }
+  
+}
+</script>
+
 
 
   <title>GYDE.COM</title>
@@ -30,9 +68,10 @@
   </ul>
 
 <!-- Please be sure to comment your code! Which boxes are these Max? -->
+
 <!-- This box is evident. -->
 <div class = "banner-box">
-  <ul class = "button-row">
+  <ul class="button-row">
       <li><button type="button">Level</button></li>
       <li><button type="button">Gydeline</button></li>
       <li><button type="button">About</button></li>
@@ -66,28 +105,57 @@
 </div>
 
 <!-- Write your comments here -->
-<div class="box-five">
+<div class="box-five"><p> hello</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Contributors')">Contributions</button>
+  <button class="tablinks" onclick="openTab(event, 'Attachments')">Attachments</button>
+  <button class="tablinks" onclick="openTab(event, 'Tags')">Tags</button>
+</div>
+
+<div id="Contributors" class="tabcontent">
+  <h3>Contributors</h3>
+  <p>This is the ccontributions page.</p>
+</div>
+
+<div id="Attachments" class="tabcontent">
+  <h3>Attachments</h3>
+  <p>This is the attachments section.</p> 
+</div>
+
+<div id="Tags" class="tabcontent">
+  <h3>TAGS</h3>
+  <p>This is the tags section.</p>
+  <ol id="demo">
+  <input type="text" id="newtag" onkeyup="changeText2(event)">
+<!-- list starts empty but onkeyup enter click we add li elements-->
+</ol>
+</div>
+
+<div>
+    <ul class="Menu-options">
+         <li><a href="#">Post</a>
+          <ul>
+            <li><a href="#">OPTION 1</a></li>
+            <li><a href="#">OPTION 2</a></li>
+            <li><a href="#">OPTION 3</a>
+            <ul>
+                <li><a href="#">Suboption 1</a></li>
+                <li><a href="#">Suboption 2</a></li>
+                    </ul>
+                </li>
+</div>
+        
+
 </div>
 
 <!-- Write your comments here -->
-<div class = "box-inside-five">
-</div>
+    <div class="bottom-post-box"> <p> hello</p>
+    </div>
 
-<div class="box-contributions">
-</div>
-<div class="box-attachments">
-</div>
-<div class="box-tags">
-</div>
 
-<div class = "bottom-post-box">
-</div>
 
-<div class = "privacy-button">
-</div>
 
-<div class = "post-button">
-</div>
 
 </body>
 </html>
