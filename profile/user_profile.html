@@ -1,114 +1,72 @@
-<DOCTYPE html>
-  <html lang = "en">
+<!DOCTYPE html>
+<html>
   <head>
-
-    <link rel="stylesheet" type="text/css" href="user_profile.css">
+    <title>GYDE.COM</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta charset = "utf-8">
-
-
-  <title>GYDE.COM</title>
-</head>
-
-<body>
-  <ul class= "nav">
-
-    <div class = "logo">
-      <a href = "#">gyde</a>
-    </div>
-
-    <div class = "search-bar">
-    <input type="text" name="search" placeholder="Search.." style="height: 2em; width: 24em;">
-  </div>
-    <li><a href = "#">Home</a></li>
-      <li><a href = "#">Profile</a></li>
-        <li><a href = "#">Account</a></li>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <ul class="nav">
+      <li class="logo-searchbar">
+        <a class="logo" href="#">gyde</a>
+        <input type="text" name="search" placeholder="Search...">
+      </li>
+      <li class="user-links">
+        <ul>
+          <li id="homebtn"><a href = "#">Home</a></li>
+          <li id="profilebtn"><a href = "#">Profile</a></li>
+          <li id="accountbtn"><a href = "#">Account</a></li>
           <li><a href = "#"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
-            <li><a href = "#">Contact</a></li>
-  </ul>
+          <li id="contactbtn"><a href = "#">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- Body Content -->
+    <div class="center-content">
+      <!-- Banner, profile picture, links -->
+      <div class = "banner-box black-border">
+        <div class = "picture-box black-border"></div>
+        <ul class = "button-row">
+          <li><button type="button">Level</button></li>
+          <li><button type="button">Gydeline</button></li>
+          <li><button type="button">About</button></li>
+          <li><button type="button">Network</button></li>
+          <li><button type="button">More</button></li>
+        </ul>
+      </div>
 
-<!-- Please be sure to comment your code! Which boxes are these Max? -->
-<!-- This box is evident. -->
-<div class = "banner-box">
-  <ul class = "button-row">
-      <li><button type="button">Level</button></li>
-      <li><button type="button">Gydeline</button></li>
-      <li><button type="button">About</button></li>
-      <li><button type="button">Network</button></li>
-      <li><button type="button">More</button></li>
-
-</ul>
-</div>
-
-<div class = "picture-box">
-</div>
-
-<!-- Top left hand box. -->
-<div class= "box-two">
-  <a href = "#"><p class = "connect">Connect</p></a>
-</div>
-
-<!-- Middle left hand box. -->
-<div class="box-three">
-  <p class = "intro">Introduction</p>
-</div>
-
-<!-- Write your comments here. -->
-<div class = "box-four">
-  <p class = "gyde_box">Gyde</p>
-  <div class = "gyde-search">
-    <form>
-        <input type="text" name="search" placeholder="Search..">
-    </form>
-</div>
-</div>
-
-<!-- Write your comments here -->
-<div class="box-five">
-</div>
-
-<!-- Write your comments here -->
-
-
-<div class="post-tabs">
-  <button class="tablinks" onclick="openTab(event, 'Contributors')">Contribute</button><!--
-  --><button class="tablinks" onclick="openTab(event, 'Attachments')">Attachments</button><!--
-  --><button class="tablinks" onclick="openTab(event, 'Tags')">Tags</button>
-</div>
-
-<div id="Contributors" class="tabcontent">
-  <p>This is the contributors page.</p>
-</div>
-
-<div id="Attachments" class="tabcontent">
-  <p>This is the attachments section.</p>
-</div>
-
-<div id="Tags" class="tabcontent">
-  <p>This is the tags section.</p>
-</div>
-
-
-<Script> function openTab(evt, tabName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}</Script>
-
-
-</body>
+      <div class="info-boxes">
+        <!-- Column 1 of boxes -->
+        <div class="col-1">
+          <!-- Connect box. -->
+          <div class= "box-two black-border">
+            <a href = "#"><p class = "connect">Connect</p></a>
+          </div>
+          <!-- Intro box. -->
+          <div class="box-three black-border">
+            <p class = "intro">Introduction</p>
+          </div>
+          <!-- Gyde box. -->
+          <div class = "box-four black-border">
+            <p class = "gyde_box">Gyde</p>
+            <input type="text" name="search" placeholder="Search..">
+          </div>
+        </div>
+        <!-- Column 2 of boxes -->
+        <div class="col-2">
+          <!-- Post box -->
+          <div class="tabs">
+            <div id="contributors" class="tab">Contributors</div>
+            <div id="attachments" class="tab">Attachments</div>
+            <div id="tags" class="tab">Tags</div>
+          </div>
+          <div class="post-box black-border"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
