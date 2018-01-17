@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Lato";
+    background-color: #ededed;
 }
 
 /*NAV BAR CSS*/
@@ -16,7 +17,7 @@ ul a {
 }
 
 .nav {
-  background-color: black;
+  background-color: #17223d;
   display: flex;
   justify-content: space-between;
   margin: 0;
@@ -30,6 +31,7 @@ li.logo-searchbar {
 
 input[name="search"] {
   min-width: 200px;
+  min-height: 25px;
 }
 
 .logo {
@@ -60,7 +62,7 @@ li.user-links {
 
 .black-border {
   border-style: solid;
-  border-color: black;
+  border-color: #17223d;
   border-width: 1.5px;
   box-sizing: border-box;
 }
@@ -92,7 +94,7 @@ li.user-links {
 }
 
 .button-row > li > button {
-  background-color: black; /* Green */
+  background-color: #17223d; /* Green */
   border: none;
   color: white;
   padding: 15px 29px;
@@ -130,7 +132,7 @@ li.user-links {
   font-size: 24px;
   font-family: 'Lato', serif;
   text-align: center;
-  color: black;
+  color: #17223d;
 }
 
 .box-two, .box-three, .box-four {
@@ -169,11 +171,11 @@ li.user-links {
   flex-grow: 1;
   border-style: solid solid none none;
   border-width: 1.5px;
-  border-color: black white black black;
+  border-color: #17223d white #17223d #17223d;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black;
+  background: #17223d;
   color: white;
   cursor: pointer;
 }
@@ -189,5 +191,5 @@ li.user-links {
 .post-box {
   width: 100%;
   height:25em;
-  border: 1.5px solid black;
+  border: 1.5px solid #17223d;
 }
