@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+    background-color: #aaa;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul a {
+  color: white;
+  margin-right: 60px;
+}
+
+.nav {
+  background-color: #17223d;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+  padding-bottom: 5px;
+  align-items: center;
+  z-index: 1;
+}
+
+.logo {
+  padding: 0 0 0 20px;
+  font-family: 'Cedarville Cursive';
+  font-size: 30px;
+}
+
+input[name="search"] {
+  min-width: 200px;
+  min-height: 25px;
+  margin-right: 50px;
+  padding-left: 4px
+}
+
+.feed-btns {
+  margin: 0 auto auto auto;
+  background-color: white;
+  max-width: 93%;
+  border-radius: 2px;
+}
+
+.feed-btns li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.feed-btns a {
+  color: #17223d;
+}
+
+.center-content {
+  max-width: 90%;
+  min-width: 500px;
+  margin: 0 auto auto auto;
+  position: relative;
+  background-color: #ededed;
+  padding: 20px;
+}
+
+.selected-feed-type {
+  border-bottom-color: #17223d;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  padding-bottom: 7px;
+}
+
+.item {
+  margin: auto auto 20px 20px;
+  background-color: white;
+  padding: 10px;
+  width: 85%;
+  font-size: 14px;
+}
+
+.question {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #055cb7;
+}
+
+.author {
+  color: #055cb7;
+}
+
+.tags {
+  margin-top: 7px;
+  font-size: 14px;
+}
+
+.tag {
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #2e7096;
+  background-color: #3a92c4;
+  color: #2c2d2d;
+}
+
+footer {
+  width: 100%;
+  min-height: 100px;
+  background-color: gray;
+}
