@@ -38,9 +38,31 @@ ul a {
 
 input[name="search"] {
   min-width: 200px;
-  min-height: 25px;
+  min-height: 30px;
   margin-right: 50px;
-  padding-left: 4px
+  padding-left: 4px;
+  background-color: #425d89;
+  border-style: none;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #D6D6D0;
+}
+
+input[name="search"]:focus {
+  color: #D6D6D0;
+}
+
+::-webkit-input-placeholder {
+    color: #D6D6D0;
+}
+:-moz-placeholder {
+    color: #D6D6D0;
+}
+::-moz-placeholder {
+    color: #D6D6D0;
+}
+:-ms-input-placeholder {
+    color:    #D6D6D0;
 }
 
 .feed-btns {
@@ -62,7 +84,7 @@ input[name="search"] {
 .center-content {
   max-width: 90%;
   min-width: 500px;
-  margin: 0 auto auto auto;
+  margin: 0 auto 10px auto;
   position: relative;
   background-color: #ededed;
   padding: 20px;
@@ -76,7 +98,7 @@ input[name="search"] {
 }
 
 .item {
-  margin: auto auto 20px 20px;
+  margin: auto auto 10px 20px;
   background-color: white;
   padding: 10px;
   width: 85%;
@@ -92,6 +114,7 @@ input[name="search"] {
 
 .author {
   color: #055cb7;
+  margin-right: 10px;
 }
 
 .tags {
