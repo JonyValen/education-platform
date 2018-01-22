@@ -2,9 +2,13 @@
 <html>
   <head>
     <title>Gyde</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="homepage.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="homepage.js"></script>
   </head>
   <body>
     <ul class="nav">
@@ -13,52 +17,43 @@
         <input type="text" name="search" placeholder="Search">
         <a href = "#" id="questions">Questions</a>
       </li>
-      <li id="login"><a href = "#">Sign up/Log in</a></li>
+      <li id="login"><a href="../loginpage/gyde_login.html">Sign up/Log in</a></li>
     </ul>
+    <div class="nav-substitute"></div>
     <ul class="feed-btns">
-      <li><a href="#" class="selected-feed-type" id="trending-btn">Trending</a></li>
+      <li><a href="#" class="selected-feed-type" id="home-btn">Home</a></li>
+      <li><a href="#" id="trending-btn">Trending</a></li>
       <li><a href="#" id="latest-btn">Latest</a></li>
     </ul>
     <div class="center-content">
-      <div class="item" id="i1">
-        <a class="question" href="#">Sample Topic 1?</a>
-        by <a class="author" href="#"> Author 1</a>
-        <span class="date">2 days ago</span>
-        <div class="tags"> Tags |
-          <button class="tag t1">Tag 1</button>
-          <button class="tag t2">Tag 2</button>
-        </div>
+      <div class="banner">
+        <img src="banner.jpg" alt="ucla-banner" width="100%">
+        <h1 class="welcome-title">Welcome to Gyde</h1>
       </div>
-      <div class="item" id="i2">
-        <a class="question" href="#">Sample Topic 2?</a>
-        by <a class="author" href="#"> Author 2</a>
-        <span class="date">3 days ago</span>
-        <div class="tags"> Tags |
-          <button class="tag t1">Tag 1</button>
-          <button class="tag t2">Tag 2</button>
+      <article class="intro">
+        <h1 class="intro-head"><div class="arrowhead"></div>Our Purpose</h1>
+        <p class="intro-head">Our ultimate goal is to help spread knowledge in two directions:</p>
+        <div class="intro-body">
+          <div class="purpose-vertical">
+            <h2>Vertically</h2>
+            <p>Stimulating collaborative research amongst professors and top level researchers, pushing the boundaries of knowledge.</p>
+            <button>Learn More</button>
+          </div>
+          <div class="purpose-horizontal">
+            <h2>Horizontally</h2>
+            <p>Increasing the access to higher level education to ALL.</p>
+            <button>Learn More</button>
+          </div>
         </div>
-      </div>
-      <div class="item" id="i3">
-        <a class="question" href="#">Sample Topic 3?</a>
-        by <a class="author" href="#"> Author 3</a>
-        <span class="date">3 days ago</span>
-        <div class="tags"> Tags |
-          <button class="tag t1">Tag 1</button>
-          <button class="tag t2">Tag 2</button>
-        </div>
-      </div>
-      <div class="item" id="i4">
-        <a class="question" href="#">Sample Topic 4?</a>
-        by <a class="author" href="#"> Author 4</a>
-        <span class="date">4 days ago</span>
-        <div class="tags"> Tags |
-          <button class="tag t1">Tag 1</button>
-          <button class="tag t2">Tag 2</button>
-        </div>
-      </div>
+      </article>
+      <article class="contact">
+        <h1><div class="arrowhead"></div>Ready to Join?</h1>
+        <a href="../loginpage/gyde_login.html"><button id="sign-up">Sign Up</button></a>
+        <h1><div class="arrowhead"></div>Share the knowledge to your friends!</h1>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </article>
     </div>
-    <footer>
-      Footer: contact and other links will appear here
-    </footer>
   </body>
 </html>
