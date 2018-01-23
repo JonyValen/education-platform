@@ -212,6 +212,7 @@ button {
 
 .contact {
   text-align: center;
+  animation-delay: 0.1s;
 }
 
 .contact h1 {
