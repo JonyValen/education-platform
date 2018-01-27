@@ -18,6 +18,16 @@ ul a {
   margin-right: 60px;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
 .nav {
   background-color: #17223d;
   width: 100%;
@@ -245,6 +255,15 @@ button {
   cursor: pointer;
 }
 
+.contact i {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  line-height: 40px;
+  vertical-align: center;
+  margin-right: 20px;
+}
+
 /*TRENDING/LATEST*/
 .item {
   margin: auto auto 10px 20px;
@@ -284,13 +303,4 @@ footer {
   width: 100%;
   min-height: 100px;
   background-color: gray;
-}
-
-.contact i {
-  width: 40px;
-  height: 40px;
-  font-size: 25px;
-  line-height: 40px;
-  vertical-align: center;
-  margin-right: 20px;
 }

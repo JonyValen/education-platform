@@ -21,10 +21,16 @@ $(document).ready(function(){
           url: 'post.html',
           type:'get',
           success: function(data){
-           $(".center-content").append($(data).html())
+            $(".center-content").append(data)
+            $(".temp .question").text("Sample Topic "+i+"?")
+            $(".temp .tag").text("Tag "+i)
+            $(".temp").removeClass("temp")
+          },
+          error: function(){
+            $(".center-content").text("Could not load :( If you are a developer, please run through a local server instead.")
           }
         });
-        
+
       }
     }
   });
