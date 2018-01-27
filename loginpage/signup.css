@@ -42,8 +42,10 @@ img[alt="bg-image"] {
   display: inline-block;
 }
 
-.login-page {
-  width: 360px;
+.signup-page {
+  min-width: 400px;
+  max-width: 600px;
+  justify-content: space-between;
   padding: 8% 0 0;
   margin: auto;
   display: flex;
@@ -51,10 +53,14 @@ img[alt="bg-image"] {
   align-items: center;
 }
 
+.field {
+  display: flex;
+}
+
 .form {
   position: relative;
   background: #10172b;
-  max-width: 360px;
+  flex-grow: 1;
   padding: 0 45px 0 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -63,14 +69,19 @@ img[alt="bg-image"] {
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: ;
   width: 100%;
   border: 0;
-  margin: 0 0 15px;
+  margin: 0 7px 15px 7px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
+  display: inline-block;
 }
+
+input[placeholder="M.I."] {
+  width: 50px;
+}
+
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -89,24 +100,21 @@ img[alt="bg-image"] {
   border-width: 1.5px;
   border-radius: 2px;
 }
+
 .form button:hover {
   background: #ddd;
 }
+
 .form .message {
   margin: 15px 0 20px;
   color: white;
   font-size: 12px;
 }
+
 .form .message a {
   color: white;
 }
 
 .message a:hover, i:hover {
   color: #ddd;
-}
-
-i {
-  color: white;
-  margin: 0 5px;
-  cursor: pointer;
 }
