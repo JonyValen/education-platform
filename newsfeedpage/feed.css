@@ -15,7 +15,7 @@ a {
 
 ul a {
   color: white;
-  margin-right: 60px;
+  margin-right: 25px;
 }
 
 .nav {
@@ -25,7 +25,8 @@ ul a {
   justify-content: space-between;
   margin: 0;
   flex-wrap: wrap;
-  padding-bottom: 5px;
+  padding: 0 40px 5px 40px;
+  box-sizing: border-box;
   align-items: center;
   z-index: 1;
   opacity: 0.9;
@@ -37,12 +38,12 @@ ul a {
 
 .user-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-grow: 1;
 }
 
 .logo {
-  padding: 0 0 0 20px;
+  padding: 0 0 0 10px;
   font-family: 'Cedarville Cursive';
   font-size: 30px;
 }
@@ -74,4 +75,18 @@ input[name="search"]:focus {
 }
 :-ms-input-placeholder {
     color:    #D6D6D0;
+}
+
+li > div, li > i {
+  margin-right: 40px;
+}
+
+img.profile-pic {
+  border-radius: 10px;
+}
+
+li > i {
+  color: white;
+  font-size: 18px !important;
+  padding-top: 2px;
 }
