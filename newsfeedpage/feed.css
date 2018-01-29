@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul a {
+  color: white;
+  margin-right: 60px;
+}
+
+.nav {
+  background-color: #17223d;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+  padding-bottom: 5px;
+  align-items: center;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.logo-searchbar {
+  flex-grow: 2;
+}
+
+.user-links {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.logo {
+  padding: 0 0 0 20px;
+  font-family: 'Cedarville Cursive';
+  font-size: 30px;
+}
+
+input[name="search"] {
+  min-width: 200px;
+  min-height: 30px;
+  margin-right: 50px;
+  padding-left: 4px;
+  background-color: #425d89;
+  border-style: none;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #D6D6D0;
+}
+
+input[name="search"]:focus {
+  color: #D6D6D0;
+}
+
+::-webkit-input-placeholder {
+    color: #D6D6D0;
+}
+:-moz-placeholder {
+    color: #D6D6D0;
+}
+::-moz-placeholder {
+    color: #D6D6D0;
+}
+:-ms-input-placeholder {
+    color:    #D6D6D0;
+}
