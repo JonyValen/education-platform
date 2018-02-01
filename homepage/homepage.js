@@ -1,4 +1,4 @@
-var numItems = 4;
+var numPost = 4;
 
 $(document).ready(function(){
   var homeHTML = $(".center-content").html();
@@ -16,22 +16,31 @@ $(document).ready(function(){
       $(".selected-feed-type").removeClass("selected-feed-type")
       $(this).addClass("selected-feed-type")
       $(".center-content").html("")
-      for(var i = 0; i < numItems; i++){
-        $.ajax({
-          url: 'post.html',
-          type:'get',
-          success: function(data){
-            $(".center-content").append(data)
-            $(".temp .question").text("Sample Topic "+i+"?")
-            $(".temp .tag").text("Tag "+i)
-            $(".temp").removeClass("temp")
-          },
-          error: function(){
-            $(".center-content").text("Could not load :( If you are a developer, please run through a local server instead.")
-          }
-        });
-
+      /*AJAX RETRIEVE POSTS ASYNCHRONOUSLY*/
+      var i = 0
+      var requestPosts = {
+        url: 'post.html',
+        async: true,
+        type: 'get',
+        success: function(data){
+          updatePosts(data)
+        },
+        error: function(){
+          $(".center-feed").append('<div class="item">Could not load posts. Please try again later.</div>')
+        }
       }
+
+      function updatePosts(data) {
+        if(i >= numPost) return
+        $(".center-content").append(data)
+        $(".temp .topic").text("Sample Topic "+i)
+        $(".temp").removeClass("temp")
+        i++
+        $.ajax(requestPosts);
+      }
+
+      $.ajax(requestPosts);
+      /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
     }
   });
 

@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -40,12 +39,15 @@ ul a {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
+  line-height: 40px;
+  vertical-align: middle;
 }
 
 .logo {
   padding: 0 0 0 10px;
   font-family: 'Cedarville Cursive';
   font-size: 30px;
+  user-select: none;
 }
 
 input[name="search"] {
@@ -78,18 +80,38 @@ input[name="search"]:focus {
     color:    #D6D6D0;
 }
 
-li > div, li > i {
+li > div {
   margin-right: 40px;
 }
 
 img.profile-pic {
-  border-radius: 10px;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 5px;
+}
+
+.user {
+  cursor: pointer;
+}
+
+.profile-name {
+  vertical-align: middle;
+  font-family: Montserrat;
 }
 
 li > i {
   color: white;
   font-size: 18px !important;
   padding-top: 2px;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px !important;
+  margin-right: 40px;
+
 }
 
 .center-content {
@@ -132,7 +154,7 @@ li > i {
   position: relative;
   margin-bottom: 20px;
   box-shadow: 2px 1px 2px gray;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 textarea[name="write-post"] {
@@ -142,18 +164,25 @@ textarea[name="write-post"] {
   padding: 8px;
   line-height: 15px;
   outline: none;
-  font-family: Montserrat;
+  font-family: Roboto;
   resize: none;
   overflow: hidden;
   margin: 0;
   display: block;
   box-sizing: border-box;
+  /* all style changes will ease-in-out for 1s */
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s;
 }
 
 textarea[name="write-post"]:focus {
   overflow: auto;
   height: 90px;
   margin: 0 0 20px 0;
+
 }
 
 .post-btn {
@@ -171,20 +200,36 @@ textarea[name="write-post"]:focus {
 
 .item {
   background-color: white;
-  font-family: Montserrat;
+  font-family: Roboto;
   margin-bottom: 15px;
   min-height: 120px;
-  padding: 25px;
   box-sizing: border-box;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 5px;
+  overflow: auto;
 }
 
-.item .react {
+.item > .post-content {
+  margin: 25px 25px 0 25px;
+  position: relative;
+  display: block;
+  border-bottom-style: solid;
+  border-bottom-color: #17223d;
+  border-bottom-width: 2px;
+}
+
+.item > .react {
   text-align: right;
+  border-bottom-style: solid;
+  border-bottom-color: #17223d;
+  border-bottom-width: 5px;
+  padding: 0 25px 0 25px;
 }
 
 .author, .date {
   font-size: 14px;
-  line-height: 20px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .date {
@@ -192,23 +237,31 @@ textarea[name="write-post"]:focus {
   clear: both;
 }
 
+.topic {
+  font-size: 26px;
+}
+
+.abstract {
+  margin-left: 15px;
+}
+
 .item .react button {
   padding: 8px;
   border-style: none;
-  border-radius: 2px;
   cursor: pointer;
   outline: none;
+  background-color: transparent;
 }
 
 .endorse:hover {
-  background-color: #ffa8c6;
+  background-color: #ffa8c6 !important;
 }
 
 .share:hover {
-  background-color: #a5a0a2;
+  background-color: #d3d3d3 !important;
 }
 
 .liked {
-  background-color: #c43a3a;
+  background-color: #c43a3a !important;
   color: white;
 }
