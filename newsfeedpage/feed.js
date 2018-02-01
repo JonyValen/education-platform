@@ -1,6 +1,7 @@
-var numPost = 2
+var numPost = 4
 
 $(document).ready(function(){
+  /*POST BOX LISTENERS*/
   $("textarea").focusin(function(){
     $(this).parent().append("<button class='post-btn'>Create Post</button>")
   });
@@ -8,28 +9,46 @@ $(document).ready(function(){
   $("textarea").focusout(function(){
     $(".post-btn").remove()
   });
+  /*END --- POST BOX LISTENERS --- END*/
 
-  $(".endorse").click(function(){
-    alert("t")
+  /*ENDORSE BUTTON LISTENERS*/
+  //Note: endorse comes from ajax call, so must use this particular listener
+  $(document).on("click", ".endorse", function(){
     if(!$(this).hasClass("liked"))
       $(this).addClass("liked")
     else
       $(this).removeClass("liked")
   });
+  /*END --- ENDORSE BUTTON LISTENERS --- END*/
 
-  for(var i = 0; i < numPost; i++){
-    $.ajax({
-      url: 'post.html',
-      async: true,
-      type: 'get',
-      success: function(data){
-        $(".center-feed").append(data)
-        $(".temp .topic").text("Sample Topic "+i)
-        $(".temp").removeClass("temp")
-      },
-      error: function(){
-        $(".center-feed").append('<div class="item">Could not load posts. Please try again later.</div>')
-      }
-    });
+  /*SHARE BUTTON LISTENERS*/
+  $(document).on("click", ".share", function(){
+  });
+  /*END --- SHARE BUTTON LISTENERS --- END*/
+
+  /*AJAX RETRIEVE POSTS ASYNCHRONOUSLY*/
+  var i = 0
+  var requestPosts = {
+    url: 'post.html',
+    async: true,
+    type: 'get',
+    success: function(data){
+      updatePosts(data)
+    },
+    error: function(){
+      $(".center-feed").append('<div class="item">Could not load posts. Please try again later.</div>')
+    }
   }
+
+  function updatePosts(data) {
+    if(i >= numPost) return
+    $(".center-feed").append(data)
+    $(".temp .topic").text("Sample Topic "+i)
+    $(".temp").removeClass("temp")
+    i++
+    $.ajax(requestPosts);
+  }
+
+  $.ajax(requestPosts);
+  /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
 });

@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   box-sizing: border-box;
 }
 
@@ -90,6 +89,7 @@ li > i {
   color: white;
   font-size: 18px !important;
   padding-top: 2px;
+  cursor: pointer;
 }
 
 .center-content {
@@ -148,12 +148,19 @@ textarea[name="write-post"] {
   margin: 0;
   display: block;
   box-sizing: border-box;
+  /* all style changes will ease-in-out for 1s */
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s;
 }
 
 textarea[name="write-post"]:focus {
   overflow: auto;
   height: 90px;
   margin: 0 0 20px 0;
+
 }
 
 .post-btn {
@@ -184,12 +191,21 @@ textarea[name="write-post"]:focus {
 
 .author, .date {
   font-size: 14px;
-  line-height: 20px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .date {
   float: right;
   clear: both;
+}
+
+.topic {
+  font-size: 26px;
+}
+
+.abstract {
+  margin-left: 15px;
 }
 
 .item .react button {
