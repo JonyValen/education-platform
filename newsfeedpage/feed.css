@@ -39,12 +39,15 @@ ul a {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
+  line-height: 40px;
+  vertical-align: middle;
 }
 
 .logo {
   padding: 0 0 0 10px;
   font-family: 'Cedarville Cursive';
   font-size: 30px;
+  user-select: none;
 }
 
 input[name="search"] {
@@ -92,8 +95,7 @@ img.profile-pic {
 }
 
 .user {
-  line-height: 40px;
-  vertical-align: middle;
+  cursor: pointer;
 }
 
 .profile-name {
@@ -201,14 +203,27 @@ textarea[name="write-post"]:focus {
   font-family: Roboto;
   margin-bottom: 15px;
   min-height: 120px;
-  padding: 25px;
   box-sizing: border-box;
   box-shadow: 1px 1px 2px gray;
   border-radius: 5px;
+  overflow: auto;
 }
 
-.item .react {
+.item > .post-content {
+  margin: 25px 25px 0 25px;
+  position: relative;
+  display: block;
+  border-bottom-style: solid;
+  border-bottom-color: #17223d;
+  border-bottom-width: 2px;
+}
+
+.item > .react {
   text-align: right;
+  border-bottom-style: solid;
+  border-bottom-color: #17223d;
+  border-bottom-width: 5px;
+  padding: 0 25px 0 25px;
 }
 
 .author, .date {
@@ -233,20 +248,20 @@ textarea[name="write-post"]:focus {
 .item .react button {
   padding: 8px;
   border-style: none;
-  border-radius: 2px;
   cursor: pointer;
   outline: none;
+  background-color: transparent;
 }
 
 .endorse:hover {
-  background-color: #ffa8c6;
+  background-color: #ffa8c6 !important;
 }
 
 .share:hover {
-  background-color: #a5a0a2;
+  background-color: #d3d3d3 !important;
 }
 
 .liked {
-  background-color: #c43a3a;
+  background-color: #c43a3a !important;
   color: white;
 }

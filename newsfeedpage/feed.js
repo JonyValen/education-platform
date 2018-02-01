@@ -51,4 +51,7 @@ $(document).ready(function(){
 
   $.ajax(requestPosts);
   /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
+
+  /*RETRIEVE NOTIFICATIONS*/
+  /*END --- RETRIEVE NOTIFICATIONS --- END*/
 });

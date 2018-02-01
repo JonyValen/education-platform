@@ -1,4 +1,4 @@
-var numItems = 4;
+var numPost = 4;
 
 $(document).ready(function(){
   var homeHTML = $(".center-content").html();
@@ -32,7 +32,7 @@ $(document).ready(function(){
 
       function updatePosts(data) {
         if(i >= numPost) return
-        $(".center-feed").append(data)
+        $(".center-content").append(data)
         $(".temp .topic").text("Sample Topic "+i)
         $(".temp").removeClass("temp")
         i++
