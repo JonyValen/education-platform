@@ -62,6 +62,7 @@ input[name="search"] {
 
 input[name="search"]:focus {
   color: #D6D6D0;
+  outline: none;
 }
 
 ::-webkit-input-placeholder {
@@ -89,4 +90,125 @@ li > i {
   color: white;
   font-size: 18px !important;
   padding-top: 2px;
+}
+
+.center-content {
+  max-width: 90%;
+  min-width: 500px;
+  margin: 0 auto 10px auto;
+  position: relative;
+  background-color: #ededed;
+  padding: 30px 0 20px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.center-content > div {
+  background-color: white;
+  min-height: 300px;
+}
+
+.post-info {
+  flex-grow: 1;
+  max-width: 18%;
+}
+
+.center-feed {
+  flex-grow: 3;
+  max-width: 56%;
+  background: transparent !important;
+}
+
+.filter-search {
+  flex-grow: 1;
+  max-width: 18%;
+}
+
+.create-post {
+  background-color: white;
+  width: 100%;
+  padding: 12px 20px 15px 20px;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 2px 1px 2px gray;
+  border-radius: 2px;
+}
+
+textarea[name="write-post"] {
+  width: 100%;
+  height: 35px;
+  border-radius: 3px;
+  padding: 8px;
+  line-height: 15px;
+  outline: none;
+  font-family: Montserrat;
+  resize: none;
+  overflow: hidden;
+  margin: 0;
+  display: block;
+  box-sizing: border-box;
+}
+
+textarea[name="write-post"]:focus {
+  overflow: auto;
+  height: 90px;
+  margin: 0 0 20px 0;
+}
+
+.post-btn {
+  width: 100px;
+  height: 40px;
+  border-style: none;
+  font-size: 14px;
+  font-family: Montserrat;
+  background-color: #17223d;
+  color: white;
+  border-radius: 2px;
+  margin: auto 0 auto auto;
+  display: block;
+}
+
+.item {
+  background-color: white;
+  font-family: Montserrat;
+  margin-bottom: 15px;
+  min-height: 120px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.item .react {
+  text-align: right;
+}
+
+.author, .date {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.date {
+  float: right;
+  clear: both;
+}
+
+.item .react button {
+  padding: 8px;
+  border-style: none;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+}
+
+.endorse:hover {
+  background-color: #ffa8c6;
+}
+
+.share:hover {
+  background-color: #a5a0a2;
+}
+
+.liked {
+  background-color: #c43a3a;
+  color: white;
 }

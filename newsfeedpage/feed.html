@@ -3,8 +3,11 @@
   <head>
     <link href="feed.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>Gyde Feed</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="feed.js"></script>
   </head>
   <body>
     <ul class="nav">
@@ -22,5 +25,14 @@
         <i class="help fa fa-info-circle" aria-hidden="true"></i>
       </li>
     </ul>
+    <div class="center-content">
+      <div class="post-info"></div>
+      <div class="center-feed">
+        <div class="create-post">
+          <textarea name="write-post" placeholder="Write Post..."></textarea>
+        </div>
+      </div>
+      <div class="filter-search"></div>
+    </div>
   </body>
 </html>
