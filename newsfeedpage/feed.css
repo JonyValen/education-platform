@@ -253,6 +253,14 @@ textarea[name="write-post"]:focus {
   background-color: transparent;
 }
 
+.item .react a {
+  padding: 8px;
+  height: 100%;
+  line-height: 100%;
+  vertical-align: middle;
+  float: left;
+}
+
 .endorse:hover {
   background-color: #ffa8c6 !important;
 }
