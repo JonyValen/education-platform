@@ -52,6 +52,11 @@ $(document).ready(function(){
   $.ajax(requestPosts);
   /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
 
+  /*CONNECT DIV LISTENER*/
+  $(".connect").click(function(){
+  });
+  /*END --- CONNECT DIV LISTENER --- END*/
+
   /*RETRIEVE NOTIFICATIONS*/
   /*END --- RETRIEVE NOTIFICATIONS --- END*/
 });

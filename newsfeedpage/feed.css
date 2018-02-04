@@ -126,7 +126,6 @@ li > i {
 }
 
 .center-content > div {
-  background-color: white;
   min-height: 300px;
 }
 
@@ -272,4 +271,37 @@ textarea[name="write-post"]:focus {
 .liked {
   background-color: #c43a3a !important;
   color: white;
+}
+
+/* Connect tab */
+.connect {
+  line-height: 35px;
+  padding: 12px 20px 15px 20px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  color: #17223d;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.connect:hover {
+  background-color: #d3d3d3;
+}
+
+.arrowhead {
+  width: 0;
+  height: 0;
+  margin-left: 7px;
+  position: relative;
+  top: 7px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #17223d transparent transparent transparent;
+  display: inline-block;
+}
+
+.online-users {
+  
 }
