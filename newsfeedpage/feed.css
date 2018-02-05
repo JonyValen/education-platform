@@ -275,10 +275,7 @@ textarea[name="write-post"]:focus {
 
 /* Connect tab */
 .connect {
-  line-height: 35px;
-  padding: 12px 20px 15px 20px;
   text-align: center;
-  font-family: Montserrat;
   font-size: 20px;
   color: #17223d;
   background-color: white;
@@ -286,7 +283,18 @@ textarea[name="write-post"]:focus {
   cursor: pointer;
 }
 
-.connect:hover {
+.connect-label {
+  padding: 12px 20px 15px 20px;
+  line-height: 35px;
+  font-family: Montserrat;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: #17223d;
+  border-bottom-width: 3px;
+}
+
+.connect-label:hover {
   background-color: #d3d3d3;
 }
 
@@ -303,5 +311,34 @@ textarea[name="write-post"]:focus {
 }
 
 .online-users {
-  
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+.user-connect {
+  padding: 10px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #d3d3d3;
+}
+
+.user-status-icon {
+  margin-right: 7px;
+  font-size: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.online {
+  background-color: green;
+  border-color: green;
+}
+
+.offline {
+  border-color: #d3d3d3;
 }

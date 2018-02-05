@@ -1,4 +1,5 @@
 var numPost = 4
+var numUsers = 3
 
 $(document).ready(function(){
   /*POST BOX LISTENERS*/
@@ -53,7 +54,41 @@ $(document).ready(function(){
   /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
 
   /*CONNECT DIV LISTENER*/
+  var j = 0;
+  function getUsers(data){
+    if(j >= numUsers) return
+    $(".online-users").append(data);
+    $(".temp-user .name").text("User "+j)
+    if(j % 2 == 0)
+      $(".temp-user .user-status-icon").addClass("online")
+    else {
+      $(".temp-user .user-status-icon").addClass("offline")
+    }
+    $(".temp-user").removeClass("temp-user")
+    j++;
+    $.ajax(connectUsers)
+  }
+
+  var connectUsers = {
+    type: 'get',
+    url: 'user.html',
+    success: function(data){
+      getUsers(data)
+    },
+    error: function(){
+      $(".online-users").append("Error: Could not load user")
+      j++;
+    }
+  }
+
   $(".connect").click(function(){
+    if($(".online-users").parent(".connect").length)
+      $(".online-users").remove()
+    else {
+      $(this).append("<div class='online-users'></div>")
+      $.ajax(connectUsers)
+      j = 0
+    }
   });
   /*END --- CONNECT DIV LISTENER --- END*/
 
