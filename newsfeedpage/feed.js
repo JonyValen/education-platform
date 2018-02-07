@@ -12,6 +12,15 @@ $(document).ready(function(){
   });
   /*END --- POST BOX LISTENERS --- END*/
 
+  /*SELECT POST LISTENER*/
+  $(document).on("click", ".item", function(){
+    $(".selected-post").removeClass("selected-post")
+    $(".selected-react").removeClass("selected-react")
+    $(this).addClass(".selected-post")
+    $(this).children(".react").addClass("selected-react")
+  });
+  /*END --- SELECT POST LISTENER --- END*/
+
   /*ENDORSE BUTTON LISTENERS*/
   //Note: endorse comes from ajax call, so must use this particular listener
   $(document).on("click", ".endorse", function(){

@@ -220,9 +220,13 @@ textarea[name="write-post"]:focus {
 .item > .react {
   text-align: right;
   border-bottom-style: solid;
-  border-bottom-color: #17223d;
+  border-bottom-color: gray;
   border-bottom-width: 5px;
   padding: 0 25px 0 25px;
+}
+
+.selected-react {
+  border-bottom-color: #17223d !important;
 }
 
 .author, .date {
@@ -281,6 +285,7 @@ textarea[name="write-post"]:focus {
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .connect-label {
@@ -341,4 +346,16 @@ textarea[name="write-post"]:focus {
 
 .offline {
   border-color: #d3d3d3;
+}
+
+.post-tags {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Roboto;
+  text-align: center;
+}
+
+.filter-searcher {
+  background-color: white;
 }
