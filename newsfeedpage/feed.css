@@ -29,6 +29,7 @@ ul a {
   align-items: center;
   z-index: 1;
   opacity: 0.9;
+  position: fixed;
 }
 
 .logo-searchbar {
@@ -77,7 +78,7 @@ input[name="search"]:focus {
     color: #D6D6D0;
 }
 :-ms-input-placeholder {
-    color:    #D6D6D0;
+    color: #D6D6D0;
 }
 
 li > div {
@@ -114,15 +115,27 @@ li > i {
 
 }
 
-.center-content {
+.nav-sub {
+  width: 100%;
+  height: 62px;
+}
+
+.center-content, .center-content-sub {
   max-width: 90%;
   min-width: 500px;
   margin: 0 auto 10px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.center-content {
   position: relative;
   background-color: #ededed;
   padding: 30px 0 20px 0;
-  display: flex;
-  justify-content: space-around;
+}
+
+.center-content-sub {
+  position: fixed;
 }
 
 .center-content > div {
@@ -132,6 +145,7 @@ li > i {
 .post-info {
   flex-grow: 1;
   max-width: 18%;
+  overflow: auto;
 }
 
 .center-feed {
@@ -208,6 +222,12 @@ textarea[name="write-post"]:focus {
   overflow: auto;
 }
 
+.selected-post {
+  border-style: solid;
+  border-color: #17223d;
+  border-width: 3px;
+}
+
 .item > .post-content {
   margin: 25px 25px 0 25px;
   position: relative;
@@ -220,7 +240,7 @@ textarea[name="write-post"]:focus {
 .item > .react {
   text-align: right;
   border-bottom-style: solid;
-  border-bottom-color: #17223d;
+  border-bottom-color: gray;
   border-bottom-width: 5px;
   padding: 0 25px 0 25px;
 }
@@ -274,19 +294,28 @@ textarea[name="write-post"]:focus {
 }
 
 /* Connect tab */
-.connect {
-  line-height: 35px;
-  padding: 12px 20px 15px 20px;
+.connect, .post-tags {
   text-align: center;
-  font-family: Montserrat;
   font-size: 20px;
   color: #17223d;
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.connect:hover {
+.connect-label, .tags-label {
+  padding: 12px 20px 15px 20px;
+  line-height: 35px;
+  font-family: Montserrat;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: #17223d;
+  border-bottom-width: 3px;
+}
+
+.connect-label:hover {
   background-color: #d3d3d3;
 }
 
@@ -302,6 +331,46 @@ textarea[name="write-post"]:focus {
   display: inline-block;
 }
 
-.online-users {
-  
+.online-users, .tags {
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+.user-connect {
+  padding: 10px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #d3d3d3;
+}
+
+.user-status-icon {
+  margin-right: 7px;
+  font-size: 10px;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.online {
+  background-color: green;
+  border-color: green;
+}
+
+.offline {
+  border-color: #d3d3d3;
+}
+
+.post-tags {
+  background-color: white;
+  border-radius: 5px;
+  font-family: Roboto;
+  text-align: center;
+}
+
+.filter-searcher {
+  background-color: white;
 }

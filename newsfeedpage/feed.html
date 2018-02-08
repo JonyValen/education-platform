@@ -26,17 +26,33 @@
         <i class="help fa fa-info-circle" aria-hidden="true"></i>
       </li>
     </ul>
+    <div class="nav-sub"></div> <!-- Divs as placeholders for positioning -->
+    <div class="center-content-sub">
+      <div class="post-info-sub"></div>
+      <div class="center-feed-sub"></div>
+      <div class="filter-search-sub"></div>
+    </div>
     <div class="center-content">
       <div class="post-info">
-        <div class="connect">Connect<div class="arrowhead"></div></div>
-        <div class="post-tags"></div>
+        <div class="connect">
+          <div class="connect-label">Connect<div class="arrowhead"></div></div>
+        </div>
+        <div class="post-tags">
+          <div class="tags-label">Related tags</div>
+          <div class="tags">Click on a post to view its tags.</div>
+        </div>
       </div>
       <div class="center-feed">
         <div class="create-post">
           <textarea name="write-post" placeholder="Write Post..."></textarea>
         </div>
       </div>
-      <div class="filter-search"></div>
+      <div class="filter-search">
+        <div class="filter-searchbar">
+          <input type="text" placeholder="Filter Feed by Tag">
+          <div class="filter-tags"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
