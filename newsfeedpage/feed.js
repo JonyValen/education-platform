@@ -12,22 +12,14 @@ $(document).ready(function(){
   });
   /*END --- POST BOX LISTENERS --- END*/
 
-  /*SELECT POST LISTENER*/
-  $(document).on("click", ".item", function(){
-    $(".selected-post").removeClass("selected-post")
-    $(".selected-react").removeClass("selected-react")
-    $(this).addClass(".selected-post")
-    $(this).children(".react").addClass("selected-react")
-  });
-  /*END --- SELECT POST LISTENER --- END*/
-
   /*ENDORSE BUTTON LISTENERS*/
   //Note: endorse comes from ajax call, so must use this particular listener
   $(document).on("click", ".endorse", function(){
-    if(!$(this).hasClass("liked"))
-      $(this).addClass("liked")
-    else
+    if($(this).hasClass("liked"))
       $(this).removeClass("liked")
+    else
+      $(this).addClass("liked")
+
   });
   /*END --- ENDORSE BUTTON LISTENERS --- END*/
 
@@ -53,6 +45,7 @@ $(document).ready(function(){
   function updatePosts(data) {
     if(i >= numPost) return
     $(".center-feed").append(data)
+    $(".temp").attr("id", "i"+i)
     $(".temp .topic").text("Sample Topic "+i)
     $(".temp").removeClass("temp")
     i++
@@ -67,7 +60,8 @@ $(document).ready(function(){
   function getUsers(data){
     if(j >= numUsers) return
     $(".online-users").append(data);
-    $(".temp-user .name").text("User "+j)
+    var index = $(".selected-post").attr("id")[1];
+    $(".temp-user .name").text("User "+(index*numUsers+j))
     if(j % 2 == 0)
       $(".temp-user .user-status-icon").addClass("online")
     else {
@@ -94,12 +88,26 @@ $(document).ready(function(){
     if($(".online-users").parent(".connect").length)
       $(".online-users").remove()
     else {
-      $(this).append("<div class='online-users'></div>")
-      $.ajax(connectUsers)
-      j = 0
+      if($(".selected-post").length)
+        $(this).append("<div class='online-users'></div>")
+        $.ajax(connectUsers)
+        j = 0
     }
   });
   /*END --- CONNECT DIV LISTENER --- END*/
+
+  /*SELECT POST LISTENER*/
+  $(document).on("click", ".post-content", function(){
+    $(".selected-post").removeClass("selected-post")
+    $(this).parent().addClass("selected-post")
+    if($(".connect").children(".online-users").length)
+      $(".online-users").html("")
+    else
+      $(".connect").append("<div class='online-users'></div>")
+    $.ajax(connectUsers)
+    j = 0
+  });
+  /*END --- SELECT POST LISTENER --- END*/
 
   /*RETRIEVE NOTIFICATIONS*/
   /*END --- RETRIEVE NOTIFICATIONS --- END*/
