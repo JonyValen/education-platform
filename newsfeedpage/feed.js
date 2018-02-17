@@ -79,16 +79,18 @@ $(document).ready(function(){
       getUsers(data)
     },
     error: function(){
-      $(".online-users").append("Error: Could not load user")
+      $(".online-users").append("<p>Error: Could not load user</p>")
       j++;
     }
   }
 
   $(".connect").click(function(){
-    if($(".online-users").parent(".connect").length)
+    if($(".online-users").parent(".connect").length){
       $(".online-users").remove()
-    else {
+      $(".connect .arrowhead").removeClass("rotate")
+    }  else {
       if($(".selected-post").length)
+        $(".connect .arrowhead").addClass("rotate")
         $(this).append("<div class='online-users'></div>")
         $.ajax(connectUsers)
         j = 0
@@ -102,8 +104,10 @@ $(document).ready(function(){
     $(this).parent().addClass("selected-post")
     if($(".connect").children(".online-users").length)
       $(".online-users").html("")
-    else
+    else{
+      $(".connect .arrowhead").addClass("rotate")
       $(".connect").append("<div class='online-users'></div>")
+    }
     $.ajax(connectUsers)
     j = 0
   });

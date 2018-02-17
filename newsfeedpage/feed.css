@@ -319,7 +319,7 @@ textarea[name="write-post"]:focus {
   background-color: #d3d3d3;
 }
 
-.arrowhead {
+.post-info .arrowhead {
   width: 0;
   height: 0;
   margin-left: 7px;
@@ -329,6 +329,11 @@ textarea[name="write-post"]:focus {
   border-style: solid;
   border-color: #17223d transparent transparent transparent;
   display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(180deg) translate(0px, 10px);
 }
 
 .online-users, .tags {
