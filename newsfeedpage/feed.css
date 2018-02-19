@@ -315,7 +315,7 @@ textarea[name="write-post"]:focus {
   border-bottom-width: 3px;
 }
 
-.connect-label:hover {
+.connect-label:hover, .tags-label:hover {
   background-color: #d3d3d3;
 }
 
@@ -341,7 +341,7 @@ textarea[name="write-post"]:focus {
   font-size: 16px;
 }
 
-.user-connect {
+.user-connect, .tag {
   padding: 10px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -374,6 +374,11 @@ textarea[name="write-post"]:focus {
   border-radius: 5px;
   font-family: Roboto;
   text-align: center;
+  height: 60%;
+}
+
+.tags {
+  height: 60%;
 }
 
 .filter-searcher {
