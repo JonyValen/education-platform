@@ -1,5 +1,6 @@
 var numPost = 4
 var numUsers = 3
+var numTags = 6
 
 $(document).ready(function(){
   /*POST BOX LISTENERS*/
@@ -79,33 +80,87 @@ $(document).ready(function(){
       getUsers(data)
     },
     error: function(){
-      $(".online-users").append("Error: Could not load user")
+      $(".online-users").append("<p>Error: Could not load user</p>")
       j++;
     }
   }
 
   $(".connect").click(function(){
-    if($(".online-users").parent(".connect").length)
+    if($(".online-users").parent(".connect").length){
       $(".online-users").remove()
-    else {
+      $(".connect .arrowhead").removeClass("rotate")
+    }  else {
       if($(".selected-post").length)
+        $(".connect .arrowhead").addClass("rotate")
         $(this).append("<div class='online-users'></div>")
-        $.ajax(connectUsers)
-        j = 0
+        if($(".selected-post")[0]){
+          $.ajax(connectUsers)
+          j = 0
+        } else {
+          $(".online-users").append("Click on a post to view its contributors.")
+        }
     }
   });
   /*END --- CONNECT DIV LISTENER --- END*/
+
+  var k = 0
+  function getTags(data){
+    if(k >= numTags) return
+    $(".tags").append(data);
+    var index = $(".selected-post").attr("id")[1];
+    $(".temp-tag .tag-name").text("Tag "+(index*numTags+k))
+    $(".temp-tag").removeClass("temp-tag")
+    k++;
+    $.ajax(requestTags)
+  }
+
+  var requestTags = {
+    type: 'get',
+    url: 'tags.html',
+    success: function(data){
+      getTags(data)
+    },
+    error: function(){
+      $(".tags").append("<p>Error: Could not load user</p>")
+      k++;
+    }
+  }
+
+  /*POST TAGS DIV LISTENER*/
+  $(".post-tags").click(function(){
+    if($(".tags").parent(".post-tags").length){
+      $(".tags").remove()
+      $(".post-tags .arrowhead").removeClass("rotate")
+    }  else {
+      if($(".selected-post").length)
+        $(".post-tags .arrowhead").addClass("rotate")
+        $(this).append("<div class='tags'></div>")
+        if($(".selected-post")[0]){
+          $.ajax(requestTags)
+          k = 0
+        } else {
+          $(".tags").append("Click on a post to view its tags.")
+        }
+    }
+  });
+  /*END --- POST TAGS DIV LISTENER -- END*/
 
   /*SELECT POST LISTENER*/
   $(document).on("click", ".post-content", function(){
     $(".selected-post").removeClass("selected-post")
     $(this).parent().addClass("selected-post")
-    if($(".connect").children(".online-users").length)
+    if($(".connect").children(".online-users").length){
       $(".online-users").html("")
-    else
+      $(".tags").html("")
+    } else{
+      $(".arrowhead").addClass("rotate")
       $(".connect").append("<div class='online-users'></div>")
+      $(".post-tags").append("<div class='tags'></div>")
+    }
     $.ajax(connectUsers)
+    $.ajax(requestTags)
     j = 0
+    k = 0
   });
   /*END --- SELECT POST LISTENER --- END*/
 

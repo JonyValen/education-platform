@@ -38,7 +38,6 @@ $(document).ready(function(){
         i++
         $.ajax(requestPosts);
       }
-
       $.ajax(requestPosts);
       /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
     }
