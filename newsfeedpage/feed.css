@@ -144,7 +144,7 @@ li > i {
   min-height: 300px;
 }
 
-.post-info {
+.post-info, .post-info-sub {
   flex-grow: 1;
   max-width: 18%;
   overflow: auto;
