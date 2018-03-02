@@ -30,33 +30,54 @@
       		</li>
    		</ul>
 
+    <!-- Content -->
    		<div class="center-content">
+
 			<div class="friend-list">
 			</div>
+
 			<div class="content-container">
 				<div class="document-container">
-
+					<div class="tabs">
+						<button class="tablinks" id="contributors" onclick="openTab(event, 'contributors')">Contributors</button>
+  						<button class="tablinks active" id="attachments" onclick="openTab(event, 'attachments')">Attachments</button>
+  						<button class="tablinks" id="tags" onclick="openTab(event, 'tags')">Tags</button>
+					</div>
+					<div class="document-header">
+						<div class="uploader-info">
+							<img class="uploader-pic" src="https://vinoo.co/assets/profile_default.png">
+							<a class="uploader-name" href="uploader's profile page" target="_blank">Firstname Lastname Firstname Lastname Firstname Lastname Firstname Lastname Firstname Lastname Firstname Lastname Firstname Lastname Firstname Lastname Firstname Lastname</a>
+						</div>
+						<div class="uploader-date">MM/DD/YYYY</div>
+					</div>
+					<div class="document-content">
+					</div>
+					<div class="document-rating">
+						<div class="rating" id="logical">
+							
+						</div>
+						<div class="rating" id="creative">
+							
+						</div>
+						<div class="rating" id="practical">
+							
+						</div>
+					</div>
 				</div>
+
 				<div class="new-comment">
 					<textarea name="styled-textarea" id="styled" placeholder="Enter your comment here..." ></textarea>
 					<button type="submit" id="submit-post">Post</button>
-					<!-- <input class="write-comment" type="text" placeholder="Comment...">
-					<button type="submit" class="searchButton">
-        				<i class="fa fa-search"></i>
-     				</button> -->
 				</div>
 
+				<div id="comments">
 				</div>
-
-				<div class="comments">
-				</div>
-
-
 			</div>
+
 		</div>
 
-		<a href="#top" class="back-to-top">
-			<i class="fa fa-chevron-up" aria-hidden="true"></i>
+		<a href="#top" id="to-top-or-comments">
+			<i id="top-down-navigate" class="fa fa-chevron-up" aria-hidden="true"></i>
 		</a>
 
 	</body>
