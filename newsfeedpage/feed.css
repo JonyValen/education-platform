@@ -161,6 +161,10 @@ li > i {
   max-width: 18%;
 }
 
+.filter-searchbar {
+  background-color: white;
+}
+
 .create-post {
   background-color: white;
   width: 100%;
