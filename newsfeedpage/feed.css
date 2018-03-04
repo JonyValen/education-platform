@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   --bgBlue: #17223d;
   --graySelect: #d3d3d3;
+  --lightGray: #f2f2f2
 }
 
 ul {
@@ -163,6 +164,34 @@ li > i {
 
 .filter-searchbar {
   background-color: white;
+  height: 65%;
+  border-radius: 5px;
+  position: relative;
+}
+
+.filter-search-label {
+  display: block;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  padding: 10px;
+  color: var(--bgBlue)
+}
+
+input[name="filter-search-tags"] {
+  display: block;
+  margin: auto;
+  width: 90%;
+  height: 25px;
+  padding-left: 4px;
+  background-color: var(--lightGray);
+  border-style: none;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+input[name="filter-search-tags"]::placeholder {
+  color: #919191;
 }
 
 .create-post {
@@ -189,12 +218,12 @@ textarea[name="write-post"] {
   margin: 0;
   display: block;
   box-sizing: border-box;
-  /* all style changes will ease-in-out for 1s */
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s;
+  /* all style changes will ease-in-out for 0.5s */
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s;
 }
 
 textarea[name="write-post"]:focus {
@@ -308,6 +337,11 @@ textarea[name="write-post"]:focus {
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 20px;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s;
 }
 
 .connect-label, .tags-label {
@@ -385,8 +419,4 @@ textarea[name="write-post"]:focus {
 
 .tags {
   height: 60%;
-}
-
-.filter-searcher {
-  background-color: white;
 }
