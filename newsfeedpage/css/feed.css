@@ -87,8 +87,8 @@ ul.nav {
   font-family: Roboto; }
 
 .center-content {
-  max-width: 90%;
-  min-width: 500px;
+  min-width: 90%;
+  max-width: 500px;
   margin: 0 auto 10px auto;
   display: flex;
   justify-content: space-around;
@@ -98,10 +98,11 @@ ul.nav {
     min-height: 300px; }
 
 .post-info {
-  flex-grow: 1;
-  max-width: 18%;
+  width: 18vw;
   overflow: auto;
-  position: relative; }
+  position: fixed;
+  margin-left: 0;
+  left: 2vw; }
   .post-info .connect, .post-info .post-tags {
     text-align: center;
     font-size: 20px;
@@ -186,9 +187,9 @@ ul.nav {
     height: 60%; }
 
 .center-feed {
-  flex-grow: 3;
-  max-width: 56%;
-  background: transparent !important; }
+  min-width: 56vw;
+  background: transparent !important;
+  margin: auto; }
   .center-feed .create-post {
     background-color: white;
     width: 100%;
@@ -291,9 +292,9 @@ ul.nav {
     margin-left: 15px; }
 
 .filter-search {
-  flex-grow: 1;
-  max-width: 18%;
-  position: relative; }
+  width: 18vw;
+  position: fixed;
+  right: 2vw; }
   .filter-search .filter-searchbar {
     background-color: white;
     border-radius: 5px;

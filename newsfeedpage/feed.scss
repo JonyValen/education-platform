@@ -1,25 +1,8 @@
+@import '../globals-css/global';
 @import '../globals-css/body';
 
 //CSS FOR NAVIGATION BAR
 @import '../globals-css/navbar';
-
-@mixin dimensions($width, $height) {
-  width: $width;
-  height: $height;
-}
-
-@mixin font($family, $size, $color) {
-  font-family: $family;
-  font-size: $size;
-  color: $color;
-}
-
-@mixin border($border, $style, $color, $width, $radius) {
-  #{$border}-style: $style;
-  #{$border}-color: $color;
-  #{$border}-width: $width;
-  #{$border}-radius: $radius;
-}
 
 %generic {
   background-color: white;
@@ -27,8 +10,7 @@
 }
 
 .center-content {
-  max-width: 90%;
-  min-width: 500px;
+  @include minmax(width, 90%, 500px);
   margin: 0 auto 10px auto;
   display: flex;
   justify-content: space-around;
@@ -41,10 +23,11 @@
 }
 
 .post-info {
-  flex-grow: 1;
-  max-width: 18%;
+  width: 18vw;
   overflow: auto;
-  position: relative;
+  position: fixed;
+  margin-left: 0;
+  left: 2vw;
 
   %post-info-children {
     text-align: center;
@@ -147,9 +130,9 @@
 }
 
 .center-feed {
-  flex-grow: 3;
-  max-width: 56%;
+  min-width: 56vw;
   background: transparent !important;
+  margin: auto;
 
   .create-post {
     @extend %generic;
@@ -273,9 +256,9 @@
 }
 
 .filter-search {
-  flex-grow: 1;
-  max-width: 18%;
-  position: relative;
+  width: 18vw;
+  position: fixed;
+  right: 2vw;
 
   .filter-searchbar {
     background-color: white;

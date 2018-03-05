@@ -141,9 +141,13 @@ $(document).ready(function(){
 
 function postBoxListener(){
   $("textarea").focusin(function(){
+    $(this).height($(this).height() + 100)
     $(this).parent().append("<button class='post-btn'>Create Post</button>")
   });
-  $("textarea").focusout(() => $(".post-btn").remove());
+  $("textarea").focusout(function(){
+    $(".post-btn").remove()
+    $(this).height($(this).height() - 100);
+  });
 }
 
 function endorseBtnListener(){
