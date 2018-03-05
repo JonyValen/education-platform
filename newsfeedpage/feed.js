@@ -3,6 +3,14 @@ const numUsers = 3
 const numTags = 6
 
 $(document).ready(function(){
+  $(".post-info").height($(window).height() - 130)
+  $(".connect").width("100%")
+  $(".connect").height($(".connect").height()) //not sure why this is needed? some css sizing issues?
+  const connectLblHeight = $(".connect").height()
+  const postInfoMargin = 20;
+  $(".post-tags").css({"top": connectLblHeight+postInfoMargin+"px", "height": $(".post-info").height()-(connectLblHeight+postInfoMargin)+"px"})
+  $(".filter-search").height($(".post-info").height())
+
   /*POST BOX LISTENERS*/
   postBoxListener();
   /*END --- POST BOX LISTENERS --- END*/
@@ -68,17 +76,19 @@ $(document).ready(function(){
   }
 
   $(".connect").click(function(){
-    if($(".connect").children(".online-users").length){
+    if($(this).children(".online-users").length){
+      $(this).height(connectLblHeight)
       $(".online-users").remove()
       $(".connect .arrowhead").removeClass("rotate")
     }  else {
+      $(this).height($(this).parent().height())
       $(".connect .arrowhead").addClass("rotate")
       $(this).append("<div class='online-users'></div>")
       if($(".selected-post")[0]){
           $.ajax(connectUsers)
           j = 0
       } else
-          $(".online-users").append("Click on a post to view its contributors.")
+          $(".online-users").append("<p class='post-notif'>Click on a post to view its contributors.</p>")
     }
   });
   /*END --- CONNECT DIV LISTENER --- END*/
@@ -87,8 +97,8 @@ $(document).ready(function(){
   var k = 0
   const getTags = data => {
     if(k >= numTags) return
-    $(".tags").append(data);
-    const index = $(".selected-post").attr("id")[1];
+    $(".tags").append(data)
+    const index = $(".selected-post").attr("id")[1]
     $(".temp-tag .tag-name").text("Tag "+(index*numTags+k))
     $(".temp-tag").removeClass("temp-tag")
     k++;
@@ -104,34 +114,19 @@ $(document).ready(function(){
       k++;
     }
   }
-
-  $(".post-tags").click(function(){
-    if($(".tags").parent(".post-tags").length){
-      $(".tags").remove()
-      $(".post-tags .arrowhead").removeClass("rotate")
-    }  else {
-      $(".post-tags .arrowhead").addClass("rotate")
-      $(this).append("<div class='tags'></div>")
-      if($(".selected-post")[0]){
-        $.ajax(requestTags)
-        k = 0
-      } else
-        $(".tags").append("Click on a post to view its tags.")
-    }
-  });
   /*END --- POST TAGS DIV LISTENER -- END*/
 
   /*SELECT POST LISTENER*/
   $(document).on("click", ".post-content", function(){
     $(".selected-post").removeClass("selected-post")
     $(this).parent().addClass("selected-post")
+    $(".tags").html("")
     if($(".connect").children(".online-users").length){
       $(".online-users").html("")
-      $(".tags").html("")
     } else{
       $(".arrowhead").addClass("rotate")
+      $(".connect").height($(".connect").parent().height())
       $(".connect").append("<div class='online-users'></div>")
-      $(".post-tags").append("<div class='tags'></div>")
     }
     $.ajax(connectUsers)
     $.ajax(requestTags)
@@ -148,7 +143,6 @@ function postBoxListener(){
   $("textarea").focusin(function(){
     $(this).parent().append("<button class='post-btn'>Create Post</button>")
   });
-
   $("textarea").focusout(() => $(".post-btn").remove());
 }
 
