@@ -2,6 +2,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #e3e3e3;
+  --bgBlue: #17223d;
+  --graySelect: #d3d3d3;
+  --lightGray: #f0f0f0;
 }
 
 ul {
@@ -18,7 +22,7 @@ ul a {
 }
 
 .nav {
-  background-color: #17223d;
+  background-color: var(--bgBlue);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -27,7 +31,7 @@ ul a {
   padding: 0 40px 5px 40px;
   box-sizing: border-box;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
   opacity: 0.9;
   position: fixed;
 }
@@ -130,7 +134,6 @@ li > i {
 
 .center-content {
   position: relative;
-  background-color: #ededed;
   padding: 30px 0 20px 0;
 }
 
@@ -146,6 +149,7 @@ li > i {
   flex-grow: 1;
   max-width: 18%;
   overflow: auto;
+  position: relative;
 }
 
 .center-feed {
@@ -157,6 +161,40 @@ li > i {
 .filter-search {
   flex-grow: 1;
   max-width: 18%;
+  position: relative;
+}
+
+.filter-searchbar {
+  background-color: white;
+  border-radius: 5px;
+  position: relative;
+  height: 100%;
+}
+
+.filter-search-label {
+  display: block;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  padding: 10px;
+  color: var(--bgBlue)
+}
+
+input[name="filter-search-tags"] {
+  display: block;
+  margin: auto;
+  width: 90%;
+  height: 25px;
+  padding-left: 4px;
+  background-color: var(--lightGray);
+  border-style: none;
+  border-radius: 2px;
+  font-size: 14px;
+  outline: none;
+}
+
+input[name="filter-search-tags"]::placeholder {
+  color: #919191;
 }
 
 .create-post {
@@ -166,7 +204,7 @@ li > i {
   box-sizing: border-box;
   position: relative;
   margin-bottom: 20px;
-  box-shadow: 2px 1px 2px gray;
+  box-shadow: 1px 1px 2px gray;
   border-radius: 5px;
 }
 
@@ -183,12 +221,8 @@ textarea[name="write-post"] {
   margin: 0;
   display: block;
   box-sizing: border-box;
-  /* all style changes will ease-in-out for 1s */
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s;
+  /* all style changes will ease-in-out for 0.5s */
+  transition: all 0.2s;
 }
 
 textarea[name="write-post"]:focus {
@@ -204,7 +238,7 @@ textarea[name="write-post"]:focus {
   border-style: none;
   font-size: 14px;
   font-family: Montserrat;
-  background-color: #17223d;
+  background-color: var(--bgBlue);
   color: white;
   border-radius: 2px;
   margin: auto 0 auto auto;
@@ -224,7 +258,7 @@ textarea[name="write-post"]:focus {
 
 .selected-post {
   border-style: solid;
-  border-color: #17223d;
+  border-color: var(--bgBlue);
   border-width: 3px;
 }
 
@@ -233,7 +267,7 @@ textarea[name="write-post"]:focus {
   position: relative;
   display: block;
   border-bottom-style: solid;
-  border-bottom-color: #17223d;
+  border-bottom-color: var(--bgBlue);
   border-bottom-width: 2px;
 }
 
@@ -285,7 +319,7 @@ textarea[name="write-post"]:focus {
 }
 
 .share:hover {
-  background-color: #d3d3d3 !important;
+  background-color: var(--graySelect) !important;
 }
 
 .liked {
@@ -297,11 +331,17 @@ textarea[name="write-post"]:focus {
 .connect, .post-tags {
   text-align: center;
   font-size: 20px;
-  color: #17223d;
+  color: var(--bgBlue);
   background-color: white;
   border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.connect {
+  position: absolute;
+  z-index: 1;
+  background-color: var(--lightGray);
   cursor: pointer;
-  margin-bottom: 20px;
 }
 
 .connect-label, .tags-label {
@@ -311,12 +351,12 @@ textarea[name="write-post"]:focus {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border-bottom-style: solid;
-  border-bottom-color: #17223d;
+  border-bottom-color: var(--bgBlue);
   border-bottom-width: 3px;
 }
 
-.connect-label:hover, .tags-label:hover {
-  background-color: #d3d3d3;
+.connect-label:hover {
+  background-color: var(--graySelect);
 }
 
 .post-info .arrowhead {
@@ -327,7 +367,7 @@ textarea[name="write-post"]:focus {
   top: 7px;
   border-width: 8px;
   border-style: solid;
-  border-color: #17223d transparent transparent transparent;
+  border-color: var(--bgBlue) transparent transparent transparent;
   display: inline-block;
   transition: transform 0.3s ease-in-out;
 }
@@ -339,13 +379,21 @@ textarea[name="write-post"]:focus {
 .online-users, .tags {
   font-family: Roboto;
   font-size: 16px;
+  overflow: auto;
+}
+
+.post-notif {
+  margin: 10px 10px;
+  padding: 10px 10px;
+  font-size: 20px;
+  background-color: #f9f9f9;
 }
 
 .user-connect, .tag {
   padding: 10px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #d3d3d3;
+  border-bottom-color: var(--graySelect);
 }
 
 .user-status-icon {
@@ -366,7 +414,7 @@ textarea[name="write-post"]:focus {
 }
 
 .offline {
-  border-color: #d3d3d3;
+  border-color: var(--graySelect);
 }
 
 .post-tags {
@@ -374,13 +422,9 @@ textarea[name="write-post"]:focus {
   border-radius: 5px;
   font-family: Roboto;
   text-align: center;
-  height: 60%;
+  position: relative;
 }
 
 .tags {
   height: 60%;
-}
-
-.filter-searcher {
-  background-color: white;
 }

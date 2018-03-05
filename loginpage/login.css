@@ -13,6 +13,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
+  --darkBlue: #10172b;
+  --whiteGray: #ddd;
 }
 
 img[alt="bg-image"] {
@@ -53,7 +55,7 @@ img[alt="bg-image"] {
 
 .form {
   position: relative;
-  background: #10172b;
+  background: var(--darkBlue);
   max-width: 360px;
   padding: 0 45px 0 45px;
   text-align: center;
@@ -79,7 +81,7 @@ img[alt="bg-image"] {
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #10172b;
+  color: var(--darkBlue);
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
@@ -90,7 +92,7 @@ img[alt="bg-image"] {
   border-radius: 2px;
 }
 .form button:hover {
-  background: #ddd;
+  background: var(--whiteGray);
 }
 .form .message {
   margin: 15px 0 20px;
@@ -102,7 +104,7 @@ img[alt="bg-image"] {
 }
 
 .message a:hover, i:hover {
-  color: #ddd;
+  color: var(--whiteGray);
 }
 
 i {

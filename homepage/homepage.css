@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: "Lato";
     background-color: #ddd;
+    --bgBlue: #17223d;
 }
 
 ul {
@@ -29,7 +30,7 @@ ul a {
 }
 
 .nav {
-  background-color: #17223d;
+  background-color: var(--bgBlue);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -79,7 +80,7 @@ input[name="search"]:focus {
     color: #D6D6D0;
 }
 :-ms-input-placeholder {
-    color:    #D6D6D0;
+    color: #D6D6D0;
 }
 
 .feed-btns {
@@ -95,7 +96,7 @@ input[name="search"]:focus {
 }
 
 .feed-btns a {
-  color: #17223d;
+  color: var(--bgBlue);
 }
 
 .center-content {
@@ -114,12 +115,12 @@ article {
   padding: 30px;
   color: #6d6d6d;
   border-bottom-style: solid;
-  border-color: #17223d;
+  border-color: var(--bgBlue);
   border-width: 5px;
 }
 
 .selected-feed-type {
-  border-bottom-color: #17223d;
+  border-bottom-color: var(--bgBlue);
   border-bottom-style: solid;
   border-bottom-width: 3px;
   padding-bottom: 7px;
@@ -130,7 +131,7 @@ article {
   height: 0;
   border-width: 8px;
   border-style: solid;
-  border-color: transparent transparent transparent #17223d;
+  border-color: transparent transparent transparent var(--bgBlue);
   display: inline-block;
 }
 
@@ -144,7 +145,7 @@ div.banner {
   justify-content: center;
   align-items: center;
   border-bottom-style: solid;
-  border-color: #17223d;
+  border-color: var(--bgBlue);
   border-width: 5px;
   padding: 0;
 }
@@ -188,7 +189,7 @@ p.intro-head {
   flex-grow: 1;
   max-width: 45%;
   margin: 10px;
-  background-color: #17223d;
+  background-color: var(--bgBlue);
   border-radius: 3px;
   color: white;
   padding-bottom: 15px;
@@ -217,7 +218,7 @@ button {
 
 .intro button:hover {
   background-color: white;
-  color: #17223d;
+  color: var(--bgBlue);
   font-weight: bolder;
 }
 
@@ -239,18 +240,18 @@ button {
 
 #sign-up:hover, .contact i:hover {
   font-weight: bolder;
-  background-color: #17223d;
+  background-color: var(--bgBlue);
   color: white;
 }
 
 #sign-up, .contact i {
-  border-color: #17223d;
+  border-color: var(--bgBlue);
   border-width: 2px;
   border-style: solid;
   border-radius: 2px;
   background-color: transparent;
   font-weight: bolder;
-  color: #17223d;
+  color: var(--bgBlue);
   font-size: 20px;
   cursor: pointer;
 }
@@ -290,14 +291,14 @@ img.profile-pic {
   position: relative;
   display: block;
   border-bottom-style: solid;
-  border-bottom-color: #17223d;
+  border-bottom-color: var(--bgBlue);
   border-bottom-width: 2px;
 }
 
 .item > .react {
   text-align: right;
   border-bottom-style: solid;
-  border-bottom-color: #17223d;
+  border-bottom-color: var(--bgBlue);
   border-bottom-width: 5px;
   padding: 0 25px 0 25px;
 }
