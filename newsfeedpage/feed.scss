@@ -1,0 +1,308 @@
+@import '../globals-css/body';
+
+//CSS FOR NAVIGATION BAR
+@import '../globals-css/navbar';
+
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin font($family, $size, $color) {
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+}
+
+@mixin border($border, $style, $color, $width, $radius) {
+  #{$border}-style: $style;
+  #{$border}-color: $color;
+  #{$border}-width: $width;
+  #{$border}-radius: $radius;
+}
+
+%generic {
+  background-color: white;
+  font-family: Roboto;
+}
+
+.center-content {
+  max-width: 90%;
+  min-width: 500px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding: 30px 0 20px 0;
+
+  > div {
+    min-height: 300px;
+  }
+}
+
+.post-info {
+  flex-grow: 1;
+  max-width: 18%;
+  overflow: auto;
+  position: relative;
+
+  %post-info-children {
+    text-align: center;
+    font-size: 20px;
+    color: $brandColor;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+
+    %post-info-label {
+      padding: 12px 20px 15px 20px;
+      line-height: 35px;
+      font-family: Montserrat;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      @include border(border-bottom, solid, $brandColor, 3px, 0);
+    }
+  }
+
+  .connect {
+    @extend %post-info-children;
+    position: absolute;
+    z-index: 1;
+    background-color: $lightGray;
+    cursor: pointer;
+
+    .connect-label {
+      @extend %post-info-label;
+
+      &:hover {
+        background-color: $graySelect;
+      }
+    }
+  }
+
+  .post-tags {
+    @extend %post-info-children;
+
+    .tags-label {
+      @extend %post-info-label;
+    }
+  }
+}
+
+.post-info .arrowhead {
+  @include dimensions(0, 0);
+  margin-left: 7px;
+  position: relative;
+  top: 7px;
+  @include border(border, solid, $brandColor transparent transparent transparent, 8px, 0);
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(180deg) translate(0px, 10px);
+}
+
+.online-users, .tags {
+  @include font(Roboto, 16px, black);
+  overflow: auto;
+}
+
+.post-notif {
+  margin: 10px 10px;
+  padding: 10px 10px;
+  font-size: 20px;
+  background-color: #f9f9f9;
+}
+
+.user-connect, .tag {
+  padding: 10px;
+  @include border(border-bottom, solid, $graySelect, 1px, 0);
+}
+
+.user-status-icon {
+  @include dimensions(8px, 8px);
+  //border color is replaced so doesn't matter
+  @include border(border, solid, $graySelect, 2px, 100%);
+  margin-right: 7px;
+  font-size: 10px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.online {
+  background-color: green;
+  border-color: green;
+}
+
+.post-tags {
+  @extend %generic;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+
+  .tags {
+    height: 60%;
+  }
+}
+
+.center-feed {
+  flex-grow: 3;
+  max-width: 56%;
+  background: transparent !important;
+
+  .create-post {
+    @extend %generic;
+    background-color: white;
+    width: 100%;
+    padding: 12px 20px 15px 20px;
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px gray;
+    border-radius: 5px;
+
+    textarea[name="write-post"] {
+      @include dimensions(100%, 35px);
+      border-radius: 3px;
+      padding: 8px;
+      line-height: 15px;
+      outline: none;
+      font-family: Roboto;
+      resize: none;
+      overflow: hidden;
+      margin: 0;
+      display: block;
+      box-sizing: border-box;
+      /* all style changes will ease-in-out for 0.2s */
+      transition: all 0.2s;
+
+      :focus {
+        overflow: auto;
+        height: 90px;
+        margin: 0 0 20px 0;
+
+      }
+    }
+
+    .post-btn {
+      @include dimensions(100px, 40px);
+      @include font(Montserrat, 14, white);
+      @include border(border, none, $brandColor, 0, 2px);
+      background-color: $brandColor;
+      margin: auto 0 auto auto;
+      display: block;
+    }
+  }
+
+  .item {
+    background-color: white;
+    font-family: Roboto;
+    margin-bottom: 15px;
+    min-height: 120px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px gray;
+    border-radius: 5px;
+    overflow: auto;
+
+    .post-content {
+      margin: 25px 25px 0 25px;
+      position: relative;
+      display: block;
+      @include border(border-bottom, solid, $brandColor, 2px, 0);
+    }
+
+    .react {
+      text-align: right;
+      @include border(border-bottom, solid, gray, 5px, 0);
+      padding: 0 25px 0 25px;
+
+      button {
+        padding: 8px;
+        border-style: none;
+        cursor: pointer;
+        outline: none;
+        background-color: transparent;
+      }
+
+      a {
+        padding: 8px;
+        height: 100%;
+        line-height: 100%;
+        vertical-align: middle;
+        float: left;
+      }
+
+      .endorse:hover {
+        background-color: #ffa8c6 !important;
+      }
+
+      .share:hover {
+        background-color: $graySelect !important;
+      }
+
+      .liked {
+        background-color: #c43a3a !important;
+        color: white;
+      }
+    }
+  }
+
+  .selected-post {
+    @include border(border, solid, $brandColor, 3px, 3px);
+  }
+
+  .author, .date {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .date {
+    float: right;
+    clear: both;
+  }
+
+  .topic {
+    font-size: 26px;
+  }
+
+  .abstract {
+    margin-left: 15px;
+  }
+}
+
+.filter-search {
+  flex-grow: 1;
+  max-width: 18%;
+  position: relative;
+
+  .filter-searchbar {
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+    height: 100%;
+
+    .filter-search-label {
+      display: block;
+      text-align: center;
+      @include font(Montserrat, 20px, $brandColor);
+      padding: 10px;
+    }
+
+    input[name="filter-search-tags"] {
+      @include dimensions(90%, 25px);
+      @include border(border, none, $brandColor, 0, 2px);
+      display: block;
+      margin: auto;
+      padding-left: 4px;
+      background-color: $lightGray;
+      font-size: 14px;
+      outline: none;
+
+      &::placeholder {
+        color: #919191;
+      }
+    }
+  }
+}
