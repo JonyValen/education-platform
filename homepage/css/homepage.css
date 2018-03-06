@@ -1,0 +1,314 @@
+.arrowhead {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent transparent #17223d;
+  border-width: 8px;
+  border-radius: 0;
+  display: inline-block; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */ }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e3e3e3; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style-type: none; }
+  ul a {
+    color: white;
+    margin-right: 25px; }
+
+ul.nav {
+  background-color: #17223d;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+  padding: 0 40px 5px 40px;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 2;
+  opacity: 0.9;
+  position: fixed;
+  font-family: Montserrat; }
+  ul.nav li > div {
+    margin-right: 40px; }
+  ul.nav .logo-searchbar {
+    flex-grow: 2; }
+    ul.nav .logo-searchbar .logo {
+      padding: 0 0 0 10px;
+      font-family: 'Cedarville Cursive';
+      font-size: 30px;
+      user-select: none; }
+    ul.nav .logo-searchbar input[name="search"] {
+      min-width: 200px;
+      min-height: 30px;
+      margin-right: 50px;
+      padding-left: 4px;
+      background-color: #425d89;
+      border-style: none;
+      border-radius: 2px;
+      font-size: 14px;
+      color: #f0f0f0; }
+      ul.nav .logo-searchbar input[name="search"]:focus {
+        color: #f0f0f0;
+        outline: none; }
+      ul.nav .logo-searchbar input[name="search"]::placeholder {
+        color: #f0f0f0; }
+  ul.nav .user-links {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    line-height: 40px;
+    vertical-align: middle; }
+    ul.nav .user-links .user {
+      cursor: pointer; }
+      ul.nav .user-links .user img.profile-pic {
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        right: 5px; }
+      ul.nav .user-links .user .profile-name {
+        vertical-align: middle;
+        font-family: Montserrat; }
+    ul.nav .user-links i {
+      color: white;
+      font-size: 18px !important;
+      padding-top: 2px;
+      cursor: pointer;
+      height: 40px;
+      line-height: 40px !important;
+      margin-right: 40px; }
+
+.nav-sub {
+  width: 100%;
+  height: 62px; }
+
+.feed-btns {
+  margin: 0 auto auto auto;
+  background-color: white;
+  max-width: 93%;
+  border-radius: 2px;
+  font-family: Lato; }
+  .feed-btns li {
+    display: inline-block;
+    padding: 10px; }
+  .feed-btns a {
+    color: #17223d; }
+
+.center-content {
+  min-width: 500px;
+  max-width: 90%;
+  margin: 0 auto 10px auto;
+  position: relative;
+  /*background-color: #ededed;*/
+  padding: 0 0 20px 0; }
+
+article {
+  border-style: none;
+  border-color: #17223d;
+  border-width: 5px;
+  border-radius: 0;
+  background-color: white;
+  margin-top: 20px;
+  position: relative;
+  padding: 30px;
+  color: #6d6d6d;
+  border-bottom-style: solid;
+  animation-duration: 0.6s !important;
+  font-family: Montserrat; }
+  article p {
+    font-family: Lato; }
+
+.selected-feed-type {
+  border-bottom-style: solid;
+  border-bottom-color: #17223d;
+  border-bottom-width: 3px;
+  border-bottom-radius: 0;
+  padding-bottom: 7px; }
+
+/*HOME*/
+div.banner {
+  width: 100%;
+  height: 300px;
+  border-style: none;
+  border-color: #17223d;
+  border-width: 5px;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-style: solid;
+  padding: 0; }
+
+img[alt="ucla-banner"] {
+  width: 100%;
+  margin-top: -50px;
+  filter: brightness(50%);
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+h1.welcome-title {
+  font-family: "Cedarville Cursive";
+  font-size: 72px;
+  color: white;
+  position: absolute;
+  bottom: 25px; }
+
+.intro {
+  text-align: center; }
+  .intro h1.intro-head {
+    font-family: inherit;
+    font-size: 30px;
+    color: inherit;
+    padding-top: 10px;
+    margin: 0; }
+  .intro p.intro-head {
+    font-size: 18px;
+    margin-top: 10px; }
+  .intro .intro-body {
+    display: flex;
+    justify-content: space-around;
+    position: relative; }
+  .intro .purpose {
+    flex-grow: 1;
+    max-width: 45%;
+    margin: 10px;
+    background-color: #17223d;
+    border-radius: 3px;
+    color: white;
+    padding-bottom: 15px; }
+
+button {
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-family: Montserrat; }
+
+.intro button {
+  width: 100px;
+  height: 25px;
+  border-color: white;
+  color: white; }
+  .intro button:hover {
+    background-color: white;
+    color: #17223d;
+    font-weight: bolder; }
+
+.contact {
+  text-align: center;
+  animation-delay: 0.1s; }
+  .contact h1 {
+    font-family: inherit;
+    font-size: 30px;
+    color: inherit; }
+
+#sign-up, .contact i {
+  border-style: solid;
+  border-color: #17223d;
+  border-width: 2px;
+  border-radius: 2px;
+  background-color: transparent;
+  font-weight: bolder;
+  color: #17223d;
+  font-size: 20px;
+  cursor: pointer; }
+  #sign-up:hover, .contact i:hover {
+    background-color: #17223d;
+    color: white; }
+
+#sign-up {
+  width: 150px;
+  height: 40px; }
+
+.contact i {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  line-height: 40px;
+  margin-right: 20px; }
+
+/*CSS FOR POSTS IN THE TRENDING/LATEST TAB*/
+img.profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 5px; }
+
+.item {
+  background-color: white;
+  font-family: Roboto;
+  margin-bottom: 15px;
+  min-height: 120px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 5px;
+  overflow: auto; }
+  .item > .post-content {
+    border-bottom-style: solid;
+    border-bottom-color: #17223d;
+    border-bottom-width: 2px;
+    border-bottom-radius: inherit;
+    margin: 25px 25px 0 25px;
+    position: relative;
+    display: block; }
+    .item > .post-content .author, .item > .post-content .date {
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: inline-block; }
+    .item > .post-content .date {
+      float: right;
+      clear: both; }
+    .item > .post-content .topic {
+      font-size: 26px; }
+    .item > .post-content .abstract {
+      margin-left: 15px; }
+  .item > .react {
+    border-bottom-style: solid;
+    border-bottom-color: #17223d;
+    border-bottom-width: 5px;
+    border-bottom-radius: inherit;
+    text-align: right;
+    padding: 0 25px 0 25px; }
+    .item > .react button {
+      padding: 8px;
+      border-style: none;
+      cursor: pointer;
+      outline: none;
+      background-color: transparent; }
