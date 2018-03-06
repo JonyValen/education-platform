@@ -1,0 +1,42 @@
+$brandColor: #17223d;
+$graySelect: #d3d3d3;
+$lightGray: #f0f0f0;
+
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin font($family, $size, $color) {
+  font-family: $family;
+  font-size: $size;
+  color: $color;
+}
+
+@mixin border($border, $style, $color, $width, $radius) {
+  #{$border}-style: $style;
+  #{$border}-color: $color;
+  #{$border}-width: $width;
+  #{$border}-radius: $radius;
+}
+
+@mixin minmax($type, $min, $max) {
+  min-#{$type}: $min;
+  max-#{$type}: $max;
+}
+
+%arrow {
+  @include dimensions(0, 0);
+  @include border(border, solid, transparent transparent transparent $brandColor, 8px, 0);
+  display: inline-block;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
