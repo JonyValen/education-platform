@@ -1,7 +1,3 @@
-$brandColor: #17223d;
-$graySelect: #d3d3d3;
-$lightGray: #f0f0f0;
-
 ul.nav {
   background-color: $brandColor;
   width: 100%;
@@ -15,6 +11,7 @@ ul.nav {
   z-index: 2;
   opacity: 0.9;
   position: fixed;
+  font-family: Montserrat;
 
   li > div {
     margin-right: 40px;
