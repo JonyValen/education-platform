@@ -20,6 +20,12 @@ img[alt="bg-image"] {
   right: 0;
   width: 108%;
   filter: brightness(75%);
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .noselect {
