@@ -7,6 +7,11 @@
   border-radius: 0;
   display: inline-block; }
 
+.center-feed .item .react button, .center-feed button.load-more {
+  border-style: none;
+  cursor: pointer;
+  outline: none; }
+
 .noselect {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -107,7 +112,7 @@ ul.nav {
   width: 100%;
   height: 62px; }
 
-.post-tags, .center-feed .create-post {
+.post-tags, .center-feed .create-post, .center-feed .item, .filter-search .filter-searchbar {
   background-color: white;
   font-family: Roboto; }
 
@@ -124,6 +129,7 @@ ul.nav {
 
 .post-info {
   width: 18vw;
+  height: calc(100vh - 130px);
   overflow: auto;
   position: fixed;
   margin-left: 0;
@@ -136,24 +142,33 @@ ul.nav {
     border-radius: 5px;
     transition: all 0.2s ease; }
     .post-info .connect .connect-label, .post-info .post-tags .tags-label {
+      border-bottom-style: solid;
+      border-bottom-color: #17223d;
+      border-bottom-width: 3px;
+      border-bottom-radius: 0;
       padding: 12px 20px 15px 20px;
       line-height: 35px;
       font-family: Montserrat;
       border-top-right-radius: 5px;
-      border-top-left-radius: 5px;
-      border-bottom-style: solid;
-      border-bottom-color: #17223d;
-      border-bottom-width: 3px;
-      border-bottom-radius: 0; }
+      border-top-left-radius: 5px; }
   .post-info .connect {
+    width: 100%;
     position: absolute;
     z-index: 1;
     background-color: #f0f0f0;
     cursor: pointer; }
     .post-info .connect .connect-label:hover {
       background-color: #d3d3d3; }
+  .post-info .post-tags {
+    width: inherit;
+    height: calc(calc(100vh - 130px) - (62px + 20px));
+    top: 82px; }
 
 .post-info .arrowhead {
+  border-style: solid;
+  border-color: #17223d transparent transparent transparent;
+  border-width: 8px;
+  border-radius: 0;
   margin-left: 7px;
   position: relative;
   top: 7px;
@@ -213,7 +228,6 @@ ul.nav {
   background: transparent !important;
   margin: auto; }
   .center-feed .create-post {
-    background-color: white;
     width: 100%;
     padding: 12px 20px 15px 20px;
     box-sizing: border-box;
@@ -254,8 +268,6 @@ ul.nav {
       margin: auto 0 auto auto;
       display: block; }
   .center-feed .item {
-    background-color: white;
-    font-family: Roboto;
     margin-bottom: 15px;
     min-height: 120px;
     box-sizing: border-box;
@@ -279,9 +291,6 @@ ul.nav {
       padding: 0 25px 0 25px; }
       .center-feed .item .react button {
         padding: 8px;
-        border-style: none;
-        cursor: pointer;
-        outline: none;
         background-color: transparent; }
       .center-feed .item .react a {
         padding: 8px;
@@ -312,13 +321,27 @@ ul.nav {
     font-size: 26px; }
   .center-feed .abstract {
     margin-left: 15px; }
+  .center-feed button.load-more {
+    width: 90%;
+    height: 40px;
+    font-family: Roboto;
+    font-size: 20px;
+    color: black;
+    border-radius: 2px;
+    background-color: #f0f0f0;
+    display: block;
+    margin: auto;
+    box-shadow: 1px 1px 1px gray; }
+    .center-feed button.load-more:hover {
+      background-color: #d3d3d3;
+      color: #f0f0f0; }
 
 .filter-search {
   width: 18vw;
+  height: calc(100vh - 130px);
   position: fixed;
   right: 2vw; }
   .filter-search .filter-searchbar {
-    background-color: white;
     border-radius: 5px;
     position: relative;
     height: 100%; }
