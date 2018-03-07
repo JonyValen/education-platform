@@ -97,10 +97,11 @@ $(document).ready(function(){
   var k = 0
   const getTags = data => {
     if(k >= numTags) return
-    $(".tags").append(data)
+    $(".tags").addClass("related-tags")
+    $(".related-tags").append(data)
     const index = $(".selected-post").attr("id")[1]
-    $(".temp-tag .tag-name").text("Tag "+(index*numTags+k))
-    $(".temp-tag").removeClass("temp-tag")
+    $(" .related-tags .temp-tag .tag-name").text("Tag "+(index*numTags+k))
+    $(".related-tags .temp-tag").removeClass("temp-tag")
     k++;
     $.ajax(requestTags)
   }
@@ -110,7 +111,7 @@ $(document).ready(function(){
     url: 'tags.html',
     success: data => getTags(data),
     error: () => {
-      $(".tags").append("<p>Error: Could not load user</p>")
+      $(".related-tags").append("<p>Error: Could not load user</p>")
       k++;
     }
   }
@@ -135,9 +136,41 @@ $(document).ready(function(){
   });
   /*END --- SELECT POST LISTENER --- END*/
 
+  /*FILTER SEARCH LISTENER*/
+  let l = 0
+  const getFilterTags = data => {
+    if(l >= numTags) return
+    $(".tags:not('.related-tags')").addClass("filter-tags")
+    $(".filter-tags").append(data)
+    $(".filter-tags .temp-tag .tag-name").text("Tag "+l)
+    $(".temp-tag").removeClass("temp-tag")
+    l++;
+    $.ajax(requestFilterTags)
+  }
+
+  const requestFilterTags = {
+    type: 'get',
+    url: 'tags.html',
+    success: data => getFilterTags(data),
+    error: () => {
+      $(".filter-tags").append("<p>Error: Could not load tags</p>")
+      l++;
+    }
+  }
+
+  $(".filter-search").keypress(e => {
+    let key = e.which || e.keyCode;
+    if(key == 13){
+      $(".filter-tags").html("");
+      l = 0
+      $.ajax(requestFilterTags)
+    }
+  })
+  /*END --- FILTER SEARCH LISTENER --- END*/
+
   /*RETRIEVE NOTIFICATIONS*/
   /*END --- RETRIEVE NOTIFICATIONS --- END*/
-});
+})
 
 function postBoxListener(){
   $("textarea").focusin(function(){
@@ -156,7 +189,6 @@ function endorseBtnListener(){
       $(this).removeClass("liked")
     else
       $(this).addClass("liked")
-
   });
 }
 

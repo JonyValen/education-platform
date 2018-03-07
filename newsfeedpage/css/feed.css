@@ -1,3 +1,27 @@
+.post-info .arrowhead {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent transparent #17223d;
+  border-width: 8px;
+  border-radius: 0;
+  display: inline-block; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */ }
+
 body {
   margin: 0;
   padding: 0;
@@ -25,7 +49,8 @@ ul.nav {
   align-items: center;
   z-index: 2;
   opacity: 0.9;
-  position: fixed; }
+  position: fixed;
+  font-family: Montserrat; }
   ul.nav li > div {
     margin-right: 40px; }
   ul.nav .logo-searchbar {
@@ -129,16 +154,9 @@ ul.nav {
       background-color: #d3d3d3; }
 
 .post-info .arrowhead {
-  width: 0;
-  height: 0;
   margin-left: 7px;
   position: relative;
   top: 7px;
-  border-style: solid;
-  border-color: #17223d transparent transparent transparent;
-  border-width: 8px;
-  border-radius: 0;
-  display: inline-block;
   transition: transform 0.3s ease-in-out; }
 
 .rotate {
@@ -161,7 +179,11 @@ ul.nav {
   border-bottom-style: solid;
   border-bottom-color: #d3d3d3;
   border-bottom-width: 1px;
-  border-bottom-radius: 0; }
+  border-bottom-radius: 0;
+  font-family: Montserrat;
+  cursor: pointer; }
+  .user-connect:hover, .tag:hover {
+    background-color: #d3d3d3; }
 
 .user-status-icon {
   width: 8px;
