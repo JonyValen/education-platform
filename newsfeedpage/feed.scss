@@ -9,9 +9,6 @@
   font-family: Roboto;
 }
 
-%tags {
-}
-
 .center-content {
   @include minmax(width, 90%, 500px);
   margin: 0 auto 10px auto;
@@ -83,25 +80,25 @@ $post-info-height: calc(100vh - 130px);
       @extend %post-info-label;
     }
   }
-}
 
-.post-info .arrowhead {
-  @extend %arrow;
-  //override default arrow border
-  @include border(border, solid, $brandColor transparent transparent transparent, 8px, 0);
-  margin-left: 7px;
-  position: relative;
-  top: 7px;
-  transition: transform 0.3s ease-in-out;
+  .arrowhead {
+    @extend %arrow;
+    //override default arrow border
+    @include border(border, solid, $brandColor transparent transparent transparent, 8px, 0);
+    margin-left: 7px;
+    position: relative;
+    top: 7px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .online-users, .tags {
+    @include font(Roboto, 16px, black);
+    overflow: auto;
+  }
 }
 
 .rotate {
   transform: rotate(180deg) translate(0px, 10px);
-}
-
-.online-users, .tags {
-  @include font(Roboto, 16px, black);
-  overflow: auto;
 }
 
 .post-notif {
