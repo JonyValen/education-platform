@@ -2,35 +2,36 @@
 <html>
   <head>
     <title>Profile</title>
-    <link href="user_profile.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="css/user_profile.css" type="text/css" rel="stylesheet">
     <script src="user_profile.js"></script>
   </head>
   <body>
     <!-- Navbar -->
     <ul class="nav">
       <li class="logo-searchbar">
-        <a class="logo" href="#">gyde</a>
-        <input type="text" name="search" placeholder="Search...">
+        <a class="logo" href="../homepage/homepage.html">gyde</a>
+        <input type="text" name="search" placeholder="Search">
       </li>
       <li class="user-links">
-        <ul>
-          <li id="homebtn"><a href = "#">Home</a></li>
-          <li id="profilebtn"><a href = "#">Profile</a></li>
-          <li id="accountbtn"><a href = "#">Account</a></li>
-          <li><a href = "#"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
-          <li id="contactbtn"><a href = "#">Contact</a></li>
-        </ul>
+        <div class="user">
+          <img class="profile-pic" src="https://vinoo.co/assets/profile_default.png">
+          <a class="profile-name">Firstname</a>
+        </div>
+        <i class="messenger fa fa-comments-o" aria-hidden="true"></i>
+        <i class="notifs fa fa-bell" aria-hidden="true"></i>
+        <i class="help fa fa-info-circle" aria-hidden="true"></i>
       </li>
     </ul>
+    <div class="nav-sub"></div>
     <!-- Body Content -->
     <div class="center-content">
       <!-- Banner, profile picture, links -->
-      <div class = "banner-box black-border">
-        <div class = "picture-box black-border"></div>
+      <div class = "banner-box">
+        <div class = "picture-box"><img class="profile-pic" src="https://vinoo.co/assets/profile_default.png"></div>
         <ul class = "button-row">
           <li><button type="button">Level</button></li>
           <li><button type="button">Gydeline</button></li>
@@ -44,16 +45,16 @@
         <!-- Column 1 of boxes -->
         <div class="col-1">
           <!-- Connect box. -->
-          <div class= "box-two black-border">
+          <div class= "box-two">
             <a href = "#"><p class = "connect">Connect</p></a>
           </div>
           <!-- Intro box. -->
-          <div class="box-three black-border">
+          <div class="box-three">
             <p class = "intro">Introduction</p>
           </div>
           <!-- Gyde box. -->
-          <div class = "box-four black-border">
-            <p class = "gyde_box">Gyde</p>
+          <div class = "box-four">
+            <p class = "gyde-box">Gyde</p>
             <input type="text" name="search" placeholder="Search..">
           </div>
         </div>

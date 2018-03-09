@@ -1,0 +1,139 @@
+@import '../globals-css/global';
+@import '../globals-css/navbar';
+@import '../globals-css/body';
+
+%black-border {
+  @include border(border, solid, $brandColor, 1.5px, 0);
+  box-sizing: border-box;
+}
+
+.center-content {
+  @include minmax(width, 500px, 90%);
+  margin: auto;
+  position: relative;
+}
+
+.banner-box {
+  @extend %black-border;
+  min-height: 240px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.picture-box {
+  //@extend %black-border;
+  @include dimensions(200px, 200px);
+  margin: 40px 0 0 40px;
+  margin-bottom: 20px;
+  position: relative;
+
+  img {
+    @include dimensions(100%, 100%);
+  }
+}
+
+.button-row {
+  display: flex;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.button-row > li > button {
+  @include font(Lato, 16px, white);
+  background-color: $brandColor;
+  border: none;
+  padding: 15px 29px;
+  text-align: center;
+  text-decoration: none;
+  min-width: 200px;
+  margin-right: 2px;
+}
+
+.info-boxes {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .col-1 {
+    flex-grow: 1;
+    max-width: 25%;
+
+    > div {
+      > p {
+        @include font(Lato, 24px, $brandColor)
+        text-align: center;
+        text-decoration: underline;
+      }
+
+      > a {
+        text-decoration: none;
+
+        > p {
+          @include font(Lato, 24px, $brandColor)
+          text-align: center;
+        }
+      }
+    }
+
+  }
+}
+
+%left-box {
+  @extend %black-border;
+  margin-bottom: 20px;
+}
+
+.box-two {
+  @extend %left-box;
+  min-height: 70px;
+}
+
+.box-three, .box-four {
+  @extend %left-box;
+  min-height: 250px;
+}
+
+.box-four {
+  @extend %left-box;
+  text-align: center;
+
+  input[name=search]{
+    display: inline-block;
+  }
+}
+
+.col-2 {
+  flex-grow: 2;
+  max-width: 65%;
+  position: relative;
+}
+
+.tabs {
+  @include dimensions(100%, 50px);
+  display: flex;
+}
+
+.tab {
+  @include border(border, solid solid none none, $brandColor white $brandColor $brandColor, 1.5px, 0);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $brandColor;
+  color: white;
+  cursor: pointer;
+  font-family: Lato;
+}
+
+#contributors {
+  border-left-style: solid;
+}
+
+#tags {
+  border-right-style: none;
+}
+
+.post-box {
+  @include dimensions(100%, 25em);
+  border: 1.5px solid #17223d;
+}

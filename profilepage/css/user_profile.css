@@ -1,0 +1,214 @@
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */ }
+
+ul.nav {
+  background-color: #17223d;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+  padding: 0 40px 5px 40px;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 2;
+  opacity: 0.9;
+  position: fixed;
+  font-family: Montserrat, Lato, serif; }
+  ul.nav li > div {
+    margin-right: 40px; }
+  ul.nav .logo-searchbar {
+    flex-grow: 2; }
+    ul.nav .logo-searchbar .logo {
+      padding: 0 0 0 10px;
+      font-family: 'Cedarville Cursive';
+      font-size: 30px;
+      user-select: none; }
+    ul.nav .logo-searchbar input[name="search"] {
+      min-width: 200px;
+      min-height: 30px;
+      margin-right: 50px;
+      padding-left: 4px;
+      background-color: #425d89;
+      border-style: none;
+      border-radius: 2px;
+      font-size: 14px;
+      color: #f0f0f0; }
+      ul.nav .logo-searchbar input[name="search"]:focus {
+        color: #f0f0f0;
+        outline: none; }
+      ul.nav .logo-searchbar input[name="search"]::placeholder {
+        color: #f0f0f0; }
+  ul.nav .user-links {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    line-height: 40px;
+    vertical-align: middle; }
+    ul.nav .user-links .user {
+      cursor: pointer; }
+      ul.nav .user-links .user img.profile-pic {
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        right: 5px; }
+      ul.nav .user-links .user .profile-name {
+        vertical-align: middle;
+        font-family: Montserrat, Lato, serif; }
+    ul.nav .user-links i {
+      color: white;
+      font-size: 18px !important;
+      padding-top: 2px;
+      cursor: pointer;
+      height: 40px;
+      line-height: 40px !important;
+      margin-right: 40px; }
+
+.nav-sub {
+  width: 100%;
+  height: 62px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e3e3e3; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style-type: none; }
+  ul a {
+    color: white;
+    margin-right: 25px; }
+
+.banner-box, .box-two, .box-three, .box-four {
+  border-style: solid;
+  border-color: #17223d;
+  border-width: 1.5px;
+  border-radius: 0;
+  box-sizing: border-box; }
+
+.center-content {
+  min-width: 500px;
+  max-width: 90%;
+  margin: auto;
+  position: relative; }
+
+.banner-box {
+  min-height: 240px;
+  width: 100%;
+  margin-bottom: 30px; }
+
+.picture-box {
+  width: 200px;
+  height: 200px;
+  margin: 40px 0 0 40px;
+  margin-bottom: 20px;
+  position: relative; }
+  .picture-box img {
+    width: 100%;
+    height: 100%; }
+
+.button-row {
+  display: flex;
+  position: relative;
+  margin-bottom: 0; }
+
+.button-row > li > button {
+  font-family: Lato;
+  font-size: 16px;
+  color: white;
+  background-color: #17223d;
+  border: none;
+  padding: 15px 29px;
+  text-align: center;
+  text-decoration: none;
+  min-width: 200px;
+  margin-right: 2px; }
+
+.info-boxes {
+  display: flex;
+  width: 100%;
+  justify-content: space-between; }
+  .info-boxes .col-1 {
+    flex-grow: 1;
+    max-width: 25%; }
+    .info-boxes .col-1 > div > p {
+      font-family: Lato;
+      font-size: 24px;
+      color: #17223d;
+      text-align: center;
+      text-decoration: underline; }
+    .info-boxes .col-1 > div > a {
+      text-decoration: none; }
+      .info-boxes .col-1 > div > a > p {
+        font-family: Lato;
+        font-size: 24px;
+        color: #17223d;
+        text-align: center; }
+
+.box-two, .box-three, .box-four {
+  margin-bottom: 20px; }
+
+.box-two {
+  min-height: 70px; }
+
+.box-three, .box-four {
+  min-height: 250px; }
+
+.box-four {
+  text-align: center; }
+  .box-four input[name=search] {
+    display: inline-block; }
+
+.col-2 {
+  flex-grow: 2;
+  max-width: 65%;
+  position: relative; }
+
+.tabs {
+  width: 100%;
+  height: 50px;
+  display: flex; }
+
+.tab {
+  border-style: solid solid none none;
+  border-color: #17223d white #17223d #17223d;
+  border-width: 1.5px;
+  border-radius: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #17223d;
+  color: white;
+  cursor: pointer;
+  font-family: Lato; }
+
+#contributors {
+  border-left-style: solid; }
+
+#tags {
+  border-right-style: none; }
+
+.post-box {
+  width: 100%;
+  height: 25em;
+  border: 1.5px solid #17223d; }

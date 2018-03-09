@@ -11,7 +11,7 @@ ul.nav {
   z-index: 2;
   opacity: 0.9;
   position: fixed;
-  font-family: Montserrat;
+  font-family: Montserrat, Lato, serif;
 
   li > div {
     margin-right: 40px;
@@ -71,7 +71,7 @@ ul.nav {
 
       .profile-name {
         vertical-align: middle;
-        font-family: Montserrat;
+        font-family: Montserrat, Lato, serif;
       }
     }
 
