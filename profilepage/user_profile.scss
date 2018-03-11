@@ -29,6 +29,10 @@
 
   img {
     @include dimensions(100%, 100%);
+
+    &:hover {
+
+    }
   }
 }
 
