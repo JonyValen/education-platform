@@ -13,22 +13,30 @@ $(document).ready(function(){ // Change documents in the document viewer
 
   $("#contributors").click(function(){
     $(".list-of-doc").hide();
+    $(".contributor-list").show();
     $(".document").hide();
+    $(".tags-list").hide();
   });
 
   $("#attachments").click(function(){
     $(".list-of-doc").show();
     $(".document").hide();
+    $(".contributor-list").hide();
+    $(".tags-list").hide();
   });
 
   $("#tags").click(function(){
     $(".list-of-doc").hide();
     $(".document").hide();
+    $(".contributor-list").hide();
+    $(".tags-list").show();
   });
 
   $("#doc1").click(function() {
     $(".list-of-doc").hide();
     $(".document").show();
+    $(".contributor-list").hide();
+    $(".tags-list").hide();
   });
 
   // $(".document").on('load', function() { 
