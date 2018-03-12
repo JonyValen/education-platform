@@ -101,7 +101,7 @@ li > div {
   margin-right: 40px;
 }
 
-img.profile-pic, img.uploader-pic {
+img#profile-pic, img.uploader-pic {
   border-radius: 100%;
   width: 30px;
   height: 30px;
@@ -149,9 +149,22 @@ li > i {
 	display: flex;
 	justify-content: left;
 	overflow: auto;
-	min-height: 400px;
-	max-height: 97.5vh;
-	width: 25%;
+	min-height: 80vh;
+	min-width: 250px;
+	margin: 40px 20px 40px 20px;
+	border-radius: 5px;
+	position: fixed;
+	left: 5%;
+	z-index: 9999;
+}
+
+.friend-list-invis { /* Necessary so that the actual friend list can be removed from flex */
+	background-color: #ededed; 
+	display: flex;
+	justify-content: left;
+	overflow-y: auto;
+	min-height: 80vh;
+	min-width: 250px;
 	margin: 40px 20px 40px 20px;
 	border-radius: 5px;
 }
@@ -160,11 +173,12 @@ li > i {
 	background-color: #FFFFFF;
 	justify-content: center;
 	display: flex;
-	width: 70%;
-	margin: 40px 20px 40px 20px;
+	flex-grow: 1;
+	width: 800px;
+	margin: 40px 20px 40px 5px;
 	flex-wrap: wrap;
 	border-radius: 5px;
-	padding: 20px;
+	padding: 20px 20px 20px 20px;
 }
 
 
@@ -247,8 +261,40 @@ a.uploader-name {
 
 .document-content {
 	height: 100%;
-	width: 100%;
-	padding: 0px 15px 0px 15px;
+	max-width: 100%;
+	padding: 0px 15px 15px 15px;
+}
+
+ul.list-of-doc {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+button.uploaded-file {
+	min-width: 100%;
+	max-width: 100%;
+	border-style: none;
+	display: inline-block;
+	text-align: left;
+	font-size: 16px;
+	padding: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-bottom: 10px;
+}
+
+button.uploaded-file:hover {
+	font-weight: bold;
+}
+
+iframe.document {
+	width: 100%; 
+	min-height: 100%;
+	height: auto;
+	display: none;
+	overflow-y: hidden;
 }
 
 .document-rating {
