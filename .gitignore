@@ -39,3 +39,6 @@ Thumbs.db
 # Folders #
 ###########
 node-sass
+node_modules
+
+.env
