@@ -15,23 +15,23 @@
     <div class="signup-page">
     <div class="form">
       <a class="logo noselect" href="../homepage/homepage.html">gyde</a>
-      <form class="signup-form">
+      <form class="signup-form" action="http://localhost:3090/signup" method="POST" >
         <div class="field name-fields">
           <input type="text" placeholder="First Name"/>
           <input type="text" placeholder="M.I."/>
           <input type="text" placeholder="Last Name"/>
         </div>
         <div class="field email-fields">
-          <input type="text" placeholder="Email Address"/>
-          <input type="text" placeholder="Confirm Email Address"/>
+          <input required type="text" name="username" placeholder="Email Address"/>
+          <input  required type="text" placeholder="Confirm Email Address"/>
         </div>
         <div class="field job-fields">
           <input type="text" placeholder="University/Organization"/>
           <input type="text" placeholder="Occupation"/>
         </div>
         <div class="field password-fields">
-          <input type="password" placeholder="New password"/>
-          <input type="password" placeholder="Confirm password"/>
+          <input required type="password" name="password" placeholder="New password"/>
+          <input required type="password" placeholder="Confirm password"/>
         </div>
         <button>Create account</button>
         <p class="message">Already registered? <a href="login.html">Log in</a></p>

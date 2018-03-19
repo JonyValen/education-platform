@@ -7,21 +7,44 @@ $(function() { // Clear comment box upon clicking "Post"
 
 
 $(document).ready(function(){ // Change documents in the document viewer
-  $("#attachments").ready(function(){
-    $(".document-content").html("Upload files: <input type='file' name='attach-file' multiple>");
-  });
+  // $("#attachments").ready(function(){ // Does NOT support .doc/.docx. Files must be in .pdf format or hosted remotely. Replace: http://infolab.stanford.edu/pub/papers/google.pdf
+  //   $(".document-content").html("");
+  // });
 
   $("#contributors").click(function(){
-    $(".document-content").html("");
+    $(".list-of-doc").hide();
+    $(".contributor-list").show();
+    $(".document").hide();
+    $(".tags-list").hide();
   });
 
   $("#attachments").click(function(){
-    $(".document-content").html("Upload files: <input type='file' name='attach-file' multiple>");
+    $(".list-of-doc").show();
+    $(".document").hide();
+    $(".contributor-list").hide();
+    $(".tags-list").hide();
   });
 
   $("#tags").click(function(){
-    $(".document-content").html("");
+    $(".list-of-doc").hide();
+    $(".document").hide();
+    $(".contributor-list").hide();
+    $(".tags-list").show();
   });
+
+  $("#doc1").click(function() {
+    $(".list-of-doc").hide();
+    $(".document").show();
+    $(".contributor-list").hide();
+    $(".tags-list").hide();
+  });
+
+  // $(".document").on('load', function() { 
+  //   var iframeSize = document.documentElement.clientHeight + document.documentElement.scrollHeight + document.documentElement.offsetHeight;
+  //   var size = document.documentElement.scrollHeight;
+  //   console.log(size);
+  //   $("iframe").height(iframeSize);
+  // });
 
   $(document).scroll(function() { // Controls bottom right scroll to top and scroll to comments functionality
     var screenTop = $(document).scrollTop();

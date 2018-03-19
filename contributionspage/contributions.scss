@@ -1,3 +1,5 @@
+$font: Montserrat;
+
 html {
   height: 100%;
   width: 100%;
@@ -99,7 +101,7 @@ img#profile-pic, img.uploader-pic {
 
 .profile-name, .uploader-name {
   vertical-align: middle;
-  font-family: Montserrat; }
+  font-family: $font; }
 
 li > i {
   color: white;
@@ -166,14 +168,16 @@ ul.friends {
   justify-content: left;
   border-radius: 50%;
   padding-left: 15px;
-  padding-bottom: 15px; }
+  padding-bottom: 15px; 
+}
 
 img.friend-pic {
   border-radius: 100%;
   width: 30px;
   height: 30px;
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: middle; 
+}
 
 .friend-name {
   width: 80%;
@@ -187,7 +191,7 @@ img.friend-pic {
   vertical-align: top;
   padding-top: 5px;
   padding-left: 10px;
-  font-family: Montserrat; }
+  font-family: $font; }
 
 .status {
   width: 10%;
@@ -276,30 +280,35 @@ a.uploader-name {
 .uploader-date {
   padding-top: 5px;
   /* Hack to put date on same line as name */
-  font-family: Montserrat;
+  font-family: $font;
   width: 15%;
   min-width: 100px; }
 
 .document-content {
   height: 100%;
   max-width: 100%;
-  padding: 0px 15px 15px 15px; }
+  padding: 0px 15px 15px 15px; 
+}
 
 .tags-list {
-  width: 100%;
-  margin: 0;
-  padding: 0; }
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
 
 .tag {
-  padding-bottom: 10px; }
+	padding-bottom: 10px;
+}
 
 #tag1 {
-  color: black;
-  font-family: Montserrat; }
+	color: black;
+	font-family: $font;
+}
 
 .contributor-list {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 .contributor {
   max-height: 30px;
@@ -309,7 +318,8 @@ a.uploader-name {
   display: flex;
   justify-content: left;
   border-radius: 50%;
-  padding-bottom: 15px; }
+  padding-bottom: 15px;
+}
 
 ul.list-of-doc {
   padding: 0;
@@ -327,8 +337,8 @@ button.uploaded-file {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-bottom: 10px;
-  font-family: Montserrat; }
+  padding-bottom: 10px; 
+  font-family: $font;}
 
 button.uploaded-file:hover {
   font-weight: bold; }
@@ -374,7 +384,7 @@ textarea#styled {
   min-height: 100px;
   border: 3px solid #cccccc;
   padding: 5px;
-  font-family: Montserrat;
+  font-family: $font;
   border-radius: 10px;
   outline: none;
   resize: vertical;
@@ -382,7 +392,7 @@ textarea#styled {
 
 #submit-post {
   border: 3px solid #cccccc;
-  font-family: Montserrat;
+  font-family: $font;
   border-radius: 10px;
   margin-left: 10px;
   height: 40px; }
@@ -419,5 +429,3 @@ a#to-top-or-comments:hover {
 
 a#to-top-or-comments:active {
   color: #a9a9a9; }
-
-/*# sourceMappingURL=contributions.css.map */
