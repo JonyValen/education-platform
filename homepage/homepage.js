@@ -10,7 +10,7 @@ $(document).ready(function(){
     $(".center-content").html(homeHTML);
   });
 
-  $("#trending-btn").click(function(){
+  $("#latest-btn").click(function(){
     if(!$(this).hasClass("selected-feed-type")){
       $(".center-content").css("padding", "20px")
       $(".selected-feed-type").removeClass("selected-feed-type")
@@ -39,7 +39,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#latest-btn").click(function(){
+  $("#feedback-btn").click(function(){
     $(".center-content").css("padding", "0 0 20px 0")
     $(".selected-feed-type").removeClass("selected-feed-type");
     $(this).addClass("selected-feed-type");
