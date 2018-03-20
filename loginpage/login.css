@@ -19,8 +19,9 @@ body {
 
 img[alt="bg-image"] {
   position: absolute;
-  right: 0;
-  width: 108%;
+  left: 0;
+  height: 100%;
+  width: 100%;
   filter: brightness(75%);
   user-drag: none;
   user-select: none;

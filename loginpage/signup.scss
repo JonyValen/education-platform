@@ -1,13 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import '../globals-css/body';
+@import '../globals-css/global';
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Lato";
-  background: black; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, white,white);
-  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
   background: linear-gradient(to left, white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,21 +17,7 @@ img[alt="bg-image"] {
   height: 100%;
   filter: brightness(75%);
   user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+  @include userSelect(none);
 }
 
 .logo {
@@ -49,9 +31,7 @@ img[alt="bg-image"] {
 }
 
 .signup-page {
-  min-width: 400px;
-  max-width: 600px;
-  justify-content: space-between;
+  @include minmax(width, 400px, 600px);
   padding: 8% 0 0;
   margin: auto;
   display: flex;
@@ -70,6 +50,16 @@ img[alt="bg-image"] {
   padding: 0 45px 0 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+  .message {
+    margin: 15px 0 20px;
+    color: white;
+    font-size: 12px;
+
+    a {
+      color: white;
+    }
+  }
 }
 
 .form input {
@@ -89,6 +79,7 @@ input[placeholder="M.I."] {
 }
 
 .form button {
+  @include border(border, solid, white, 1.5px, 2px);
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -101,24 +92,8 @@ input[placeholder="M.I."] {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
-  border-style: solid;
-  border-color: white;
-  border-width: 1.5px;
-  border-radius: 2px;
-}
 
-.form button:hover {
-  background: #ddd;
-}
-
-.form .message {
-  margin: 15px 0 20px;
-  color: white;
-  font-size: 12px;
-}
-
-.form .message a {
-  color: white;
+  &:hover { background: #ddd;}
 }
 
 .message a:hover, i:hover {

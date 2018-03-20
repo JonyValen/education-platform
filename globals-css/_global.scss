@@ -37,12 +37,17 @@ $lightGray: #f0f0f0;
   outline: none;
 }
 
+@mixin userSelect($option) {
+  -webkit-touch-callout: $option;
+  user-select: $option;
+  -moz-user-select: $option;
+  -webkit-user-drag: $option;
+  -webkit-user-select: $option;
+  -ms-user-select: $option;
+}
+
+
+
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+  @include userSelect(none);
 }
