@@ -13,14 +13,14 @@ $lightGray: #f0f0f0;
   color: $color;
 }
 
-@mixin border($border, $style, $color, $width, $radius) {
+@mixin border($border, $style, $color, $width: 0, $radius: 0) {
   #{$border}-style: $style;
   #{$border}-color: $color;
   #{$border}-width: $width;
   #{$border}-radius: $radius;
 }
 
-@mixin minmax($type, $min, $max) {
+@mixin minmax($type, $min, $max: 100%) {
   min-#{$type}: $min;
   max-#{$type}: $max;
 }
@@ -46,7 +46,10 @@ $lightGray: #f0f0f0;
   -ms-user-select: $option;
 }
 
-
+@mixin custom-link-layout($color: white) {
+  outline: none;
+  color: $color;
+}
 
 .noselect {
   @include userSelect(none);

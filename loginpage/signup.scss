@@ -1,6 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+//@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import '../globals-css/body';
 @import '../globals-css/global';
+
+$dark: #10172b;
+$whiteGray: #ddd;
 
 body {
   font-family: "Lato";
@@ -12,6 +15,8 @@ body {
 }
 
 img[alt="bg-image"] {
+  width: 100%;
+  @include minmax(width, 1400px);
   position: absolute;
   right: 0;
   height: 100%;
@@ -21,11 +26,9 @@ img[alt="bg-image"] {
 }
 
 .logo {
+  @include font('Cedarville Cursive', 30px, white);
   margin: 15px;
-  font-family: 'Cedarville Cursive';
-  font-size: 30px;
   text-decoration: none;
-  color: white;
   position: relative;
   display: inline-block;
 }
@@ -45,16 +48,15 @@ img[alt="bg-image"] {
 
 .form {
   position: relative;
-  background: #10172b;
+  background: $dark;
   flex-grow: 1;
   padding: 0 45px 0 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 
   .message {
+    @include font(inherit, 12px, white);
     margin: 15px 0 20px;
-    color: white;
-    font-size: 12px;
 
     a {
       color: white;
@@ -63,14 +65,13 @@ img[alt="bg-image"] {
 }
 
 .form input {
-  font-family: "Roboto", sans-serif;
+  @include font("Roboto", 14px, inherit);
   outline: 0;
   width: 100%;
   border: 0;
   margin: 0 7px 15px 7px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
   display: inline-block;
 }
 
@@ -80,22 +81,19 @@ input[placeholder="M.I."] {
 
 .form button {
   @include border(border, solid, white, 1.5px, 2px);
-  font-family: "Roboto", sans-serif;
+  @include font(Roboto, 14px, $dark);
   text-transform: uppercase;
   outline: 0;
   background: white;
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #10172b;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
 
-  &:hover { background: #ddd;}
+  &:hover { background: $whiteGray;}
 }
 
 .message a:hover, i:hover {
-  color: #ddd;
+  color: $whiteGray;
 }
