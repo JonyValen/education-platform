@@ -79,13 +79,15 @@ img[alt="bg-image"] {
     color: white;
     margin: 15px 0 20px; }
     .form .message a {
+      outline: none;
       color: white; }
 
 .form input {
-  font-family: "Roboto";
+  font-family: Roboto;
   font-size: 14px;
   color: inherit;
-  outline: 0;
+  outline: none;
+  color: inherit;
   width: 100%;
   border: 0;
   margin: 0 7px 15px 7px;

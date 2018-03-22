@@ -38,8 +38,7 @@ img[alt="bg-image"] {
   padding: 8% 0 0;
   margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  @include centerPos(true, true, true);
 }
 
 .field {
@@ -58,15 +57,13 @@ img[alt="bg-image"] {
     @include font(inherit, 12px, white);
     margin: 15px 0 20px;
 
-    a {
-      color: white;
-    }
+    a { @include custom-link-layout(); }
   }
 }
 
 .form input {
-  @include font("Roboto", 14px, inherit);
-  outline: 0;
+  @include font(Roboto, 14px, inherit);
+  @include custom-link-layout(inherit);
   width: 100%;
   border: 0;
   margin: 0 7px 15px 7px;
@@ -77,6 +74,10 @@ img[alt="bg-image"] {
 
 input[placeholder="M.I."] {
   width: 50px;
+}
+
+%hover {
+  background: $whiteGray;
 }
 
 .form button {
@@ -91,9 +92,9 @@ input[placeholder="M.I."] {
   transition: all 0.3 ease;
   cursor: pointer;
 
-  &:hover { background: $whiteGray;}
+  &:hover { @extend %hover; }
 }
 
 .message a:hover, i:hover {
-  color: $whiteGray;
+  @extend %hover;
 }

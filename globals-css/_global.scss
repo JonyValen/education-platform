@@ -51,6 +51,15 @@ $lightGray: #f0f0f0;
   color: $color;
 }
 
+@mixin centerPos($isFlex: false, $justifyContent: false, $alignItems: false){
+  @if $isFlex {
+    margin: auto;
+  } @else {
+    @if $justifyContent { justify-content: center; }
+    @if $alignItems { align-items: center; }
+  }
+}
+
 .noselect {
   @include userSelect(none);
 }
