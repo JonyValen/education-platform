@@ -7,25 +7,18 @@
   border-radius: 0;
   display: inline-block; }
 
-.center-feed .item .react button, .center-feed button.load-more {
+.post-info .connect, .create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], button.load-more, .item .react button {
   border-style: none;
   cursor: pointer;
   outline: none; }
 
 .noselect {
   -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
   user-select: none;
-  /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */ }
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
 
 body {
   margin: 0;
@@ -55,7 +48,7 @@ ul.nav {
   z-index: 2;
   opacity: 0.9;
   position: fixed;
-  font-family: Montserrat; }
+  font-family: Montserrat, Lato, serif; }
   ul.nav li > div {
     margin-right: 40px; }
   ul.nav .logo-searchbar {
@@ -88,17 +81,9 @@ ul.nav {
     vertical-align: middle; }
     ul.nav .user-links .user {
       cursor: pointer; }
-      ul.nav .user-links .user img.profile-pic {
-        border-radius: 100%;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        vertical-align: middle;
-        position: relative;
-        right: 5px; }
       ul.nav .user-links .user .profile-name {
         vertical-align: middle;
-        font-family: Montserrat; }
+        font-family: Montserrat, Lato, serif; }
     ul.nav .user-links i {
       color: white;
       font-size: 18px !important;
@@ -112,9 +97,31 @@ ul.nav {
   width: 100%;
   height: 62px; }
 
-.post-tags, .center-feed .create-post, .center-feed .item, .filter-search .filter-searchbar {
+img.profile-pic {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 5px; }
+
+.post-tags, .create-post, .item, .filter-search .filter-searchbar {
   background-color: white;
   font-family: Roboto; }
+
+.create-post .create-post-contents input[name="enter-tag"], .filter-search .filter-searchbar input[name="filter-search-tags"] {
+  border-style: none;
+  border-color: #17223d;
+  border-width: 0;
+  border-radius: 2px;
+  display: block;
+  padding-left: 4px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  outline: none; }
+  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .filter-search .filter-searchbar input[name="filter-search-tags"]::placeholder {
+    color: #919191; }
 
 .center-content {
   min-width: 90%;
@@ -155,8 +162,7 @@ ul.nav {
     width: 100%;
     position: absolute;
     z-index: 1;
-    background-color: #f0f0f0;
-    cursor: pointer; }
+    background-color: #f0f0f0; }
     .post-info .connect .connect-label:hover {
       background-color: #d3d3d3; }
   .post-info .post-tags {
@@ -222,117 +228,186 @@ ul.nav {
     height: 60%; }
 
 .center-feed {
-  min-width: 56vw;
+  width: 56vw;
   background: transparent !important;
   margin: auto; }
-  .center-feed .create-post {
-    width: 100%;
-    padding: 12px 20px 15px 20px;
-    box-sizing: border-box;
-    position: relative;
-    margin-bottom: 20px;
-    box-shadow: 1px 1px 2px gray;
-    border-radius: 5px; }
-    .center-feed .create-post textarea[name="write-post"] {
-      width: 100%;
-      height: 35px;
-      border-radius: 3px;
-      padding: 8px;
-      line-height: 15px;
-      outline: none;
-      font-family: Roboto;
-      resize: none;
-      overflow: hidden;
-      margin: 0;
-      display: block;
-      box-sizing: border-box;
-      /* all style changes will ease-in-out for 0.2s */
-      transition: all 0.2s; }
-      .center-feed .create-post textarea[name="write-post"] :focus {
-        overflow: auto;
-        height: 90px;
-        margin: 0 0 20px 0; }
-    .center-feed .create-post .post-btn {
-      width: 100px;
-      height: 40px;
-      font-family: Montserrat;
-      font-size: 14;
-      color: white;
-      border-style: none;
-      border-color: #17223d;
-      border-width: 0;
-      border-radius: 2px;
-      background-color: #17223d;
-      margin: auto 0 auto auto;
-      display: block; }
-  .center-feed .item {
-    margin-bottom: 15px;
-    min-height: 120px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 2px gray;
-    border-radius: 5px;
-    overflow: auto; }
-    .center-feed .item .post-content {
-      margin: 25px 25px 0 25px;
-      position: relative;
-      display: block;
-      border-bottom-style: solid;
-      border-bottom-color: #17223d;
-      border-bottom-width: 2px;
-      border-bottom-radius: 0; }
-    .center-feed .item .react {
-      text-align: right;
-      border-bottom-style: solid;
-      border-bottom-color: gray;
-      border-bottom-width: 5px;
-      border-bottom-radius: 0;
-      padding: 0 25px 0 25px; }
-      .center-feed .item .react button {
-        padding: 8px;
-        background-color: transparent; }
-      .center-feed .item .react a {
-        padding: 8px;
-        height: 100%;
-        line-height: 100%;
-        vertical-align: middle;
-        float: left; }
-      .center-feed .item .react .endorse:hover {
-        background-color: #ffa8c6 !important; }
-      .center-feed .item .react .share:hover {
-        background-color: #d3d3d3 !important; }
-      .center-feed .item .react .liked {
-        background-color: #c43a3a !important;
-        color: white; }
-  .center-feed .selected-post {
-    border-style: solid;
-    border-color: #17223d;
-    border-width: 3px;
-    border-radius: 3px; }
-  .center-feed .author, .center-feed .date {
-    font-size: 14px;
-    margin-bottom: 10px;
-    display: inline-block; }
-  .center-feed .date {
-    float: right;
-    clear: both; }
-  .center-feed .topic {
-    font-size: 26px; }
-  .center-feed .abstract {
-    margin-left: 15px; }
-  .center-feed button.load-more {
-    width: 90%;
+
+.create-post {
+  width: 100%;
+  padding: 0 0 10px;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 5px;
+  overflow: hidden; }
+  .create-post .post-tabs {
+    display: flex;
+    margin-bottom: 10px; }
+  .create-post .post-tab {
     height: 40px;
     font-family: Roboto;
-    font-size: 20px;
-    color: black;
-    border-radius: 2px;
-    background-color: #f0f0f0;
-    display: block;
+    font-size: 18px;
+    color: white;
+    border-style: solid;
+    border-color: #f0f0f0;
+    border-width: 1px;
+    border-radius: 7px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-width: 0;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    flex-grow: 1;
+    background-color: #425d89; }
+  .create-post .active {
+    background-color: white;
+    color: black; }
+  .create-post textarea[name="write-post"] {
+    width: calc(100% - 15px);
+    height: 35px;
+    border-radius: 3px;
+    padding: 8px;
+    line-height: 15px;
+    outline: none;
+    font-family: Roboto;
+    resize: none;
+    overflow: hidden;
     margin: auto;
-    box-shadow: 1px 1px 1px gray; }
-    .center-feed button.load-more:hover {
-      background-color: #d3d3d3;
-      color: #f0f0f0; }
+    display: block;
+    box-sizing: inherit;
+    /* all style changes will ease-in-out for 0.2s */
+    transition: all 0.2s; }
+    .create-post textarea[name="write-post"] :focus {
+      overflow: auto;
+      height: 90px;
+      margin: 0 0 20px 0; }
+  .create-post #post-button-options {
+    text-align: right; }
+  .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"] {
+    width: 100px;
+    height: 40px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: white;
+    border-style: none;
+    border-color: #17223d;
+    border-width: 0;
+    border-radius: 2px;
+    background-color: #17223d;
+    display: inline-block; }
+  .create-post .post-btn, .create-post .privacy-btn {
+    margin: 10px 15px auto auto; }
+  .create-post .create-post-contents {
+    margin-left: 15px;
+    position: relative;
+    display: none; }
+    .create-post .create-post-contents #upload-files {
+      display: none; }
+    .create-post .create-post-contents label[for="upload-files"] {
+      text-align: center;
+      line-height: 40px;
+      vertical-align: middle; }
+    .create-post .create-post-contents #files-list {
+      line-height: 26.66667px; }
+    .create-post .create-post-contents input[name="enter-tag"] {
+      width: 250px;
+      height: 30px; }
+    .create-post .create-post-contents .tag-list {
+      margin-top: 5px;
+      width: calc(100% - 10px);
+      display: inline-block; }
+    .create-post .create-post-contents .pre-tag {
+      font-family: Roboto;
+      font-size: 14px;
+      color: white;
+      display: inline-block;
+      margin-left: 4px;
+      margin-bottom: 4px;
+      border-radius: 5px;
+      background-color: gray;
+      padding: 6px; }
+      .create-post .create-post-contents .pre-tag i {
+        display: none;
+        cursor: pointer; }
+
+.selected-post {
+  border-style: solid;
+  border-color: #17223d;
+  border-width: 3px;
+  border-radius: 3px; }
+
+.author, .date {
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: inline-block; }
+
+.date {
+  float: right;
+  clear: both; }
+
+.topic {
+  font-size: 26px; }
+
+.abstract {
+  margin-left: 15px; }
+
+button.load-more {
+  width: 90%;
+  height: 40px;
+  font-family: Roboto;
+  font-size: 20px;
+  color: black;
+  border-radius: 2px;
+  background-color: #f0f0f0;
+  display: block;
+  margin: auto;
+  box-shadow: 1px 1px 1px gray; }
+  button.load-more:hover {
+    background-color: #d3d3d3;
+    color: #f0f0f0; }
+
+.item {
+  margin-bottom: 15px;
+  min-height: 120px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 5px;
+  overflow: auto; }
+  .item .post-content {
+    margin: 25px 25px 0 25px;
+    position: relative;
+    display: block;
+    border-bottom-style: solid;
+    border-bottom-color: #17223d;
+    border-bottom-width: 2px;
+    border-bottom-radius: 0; }
+  .item .react {
+    text-align: right;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: 5px;
+    border-bottom-radius: 0;
+    padding: 0 25px 0 25px; }
+    .item .react button {
+      padding: 8px;
+      background-color: transparent; }
+    .item .react a {
+      padding: 8px;
+      height: 100%;
+      text-align: center;
+      line-height: 100%;
+      vertical-align: middle;
+      float: left; }
+    .item .react .endorse:hover {
+      background-color: #ffa8c6 !important; }
+    .item .react .share:hover {
+      background-color: #d3d3d3 !important; }
+    .item .react .liked {
+      background-color: #c43a3a !important; }
+    .item .react .liked {
+      color: white; }
 
 .filter-search {
   width: 18vw;
@@ -353,15 +428,4 @@ ul.nav {
     .filter-search .filter-searchbar input[name="filter-search-tags"] {
       width: 90%;
       height: 25px;
-      border-style: none;
-      border-color: #17223d;
-      border-width: 0;
-      border-radius: 2px;
-      display: block;
-      margin: auto;
-      padding-left: 4px;
-      background-color: #f0f0f0;
-      font-size: 14px;
-      outline: none; }
-      .filter-search .filter-searchbar input[name="filter-search-tags"]::placeholder {
-        color: #919191; }
+      margin: auto; }

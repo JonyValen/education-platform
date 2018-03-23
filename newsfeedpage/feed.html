@@ -41,7 +41,25 @@
       </div>
       <div class="center-feed">
         <div class="create-post">
-          <textarea name="write-post" placeholder="Write Post..."></textarea>
+          <div class="post-tabs">
+            <div class="post-tab active" id="contrib-tab">Contributions</div>
+            <div class="post-tab" id="attach-tab">Attachments</div>
+            <div class="post-tab" id="tags-tab">Tags</div>
+          </div>
+          <!-- Contributions tab -->
+          <textarea name="write-post" placeholder="Post Abstract Here..."></textarea>
+          <div id="post-button-options"></div>
+          <!-- Attachments tab -->
+          <div class="create-post-contents" id="attachments-section">
+            <input type="file" id="upload-files" name="upload-files" accept="application/pdf, application/msword, application/msexcel, image/*" multiple>
+            <label for="upload-files">Upload files</label>
+            <p id="files-list"></p>
+          </div>
+          <!-- Tags tab -->
+          <div class="create-post-contents" id="tags-section">
+            <input type="text" name="enter-tag" placeholder="Enter a tag" maxlength="25">
+            <div class="tag-list"></div>
+          </div>
         </div>
         <div class="feed"></div>
         <button class="load-more">Load more</button>

@@ -60,6 +60,30 @@ $lightGray: #f0f0f0;
   }
 }
 
+@mixin centerText($line-height){
+  text-align: center;
+  line-height: $line-height;
+  vertical-align: middle;
+}
+
 .noselect {
   @include userSelect(none);
+}
+
+%generic {
+  background-color: white;
+  font-family: Roboto;
+}
+
+%std-searchbar {
+  @include border(border, none, $brandColor, 0, 2px);
+  display: block;
+  padding-left: 4px;
+  background-color: $lightGray;
+  font-size: 14px;
+  outline: none;
+
+  &::placeholder {
+    color: #919191;
+  }
 }

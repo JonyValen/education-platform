@@ -1,7 +1,96 @@
-@import '../globals-css/global';
-@import '../globals-css/body';
-@import '../globals-css/navbar';
-$font: Montserrat;
+.noselect {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e3e3e3; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style-type: none; }
+  ul a {
+    color: white;
+    margin-right: 25px; }
+
+ul.nav {
+  background-color: #17223d;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+  padding: 0 40px 5px 40px;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 2;
+  opacity: 0.9;
+  position: fixed;
+  font-family: Montserrat, Lato, serif; }
+  ul.nav li > div {
+    margin-right: 40px; }
+  ul.nav .logo-searchbar {
+    flex-grow: 2; }
+    ul.nav .logo-searchbar .logo {
+      padding: 0 0 0 10px;
+      font-family: 'Cedarville Cursive';
+      font-size: 30px;
+      user-select: none; }
+    ul.nav .logo-searchbar input[name="search"] {
+      min-width: 200px;
+      min-height: 30px;
+      margin-right: 50px;
+      padding-left: 4px;
+      background-color: #425d89;
+      border-style: none;
+      border-radius: 2px;
+      font-size: 14px;
+      color: #f0f0f0; }
+      ul.nav .logo-searchbar input[name="search"]:focus {
+        color: #f0f0f0;
+        outline: none; }
+      ul.nav .logo-searchbar input[name="search"]::placeholder {
+        color: #f0f0f0; }
+  ul.nav .user-links {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    line-height: 40px;
+    vertical-align: middle; }
+    ul.nav .user-links .user {
+      cursor: pointer; }
+      ul.nav .user-links .user .profile-name {
+        vertical-align: middle;
+        font-family: Montserrat, Lato, serif; }
+    ul.nav .user-links i {
+      color: white;
+      font-size: 18px !important;
+      padding-top: 2px;
+      cursor: pointer;
+      height: 40px;
+      line-height: 40px !important;
+      margin-right: 40px; }
+
+.nav-sub {
+  width: 100%;
+  height: 62px; }
+
+img.profile-pic {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 5px; }
 
 html {
   height: 100%;
@@ -66,16 +155,14 @@ ul.friends {
   justify-content: left;
   border-radius: 50%;
   padding-left: 15px;
-  padding-bottom: 15px;
-}
+  padding-bottom: 15px; }
 
 img {
   border-radius: 100%;
   width: 30px;
   height: 30px;
   display: inline-block;
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 .friend-name {
   width: 80%;
@@ -89,7 +176,7 @@ img {
   vertical-align: top;
   padding-top: 5px;
   padding-left: 10px;
-  font-family: $font; }
+  font-family: Montserrat; }
 
 .status {
   width: 10%;
@@ -100,7 +187,6 @@ img {
   border-radius: 50%;
   background-color: green;
   margin-top: 7px; }
-
 
 .content-container {
   /* Contains documents and comments */
@@ -179,35 +265,30 @@ a.uploader-name {
 .uploader-date {
   padding-top: 5px;
   /* Hack to put date on same line as name */
-  font-family: $font;
+  font-family: Montserrat;
   width: 15%;
   min-width: 100px; }
 
 .document-content {
   height: 100%;
   max-width: 100%;
-  padding: 0px 15px 15px 15px;
-}
+  padding: 0px 15px 15px 15px; }
 
 .tags-list {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
+  width: 100%;
+  margin: 0;
+  padding: 0; }
 
 .tag {
-	padding-bottom: 10px;
-}
+  padding-bottom: 10px; }
 
 #tag1 {
-	color: black;
-	font-family: $font;
-}
+  color: black;
+  font-family: Montserrat; }
 
 .contributor-list {
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
 .contributor {
   max-height: 30px;
@@ -217,8 +298,7 @@ a.uploader-name {
   display: flex;
   justify-content: left;
   border-radius: 50%;
-  padding-bottom: 15px;
-}
+  padding-bottom: 15px; }
 
 ul.list-of-doc {
   padding: 0;
@@ -237,7 +317,7 @@ button.uploaded-file {
   overflow: hidden;
   text-overflow: ellipsis;
   padding-bottom: 10px;
-  font-family: $font;}
+  font-family: Montserrat; }
 
 button.uploaded-file:hover {
   font-weight: bold; }
@@ -283,7 +363,7 @@ textarea#styled {
   min-height: 100px;
   border: 3px solid #cccccc;
   padding: 5px;
-  font-family: $font;
+  font-family: Montserrat;
   border-radius: 10px;
   outline: none;
   resize: vertical;
@@ -291,7 +371,7 @@ textarea#styled {
 
 #submit-post {
   border: 3px solid #cccccc;
-  font-family: $font;
+  font-family: Montserrat;
   border-radius: 10px;
   margin-left: 10px;
   height: 40px; }

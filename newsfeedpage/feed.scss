@@ -4,11 +4,6 @@
 //CSS FOR NAVIGATION BAR
 @import '../globals-css/navbar';
 
-%generic {
-  background-color: white;
-  font-family: Roboto;
-}
-
 .center-content {
   @include minmax(width, 90%, 500px);
   margin: 0 auto 10px auto;
@@ -22,6 +17,7 @@
   }
 }
 
+//LEFT
 $post-info-height: calc(100vh - 130px);
 .post-info {
   @include dimensions(18vw, $post-info-height);
@@ -54,12 +50,12 @@ $post-info-height: calc(100vh - 130px);
   }
 
   .connect {
+    @extend %button;
     @extend %post-info-children;
     width: 100%;
     position: absolute;
     z-index: 1;
     background-color: $lightGray;
-    cursor: pointer;
 
     .connect-label {
       @extend %post-info-label;
@@ -145,143 +141,103 @@ $post-info-height: calc(100vh - 130px);
   }
 }
 
+//CENTER
 .center-feed {
-  min-width: 56vw;
+  width: 56vw;
   background: transparent !important;
   margin: auto;
+}
 
-  .create-post {
-    @extend %generic;
-    width: 100%;
-    padding: 12px 20px 15px 20px;
-    box-sizing: border-box;
-    position: relative;
-    margin-bottom: 20px;
-    box-shadow: 1px 1px 2px gray;
-    border-radius: 5px;
+@import '../globals-css/postbox';
 
-    textarea[name="write-post"] {
-      @include dimensions(100%, 35px);
-      border-radius: 3px;
-      padding: 8px;
-      line-height: 15px;
-      outline: none;
-      font-family: Roboto;
-      resize: none;
-      overflow: hidden;
-      margin: 0;
-      display: block;
-      box-sizing: border-box;
-      /* all style changes will ease-in-out for 0.2s */
-      transition: all 0.2s;
+.selected-post {
+  @include border(border, solid, $brandColor, 3px, 3px);
+}
 
-      :focus {
-        overflow: auto;
-        height: 90px;
-        margin: 0 0 20px 0;
-      }
-    }
+.author, .date {
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
 
-    .post-btn {
-      @include dimensions(100px, 40px);
-      @include font(Montserrat, 14, white);
-      @include border(border, none, $brandColor, 0, 2px);
-      background-color: $brandColor;
-      margin: auto 0 auto auto;
-      display: block;
-    }
-  }
+.date {
+  float: right;
+  clear: both;
+}
 
-  .item {
-    @extend %generic;
-    margin-bottom: 15px;
-    min-height: 120px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 2px gray;
-    border-radius: 5px;
-    overflow: auto;
+.topic {
+  font-size: 26px;
+}
 
-    .post-content {
-      margin: 25px 25px 0 25px;
-      position: relative;
-      display: block;
-      @include border(border-bottom, solid, $brandColor, 2px, 0);
-    }
+.abstract {
+  margin-left: 15px;
+}
 
-    .react {
-      text-align: right;
-      @include border(border-bottom, solid, gray, 5px, 0);
-      padding: 0 25px 0 25px;
+button.load-more {
+  @extend %button;
+  @include dimensions(90%, 40px);
+  @include font(Roboto, 20px, black);
+  border-radius: 2px;
+  background-color: $lightGray;
+  display: block;
+  margin: auto;
+  box-shadow: 1px 1px 1px gray;
 
-      button {
-        @extend %button;
-        padding: 8px;
-        background-color: transparent;
-      }
-
-      a {
-        padding: 8px;
-        height: 100%;
-        line-height: 100%;
-        vertical-align: middle;
-        float: left;
-      }
-
-      .endorse:hover {
-        background-color: #ffa8c6 !important;
-      }
-
-      .share:hover {
-        background-color: $graySelect !important;
-      }
-
-      .liked {
-        background-color: #c43a3a !important;
-        color: white;
-      }
-    }
-  }
-
-  .selected-post {
-    @include border(border, solid, $brandColor, 3px, 3px);
-  }
-
-  .author, .date {
-    font-size: 14px;
-    margin-bottom: 10px;
-    display: inline-block;
-  }
-
-  .date {
-    float: right;
-    clear: both;
-  }
-
-  .topic {
-    font-size: 26px;
-  }
-
-  .abstract {
-    margin-left: 15px;
-  }
-
-  button.load-more {
-    @extend %button;
-    @include dimensions(90%, 40px);
-    @include font(Roboto, 20px, black);
-    border-radius: 2px;
-    background-color: $lightGray;
-    display: block;
-    margin: auto;
-    box-shadow: 1px 1px 1px gray;
-
-    &:hover {
-      background-color: $graySelect;
-      color: $lightGray;
-    }
+  &:hover {
+    background-color: $graySelect;
+    color: $lightGray;
   }
 }
 
+.item {
+  @extend %generic;
+  margin-bottom: 15px;
+  min-height: 120px;
+  box-sizing: border-box;
+  box-shadow: $boxShadow;
+  border-radius: 5px;
+  overflow: auto;
+
+  .post-content {
+    margin: 25px 25px 0 25px;
+    position: relative;
+    display: block;
+    @include border(border-bottom, solid, $brandColor, 2px, 0);
+  }
+
+  .react {
+    text-align: right;
+    @include border(border-bottom, solid, gray, 5px, 0);
+    padding: 0 25px 0 25px;
+
+    button {
+      @extend %button;
+      padding: 8px;
+      background-color: transparent;
+    }
+
+    a {
+      padding: 8px;
+      height: 100%;
+      @include centerText(100%);
+      float: left;
+    }
+
+    @mixin hoverBGColor($selector, $color){
+      #{$selector} {
+        background-color: $color !important;
+      }
+    }
+
+    @include hoverBGColor('.endorse:hover', #ffa8c6);
+    @include hoverBGColor('.share:hover', $graySelect);
+    @include hoverBGColor('.liked', #c43a3a);
+
+    .liked {color: white;}
+  }
+}
+
+//Right
 .filter-search {
   @include dimensions(18vw, $post-info-height);
   position: fixed;
@@ -301,18 +257,9 @@ $post-info-height: calc(100vh - 130px);
     }
 
     input[name="filter-search-tags"] {
+      @extend %std-searchbar;
       @include dimensions(90%, 25px);
-      @include border(border, none, $brandColor, 0, 2px);
-      display: block;
       margin: auto;
-      padding-left: 4px;
-      background-color: $lightGray;
-      font-size: 14px;
-      outline: none;
-
-      &::placeholder {
-        color: #919191;
-      }
     }
   }
 }
