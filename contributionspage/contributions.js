@@ -1,4 +1,4 @@
-$(function() { // Clear comment box upon clicking "Post"
+$(() => { // Clear comment box upon clicking "Post"
   $('#submit-post').click(function() {
     $("textarea").val("")
   });
@@ -11,43 +11,43 @@ $(document).ready(function(){ // Change documents in the document viewer
   //   $(".document-content").html("");
   // });
 
-  $("#contributors").click(function(){
-    $(".list-of-doc").hide();
-    $(".contributor-list").show();
-    $(".document").hide();
-    $(".tags-list").hide();
+  $("#contributors").click(() => {
+    $(".list-of-doc").hide()
+    $(".contributor-list").show()
+    $(".document").hide()
+    $(".tags-list").hide()
   });
 
-  $("#attachments").click(function(){
+  $("#attachments").click(() => {
     $(".list-of-doc").show();
     $(".document").hide();
     $(".contributor-list").hide();
     $(".tags-list").hide();
   });
 
-  $("#tags").click(function(){
+  $("#tags").click(() => {
     $(".list-of-doc").hide();
     $(".document").hide();
     $(".contributor-list").hide();
     $(".tags-list").show();
   });
 
-  $("#doc1").click(function() {
+  $("#doc1").click(() => {
     $(".list-of-doc").hide();
     $(".document").show();
     $(".contributor-list").hide();
     $(".tags-list").hide();
   });
 
-  // $(".document").on('load', function() { 
+  // $(".document").on('load', function() {
   //   var iframeSize = document.documentElement.clientHeight + document.documentElement.scrollHeight + document.documentElement.offsetHeight;
   //   var size = document.documentElement.scrollHeight;
   //   console.log(size);
   //   $("iframe").height(iframeSize);
   // });
 
-  $(document).scroll(function() { // Controls bottom right scroll to top and scroll to comments functionality
-    var screenTop = $(document).scrollTop();
+  $(document).scroll(() => { // Controls bottom right scroll to top and scroll to comments functionality
+  let screenTop = $(document).scrollTop();
     if (screenTop == 0) {
   	  $("#top-down-navigate").removeClass("fa-chevron-up");
   	  $("#top-down-navigate").addClass("fa-chevron-down");
