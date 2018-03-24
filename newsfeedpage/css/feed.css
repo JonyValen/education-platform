@@ -20,6 +20,23 @@
   -webkit-user-select: none;
   -ms-user-select: none; }
 
+.post-tags, .create-post, .item, .filter-search .filter-searchbar {
+  background-color: white;
+  font-family: Roboto; }
+
+.create-post .create-post-contents input[name="enter-tag"], .filter-search .filter-searchbar input[name="filter-search-tags"] {
+  border-style: none;
+  border-color: #17223d;
+  border-width: 0;
+  border-radius: 2px;
+  display: block;
+  padding-left: 4px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  outline: none; }
+  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .filter-search .filter-searchbar input[name="filter-search-tags"]::placeholder {
+    color: #919191; }
+
 body {
   margin: 0;
   padding: 0;
@@ -105,23 +122,6 @@ img.profile-pic {
   vertical-align: middle;
   position: relative;
   right: 5px; }
-
-.post-tags, .create-post, .item, .filter-search .filter-searchbar {
-  background-color: white;
-  font-family: Roboto; }
-
-.create-post .create-post-contents input[name="enter-tag"], .filter-search .filter-searchbar input[name="filter-search-tags"] {
-  border-style: none;
-  border-color: #17223d;
-  border-width: 0;
-  border-radius: 2px;
-  display: block;
-  padding-left: 4px;
-  background-color: #f0f0f0;
-  font-size: 14px;
-  outline: none; }
-  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .filter-search .filter-searchbar input[name="filter-search-tags"]::placeholder {
-    color: #919191; }
 
 .center-content {
   min-width: 90%;
@@ -246,13 +246,13 @@ img.profile-pic {
     margin-bottom: 10px; }
   .create-post .post-tab {
     height: 40px;
-    font-family: Roboto;
+    font-family: Roboto, Lato, serif;
     font-size: 18px;
     color: white;
-    border-style: solid;
-    border-color: #f0f0f0;
-    border-width: 1px;
-    border-radius: 7px;
+    border-style: solid solid none none;
+    border-color: #17223d white #17223d #17223d;
+    border-width: 1.5px;
+    border-radius: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-width: 0;
@@ -260,7 +260,7 @@ img.profile-pic {
     line-height: 40px;
     vertical-align: middle;
     flex-grow: 1;
-    background-color: #425d89; }
+    background-color: #17223d; }
   .create-post .active {
     background-color: white;
     color: black; }

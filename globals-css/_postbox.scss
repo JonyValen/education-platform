@@ -22,14 +22,14 @@ $side-margin: 15px;
   .post-tab {
     @extend %button;
     height: $height;
-    @include font(Roboto, 18px, white);
-    @include border(border, solid, $lightGray, 1px, 7px);
+    @include font('Roboto, Lato, sans-serif', 18px, white);
+    @include border(border, solid solid none none, $brandColor white $brandColor $brandColor, 1.5px);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-width: 0;
     @include centerText($height);
     flex-grow: 1;
-    background-color: $navyBlue;
+    background-color: $brandColor;
   }
 
   .active {
@@ -43,7 +43,7 @@ $side-margin: 15px;
     padding: 8px;
     line-height: 15px;
     outline: none;
-    font-family: Roboto;
+    font-family: Roboto, Lato, sans-serif;
     resize: none;
     overflow: hidden;
     margin: auto;
@@ -67,7 +67,7 @@ $side-margin: 15px;
   %abstract-post-btn {
     @extend %button;
     @include dimensions(100px, 40px);
-    @include font(Montserrat, 14px, white);
+    @include font('Montserrat, Roboto, Lato, sans-serif', 14px, white);
     @include border(border, none, $brandColor, 0, 2px);
     background-color: $brandColor;
     display: inline-block;
@@ -108,7 +108,7 @@ $side-margin: 15px;
     }
 
     .pre-tag {
-      @include font(Roboto, 14px, white);
+      @include font('Roboto, Lato, sans-serif', 14px, white);
       display: inline-block;
       margin-left: 4px;
       margin-bottom: 4px;

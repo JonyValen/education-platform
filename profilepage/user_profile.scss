@@ -1,6 +1,7 @@
 @import '../globals-css/global';
 @import '../globals-css/navbar';
 @import '../globals-css/body';
+@import '../globals-css/postbox';
 
 %black-border {
   @include border(border, solid, $brandColor, 1.5px, 0);
@@ -18,20 +19,30 @@
   min-height: 240px;
   width: 100%;
   margin-bottom: 30px;
+  background-color: $lightGray;
 }
 
 .picture-box {
-  //@extend %black-border;
   @include dimensions(200px, 200px);
   margin: 40px 0 0 40px;
   margin-bottom: 20px;
   position: relative;
+  display: flex;
+  @include centerPos(true, true, true);
+
+  #change-picture {
+    display: none;
+    width: 80%;
+    position: absolute;
+    color: white;
+  }
 
   img {
     @include dimensions(100%, 100%);
+    border-radius: 0;
 
     &:hover {
-
+      filter: brightness(50%);
     }
   }
 }
@@ -40,19 +51,22 @@
   display: flex;
   position: relative;
   margin-bottom: 0;
+
+  button {
+    @include font(Lato, 16px, white);
+    @include custom-link-layout(white);
+    background-color: $brandColor;
+    border: none;
+    padding: 15px 29px;
+    text-align: center;
+    text-decoration: none;
+    min-width: 200px;
+    margin-right: 2px;
+    cursor: pointer;
+  }
 }
 
-.button-row > li > button {
-  @include font(Lato, 16px, white);
-  background-color: $brandColor;
-  border: none;
-  padding: 15px 29px;
-  text-align: center;
-  text-decoration: none;
-  min-width: 200px;
-  margin-right: 2px;
-}
-
+$col1ShiftHeight: 82px;
 .info-boxes {
   display: flex;
   width: 100%;
@@ -60,73 +74,177 @@
 
   .col-1 {
     flex-grow: 1;
-    max-width: 25%;
+    max-width: 28%;
+    position: relative;
+    margin-bottom: 20px;
 
-    > div {
-      > p {
-        @include font(Lato, 24px, $brandColor)
-        text-align: center;
-        text-decoration: underline;
+    > div > a {text-decoration: none;}
+  }
+}
+
+.arrowhead {
+  @extend %arrow;
+  //override default arrow border
+  @include border(border, solid, $brandColor transparent transparent transparent, 8px, 0);
+  margin-left: 7px;
+  position: relative;
+  top: 7px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.user-connect, .tag {
+  padding: 10px;
+  @include border(border-bottom, solid, $graySelect, 1px, 0);
+  @include font('Montserrat, Roboto, Lato, sans-serif', 20px, inherit);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $graySelect;
+  }
+}
+
+.user-status-icon {
+  @include dimensions(8px, 8px);
+  //border color is replaced so doesn't matter
+  @include border(border, solid, $graySelect, 2px, 100%);
+  margin-right: 7px;
+  font-size: 10px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.online {
+  background-color: green;
+  border-color: green;
+}
+
+$post-label-padding-top: 12px;
+$post-label-padding-bottom: 15px;
+$post-label-line-height: 35px;
+$post-label-height: ($post-label-padding-top + $post-label-padding-bottom + $post-label-line-height);
+$post-info-margin: 20px;
+$post-label-padding: $post-label-padding-top 20px $post-label-padding-bottom 20px;
+%post-info-children {
+  text-align: center;
+  font-size: 20px;
+  color: $brandColor;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+
+  %post-info-label {
+    @include border(border-bottom, solid, $brandColor, 3px);
+    padding: $post-label-padding;
+    line-height: $post-label-line-height;
+    @include font('Montserrat, Roboto, Lato, sans-serif', 20px, inherit);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+}
+
+.connect {
+  @extend %button;
+  @extend %post-info-children;
+  width: 100%;
+  z-index: 1;
+  background-color: $lightGray;
+  margin-bottom: 20px;
+  position: absolute;
+
+  .connect-label {
+    @extend %post-info-label;
+
+    &:hover {
+      background-color: $graySelect;
+    }
+  }
+}
+
+.intro, .gyde {
+  height: 250px;
+  top: 82px;
+  overflow: auto;
+  position: relative;
+}
+
+.intro {
+  @extend %generic;
+  @extend %post-info-children;
+  margin-bottom: 20px;
+
+  .intro-label {
+    @extend %post-info-label;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .intro-text {
+    @include font('Roboto, Lato, sans-serif', 16px, inherit);
+    margin-top: 5px;
+    padding: 0 10px;
+    text-align: left;
+  }
+}
+
+.gyde {
+  @extend %generic;
+  @extend %post-info-children;
+
+  .gyde-label {
+    @extend %post-info-label;
+    text-align: center;
+  }
+
+  .gyde-search {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+
+    .filter {
+      flex-grow: 1;
+      @include centerPos(true, true, false);
+      background-color: rgba(#3f6eba, 0.25);
+
+      > * {
+        margin-left: 0;
+        position: relative;
+        top: 12px;
       }
+    }
 
-      > a {
-        text-decoration: none;
-
-        > p {
-          @include font(Lato, 24px, $brandColor)
-          text-align: center;
-        }
-      }
+    input[name=search] {
+      @extend %std-searchbar;
+      flex-grow: 5;
+      display: block;
+      height: 35px;
+      @include custom-link-layout;
+      color: gray;
     }
 
   }
 }
 
-%left-box {
-  @extend %black-border;
-  margin-bottom: 20px;
-}
-
-.box-two {
-  @extend %left-box;
-  min-height: 70px;
-}
-
-.box-three, .box-four {
-  @extend %left-box;
-  min-height: 250px;
-}
-
-.box-four {
-  @extend %left-box;
-  text-align: center;
-
-  input[name=search]{
-    display: inline-block;
-  }
-}
-
 .col-2 {
   flex-grow: 2;
-  max-width: 65%;
+  max-width: 68%;
   position: relative;
 }
 
+$tabHeight: 50px;
 .tabs {
-  @include dimensions(100%, 50px);
+  @include dimensions(100%, $tabHeight);
   display: flex;
 }
 
 .tab {
-  @include border(border, solid solid none none, $brandColor white $brandColor $brandColor, 1.5px, 0);
+  @include border(border, solid solid none none, $brandColor white $brandColor $brandColor, 1.5px);
+  @include font(Lato, inherit, white);
   flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  @include centerText($tabHeight);
   background: $brandColor;
-  color: white;
   cursor: pointer;
-  font-family: Lato;
 }
 
 #contributors {

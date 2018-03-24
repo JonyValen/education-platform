@@ -8,7 +8,7 @@ $lightGray: #f0f0f0;
 }
 
 @mixin font($family, $size, $color) {
-  font-family: $family;
+  font-family: #{$family};
   font-size: $size;
   color: $color;
 }
@@ -53,10 +53,10 @@ $lightGray: #f0f0f0;
 
 @mixin centerPos($isFlex: false, $justifyContent: false, $alignItems: false){
   @if $isFlex {
-    margin: auto;
-  } @else {
     @if $justifyContent { justify-content: center; }
     @if $alignItems { align-items: center; }
+  } @else {
+    margin: auto;
   }
 }
 
@@ -72,7 +72,7 @@ $lightGray: #f0f0f0;
 
 %generic {
   background-color: white;
-  font-family: Roboto;
+  font-family: Roboto, Lato, sans-serif;
 }
 
 %std-searchbar {
