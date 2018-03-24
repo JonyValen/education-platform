@@ -6,14 +6,21 @@ $(document).ready(function(){
 
 function postBoxListener(){
   $("textarea").focusin(function(){
+    let numPosts = $(".feed").children().length
     $(this).height($(this).height() + 100)
     $("#post-button-options").append("<button class='privacy-btn'>Privacy</button>")
     $("#post-button-options").append("<button class='post-btn'>Create Post</button>")
+    for(let i = 0; i < numPosts; i++)
+      $("#i"+i).css("opacity", "0.5")
   })
   $("textarea").focusout(function(){
+    let numPosts = $(".feed").children().length
     $(".post-btn").remove()
     $(".privacy-btn").remove()
     $(this).height($(this).height() - 100)
+
+    for(let i = 0; i < numPosts; i++)
+      $("#i"+i).css("opacity", "1")
   })
   $(".post-tab").click(function(){
     let activeId = $(".active").attr("id")
