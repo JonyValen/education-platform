@@ -43,7 +43,7 @@ $post-info-height: calc(100vh - 130px);
       @include border(border-bottom, solid, $brandColor, 3px, 0);
       padding: $post-label-padding-top 20px $post-label-padding-bottom 20px;
       line-height: $post-label-line-height;
-      font-family: Montserrat;
+      font-family: $font-list;
       border-top-right-radius: 5px;
       border-top-left-radius: 5px;
     }
@@ -118,7 +118,7 @@ $post-info-height: calc(100vh - 130px);
 .user-status-icon {
   @include dimensions(8px, 8px);
   //border color is replaced so doesn't matter
-  @include border(border, solid, $graySelect, 2px, 100%);
+  @include border(border, solid, inherit, 2px, 100%);
   margin-right: 7px;
   font-size: 10px;
   vertical-align: middle;
@@ -189,53 +189,7 @@ button.load-more {
   }
 }
 
-.item {
-  @extend %generic;
-  margin-bottom: 15px;
-  min-height: 120px;
-  box-sizing: border-box;
-  box-shadow: $boxShadow;
-  border-radius: 5px;
-  overflow: auto;
-
-  .post-content {
-    margin: 25px 25px 0 25px;
-    position: relative;
-    display: block;
-    @include border(border-bottom, solid, $brandColor, 2px, 0);
-  }
-
-  .react {
-    text-align: right;
-    @include border(border-bottom, solid, gray, 5px, 0);
-    padding: 0 25px 0 25px;
-
-    button {
-      @extend %button;
-      padding: 8px;
-      background-color: transparent;
-    }
-
-    a {
-      padding: 8px;
-      height: 100%;
-      @include centerText(100%);
-      float: left;
-    }
-
-    @mixin hoverBGColor($selector, $color){
-      #{$selector} {
-        background-color: $color !important;
-      }
-    }
-
-    @include hoverBGColor('.endorse:hover', #ffa8c6);
-    @include hoverBGColor('.share:hover', $graySelect);
-    @include hoverBGColor('.liked', #c43a3a);
-
-    .liked {color: white;}
-  }
-}
+@import '../globals-css/post';
 
 //Right
 .filter-search {

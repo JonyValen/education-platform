@@ -22,7 +22,7 @@
 
 .post-tags, .create-post, .item, .filter-search .filter-searchbar {
   background-color: white;
-  font-family: Roboto; }
+  font-family: Roboto, Lato, sans-serif; }
 
 .create-post .create-post-contents input[name="enter-tag"], .filter-search .filter-searchbar input[name="filter-search-tags"] {
   border-style: none;
@@ -155,7 +155,7 @@ img.profile-pic {
       border-bottom-radius: 0;
       padding: 12px 20px 15px 20px;
       line-height: 35px;
-      font-family: Montserrat;
+      font-family: "Montserrat, Roboto, Lato, sans-serif";
       border-top-right-radius: 5px;
       border-top-left-radius: 5px; }
   .post-info .connect {
@@ -208,7 +208,7 @@ img.profile-pic {
   width: 8px;
   height: 8px;
   border-style: solid;
-  border-color: #d3d3d3;
+  border-color: inherit;
   border-width: 2px;
   border-radius: 100%;
   margin-right: 7px;
@@ -246,7 +246,7 @@ img.profile-pic {
     margin-bottom: 10px; }
   .create-post .post-tab {
     height: 40px;
-    font-family: Roboto, Lato, serif;
+    font-family: Roboto, Lato, sans-serif;
     font-size: 18px;
     color: white;
     border-style: solid solid none none;
@@ -271,7 +271,7 @@ img.profile-pic {
     padding: 8px;
     line-height: 15px;
     outline: none;
-    font-family: Roboto;
+    font-family: Roboto, Lato, sans-serif;
     resize: none;
     overflow: hidden;
     margin: auto;
@@ -288,7 +288,7 @@ img.profile-pic {
   .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"] {
     width: 100px;
     height: 40px;
-    font-family: Montserrat;
+    font-family: Montserrat, Roboto, Lato, sans-serif;
     font-size: 14px;
     color: white;
     border-style: none;
@@ -319,7 +319,7 @@ img.profile-pic {
       width: calc(100% - 10px);
       display: inline-block; }
     .create-post .create-post-contents .pre-tag {
-      font-family: Roboto;
+      font-family: Roboto, Lato, sans-serif;
       font-size: 14px;
       color: white;
       display: inline-block;
@@ -368,6 +368,45 @@ button.load-more {
     background-color: #d3d3d3;
     color: #f0f0f0; }
 
+.post-info .arrowhead {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent transparent #17223d;
+  border-width: 8px;
+  border-radius: 0;
+  display: inline-block; }
+
+.post-info .connect, .create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], button.load-more, .item .react button {
+  border-style: none;
+  cursor: pointer;
+  outline: none; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+.post-tags, .create-post, .item, .filter-search .filter-searchbar {
+  background-color: white;
+  font-family: Roboto, Lato, sans-serif; }
+
+.create-post .create-post-contents input[name="enter-tag"], .filter-search .filter-searchbar input[name="filter-search-tags"] {
+  border-style: none;
+  border-color: #17223d;
+  border-width: 0;
+  border-radius: 2px;
+  display: block;
+  padding-left: 4px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  outline: none; }
+  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .filter-search .filter-searchbar input[name="filter-search-tags"]::placeholder {
+    color: #919191; }
+
 .item {
   margin-bottom: 15px;
   min-height: 120px;
@@ -401,11 +440,11 @@ button.load-more {
       vertical-align: middle;
       float: left; }
     .item .react .endorse:hover {
-      background-color: #ffa8c6 !important; }
+      background-color: #ffa8c6; }
     .item .react .share:hover {
-      background-color: #d3d3d3 !important; }
+      background-color: #d3d3d3; }
     .item .react .liked {
-      background-color: #c43a3a !important; }
+      background-color: #c43a3a; }
     .item .react .liked {
       color: white; }
 
