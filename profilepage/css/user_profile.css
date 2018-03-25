@@ -57,24 +57,25 @@ ul.nav {
     flex-grow: 2; }
     ul.nav .logo-searchbar .logo {
       padding: 0 0 0 10px;
-      font-family: 'Cedarville Cursive';
+      font-family: Cedarville Cursive;
       font-size: 30px;
+      color: white;
       user-select: none; }
     ul.nav .logo-searchbar input[name="search"] {
+      border-style: none;
+      border-color: inherit;
+      border-width: inherit;
+      border-radius: 2px;
       min-width: 200px;
       min-height: 30px;
       margin-right: 50px;
       padding-left: 4px;
       background-color: #425d89;
-      border-style: none;
-      border-radius: 2px;
       font-size: 14px;
       color: #f0f0f0; }
-      ul.nav .logo-searchbar input[name="search"]:focus {
+      ul.nav .logo-searchbar input[name="search"]:focus, ul.nav .logo-searchbar input[name="search"]::placeholder {
         color: #f0f0f0;
         outline: none; }
-      ul.nav .logo-searchbar input[name="search"]::placeholder {
-        color: #f0f0f0; }
   ul.nav .user-links {
     display: flex;
     justify-content: flex-end;
@@ -140,18 +141,27 @@ ul {
     font-family: Roboto, Lato, sans-serif;
     font-size: 18px;
     color: white;
-    border-style: solid solid none none;
-    border-color: #17223d white #17223d #17223d;
-    border-width: 1.5px;
-    border-radius: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     border-bottom-width: 0;
     text-align: center;
     line-height: 40px;
     vertical-align: middle;
     flex-grow: 1;
     background-color: #17223d; }
+  .create-post #contrib-tab {
+    border-style: solid solid none none;
+    border-color: #17223d white #17223d #17223d;
+    border-width: 1.5px;
+    border-radius: 0; }
+  .create-post #attach-tab {
+    border-style: solid solid none none;
+    border-color: #17223d white #17223d #17223d;
+    border-width: 1.5px;
+    border-radius: 0; }
+  .create-post #tags-tab {
+    border-style: solid none none none;
+    border-color: #17223d;
+    border-width: 1.5px;
+    border-radius: 0; }
   .create-post .active {
     background-color: white;
     color: black; }

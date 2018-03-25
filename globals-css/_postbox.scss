@@ -23,13 +23,27 @@ $side-margin: 15px;
     @extend %button;
     height: $height;
     @include font('Roboto, Lato, sans-serif', 18px, white);
-    @include border(border, solid solid none none, $brandColor white $brandColor $brandColor, 1.5px);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     border-bottom-width: 0;
     @include centerText($height);
     flex-grow: 1;
     background-color: $brandColor;
+  }
+
+  $tab-list: '#contrib-tab', '#attach-tab', '#tags-tab';
+  @for $i from 1 through length($tab-list) {
+    $border-pattern: ();
+    $border-colors: ();
+
+    @if $i == length($tab-list) {
+      $border-pattern: solid none none none;
+      $border-colors: $brandColor;
+    } @else {
+      $border-pattern: solid solid none none;
+      $border-colors: $brandColor white $brandColor $brandColor;
+    }
+    #{nth($tab-list, $i)} {
+      @include border(border, $border-pattern, $border-colors, 1.5px);
+    }
   }
 
   .active {
