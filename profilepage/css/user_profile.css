@@ -37,45 +37,6 @@
   .create-post .create-post-contents input[name="enter-tag"]::placeholder, .gyde-search input[name=search]::placeholder {
     color: #919191; }
 
-.arrowhead {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-color: transparent transparent transparent #17223d;
-  border-width: 8px;
-  border-radius: 0;
-  display: inline-block; }
-
-.create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], .item .react button, .connect, .intro, .gyde {
-  border-style: none;
-  cursor: pointer;
-  outline: none; }
-
-.noselect {
-  -webkit-touch-callout: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none; }
-
-.create-post, .item {
-  background-color: white;
-  font-family: Roboto, Lato, sans-serif; }
-
-.create-post .create-post-contents input[name="enter-tag"], .gyde-search input[name=search] {
-  border-style: none;
-  border-color: #17223d;
-  border-width: 0;
-  border-radius: 2px;
-  display: block;
-  padding-left: 4px;
-  background-color: #f0f0f0;
-  font-size: 14px;
-  outline: none; }
-  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .gyde-search input[name=search]::placeholder {
-    color: #919191; }
-
 ul.nav {
   background-color: #17223d;
   width: 100%;
@@ -261,45 +222,6 @@ ul {
       .create-post .create-post-contents .pre-tag i {
         display: none;
         cursor: pointer; }
-
-.arrowhead {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-color: transparent transparent transparent #17223d;
-  border-width: 8px;
-  border-radius: 0;
-  display: inline-block; }
-
-.create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], .item .react button, .connect, .intro, .gyde {
-  border-style: none;
-  cursor: pointer;
-  outline: none; }
-
-.noselect {
-  -webkit-touch-callout: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none; }
-
-.create-post, .item {
-  background-color: white;
-  font-family: Roboto, Lato, sans-serif; }
-
-.create-post .create-post-contents input[name="enter-tag"], .gyde-search input[name=search] {
-  border-style: none;
-  border-color: #17223d;
-  border-width: 0;
-  border-radius: 2px;
-  display: block;
-  padding-left: 4px;
-  background-color: #f0f0f0;
-  font-size: 14px;
-  outline: none; }
-  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .gyde-search input[name=search]::placeholder {
-    color: #919191; }
 
 .item {
   margin-bottom: 15px;

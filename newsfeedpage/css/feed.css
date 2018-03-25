@@ -155,7 +155,7 @@ img.profile-pic {
       border-bottom-radius: 0;
       padding: 12px 20px 15px 20px;
       line-height: 35px;
-      font-family: "Montserrat, Roboto, Lato, sans-serif";
+      font-family: Montserrat, Roboto, Lato, sans-serif;
       border-top-right-radius: 5px;
       border-top-left-radius: 5px; }
   .post-info .connect {
@@ -367,45 +367,6 @@ button.load-more {
   button.load-more:hover {
     background-color: #d3d3d3;
     color: #f0f0f0; }
-
-.post-info .arrowhead {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-color: transparent transparent transparent #17223d;
-  border-width: 8px;
-  border-radius: 0;
-  display: inline-block; }
-
-.post-info .connect, .create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], button.load-more, .item .react button {
-  border-style: none;
-  cursor: pointer;
-  outline: none; }
-
-.noselect {
-  -webkit-touch-callout: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none; }
-
-.post-tags, .create-post, .item, .filter-search .filter-searchbar {
-  background-color: white;
-  font-family: Roboto, Lato, sans-serif; }
-
-.create-post .create-post-contents input[name="enter-tag"], .filter-search .filter-searchbar input[name="filter-search-tags"] {
-  border-style: none;
-  border-color: #17223d;
-  border-width: 0;
-  border-radius: 2px;
-  display: block;
-  padding-left: 4px;
-  background-color: #f0f0f0;
-  font-size: 14px;
-  outline: none; }
-  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .filter-search .filter-searchbar input[name="filter-search-tags"]::placeholder {
-    color: #919191; }
 
 .item {
   margin-bottom: 15px;
