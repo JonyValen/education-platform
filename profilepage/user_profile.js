@@ -1,9 +1,44 @@
 var numUsers = 4;
+var numPost = 4;
 
 $(document).ready(function(){
   /*CHANGE PROFILE PIC LISTENER*/
   changeProfilePicListener()
   /*END -- CHANGE PROFILE PIC LISTENER -- END*/
+
+  /*CHECKBOX LISTENER*/
+  checkBoxListener()
+  /*END -- CHECKBOX LISTENER -- END*/
+
+  /*AJAX RETRIEVE POSTS ASYNCHRONOUSLY*/
+  var i = 0
+  const requestPosts = {
+    url: '../globals-html/post.html',
+    async: true,
+    type: 'get',
+    success: data => updatePosts(data),
+    error: () => {
+      $(".feed").append(`<div class="item">Could not load posts. Please try again later.</div>`)
+    }
+  }
+
+  const updatePosts = data => {
+    if(i >= numPost) return
+    $(".feed").append(data)
+    $(".temp").attr("id", "i"+i)
+    $(".temp .topic").text("Sample Topic "+i)
+    $(".temp").removeClass("temp")
+    i++
+    $.ajax(requestPosts);
+  }
+
+  $.ajax(requestPosts);
+
+  $("button.load-more").click(() => {
+    numPost += 4
+    $.ajax(requestPosts);
+  })
+  /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
 
   /*CONNECT DIV LISTENER*/
   const connectLblHeight = $(".connect").height()
@@ -49,9 +84,13 @@ $(document).ready(function(){
 });
 
 function changeProfilePicListener(){
-  $(".picture-div").hover(() => $("#change-picture").show(), () => $("#change-picture").hide())
-  $("#change-picture").hover(() => {
-    $("#change-picture").show()
-    $(".picture-div").css("filter", "brightness(50%)")
-  }, () => $(".picture-div").css("filter", "brightness(100%)"))
+  $(".picture-box").hover(() => $("label[for=change-picture]").show(), () => $("label[for=change-picture]").hide())
+  $("label[for=change-picture]").hover(() => $("label[for=change-picture]").show())
+}
+
+function checkBoxListener(){
+  $(".category").click(function(){
+    let $checkBox = $(this).children("input[type=checkbox]")
+    $checkBox.prop("checked", !$checkBox.prop("checked"))
+  })
 }

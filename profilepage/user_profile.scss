@@ -2,6 +2,7 @@
 @import '../globals-css/navbar';
 @import '../globals-css/body';
 @import '../globals-css/postbox';
+@import '../globals-css/post';
 
 %black-border {
   @include border(border, solid, $brandColor, 1.5px, 0);
@@ -32,18 +33,20 @@
 
   #change-picture {
     display: none;
-    width: 80%;
+  }
+
+  label[for=change-picture] {
+    @include font(inherit, 20px, white);
+    display: none;
     position: absolute;
-    color: white;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
   }
 
   img {
     @include dimensions(100%, 100%);
     border-radius: 0;
-
-    &:hover {
-      filter: brightness(50%);
-    }
   }
 }
 
@@ -92,14 +95,20 @@ $col1ShiftHeight: 82px;
   transition: transform 0.3s ease-in-out;
 }
 
-.user-connect, .tag {
+.user-connect, .tag, .category {
   padding: 10px;
   @include border(border-bottom, solid, $graySelect, 1px, 0);
   @include font('Montserrat, Roboto, Lato, sans-serif', 20px, inherit);
   cursor: pointer;
 
-  &:hover {
-    background-color: $graySelect;
+  &.category {
+    font-size: 16px;
+    text-align: left;
+    @include userSelect(none);
+
+    label {
+      cursor: pointer;
+    }
   }
 }
 
@@ -136,93 +145,81 @@ $post-label-padding: $post-label-padding-top 20px $post-label-padding-bottom 20p
     @include border(border-bottom, solid, $brandColor, 3px);
     padding: $post-label-padding;
     line-height: $post-label-line-height;
-    @include font('Montserrat, Roboto, Lato, sans-serif', 20px, inherit);
+    @include font($font-list, 20px, inherit);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
   }
 }
 
-.connect {
-  @extend %button;
-  @extend %post-info-children;
-  width: 100%;
-  z-index: 1;
-  background-color: $lightGray;
-  margin-bottom: 20px;
-  position: absolute;
+$col-1-divs: '.connect', '.intro', '.gyde';
+@each $item in $col-1-divs {
+  #{$item} {
+    @extend %button;
+    @extend %post-info-children;
+    $i:index($col-1-divs, $item);
+    @if $i > 1 { //.intro, .gyde
+      height: 250px;
+      top: 82px;
+      overflow: auto;
+      position: relative;
+    } @else { //.CONNECT
+      width: 100%;
+      z-index: 1;
+      background-color: $lightGray;
+      margin-bottom: 20px;
+      position: absolute;
+    }
 
-  .connect-label {
-    @extend %post-info-label;
+    #{$item}-label {
+      @extend %post-info-label;
 
-    &:hover {
-      background-color: $graySelect;
+      @if $i  == 1 { //.CONNECT
+        &:hover {background-color: $graySelect;}
+      } @else if $i == 2 { //.intro
+        font-weight: normal;
+      }
     }
   }
 }
 
-.intro, .gyde {
-  height: 250px;
-  top: 82px;
-  overflow: auto;
-  position: relative;
-}
-
 .intro {
-  @extend %generic;
-  @extend %post-info-children;
   margin-bottom: 20px;
 
-  .intro-label {
-    @extend %post-info-label;
-    text-align: center;
-    font-weight: normal;
-  }
-
   .intro-text {
-    @include font('Roboto, Lato, sans-serif', 16px, inherit);
+    @include font(slice($font-list, 2), 16px, inherit);
     margin-top: 5px;
     padding: 0 10px;
     text-align: left;
   }
 }
 
-.gyde {
-  @extend %generic;
-  @extend %post-info-children;
+.gyde-search {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
 
-  .gyde-label {
-    @extend %post-info-label;
-    text-align: center;
+  .filter {
+    flex-grow: 1;
+    @include centerPos(true, true, false);
+    background-color: rgba(#3f6eba, 0.25);
+
+    > * {
+      margin-left: 0;
+      position: relative;
+      top: 12px;
+    }
   }
 
-  .gyde-search {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 0;
-
-    .filter {
-      flex-grow: 1;
-      @include centerPos(true, true, false);
-      background-color: rgba(#3f6eba, 0.25);
-
-      > * {
-        margin-left: 0;
-        position: relative;
-        top: 12px;
-      }
-    }
-
-    input[name=search] {
-      @extend %std-searchbar;
-      flex-grow: 5;
-      display: block;
-      height: 35px;
-      @include custom-link-layout;
-      color: gray;
-    }
-
+  input[name=search] {
+    @extend %std-searchbar;
+    flex-grow: 5;
+    display: block;
+    height: 35px;
+    @include custom-link-layout;
+    color: gray;
   }
+
 }
 
 .col-2 {
@@ -258,4 +255,8 @@ $tabHeight: 50px;
 .post-box {
   @include dimensions(100%, 25em);
   border: 1.5px solid #17223d;
+}
+
+.item {
+  font-family: slice($font-list, 2);
 }

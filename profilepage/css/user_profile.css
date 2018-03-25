@@ -7,7 +7,7 @@
   border-radius: 0;
   display: inline-block; }
 
-.create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], .connect {
+.create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], .item .react button, .connect, .intro, .gyde {
   border-style: none;
   cursor: pointer;
   outline: none; }
@@ -20,11 +20,11 @@
   -webkit-user-select: none;
   -ms-user-select: none; }
 
-.create-post, .intro, .gyde {
+.create-post, .item {
   background-color: white;
   font-family: Roboto, Lato, sans-serif; }
 
-.create-post .create-post-contents input[name="enter-tag"], .gyde .gyde-search input[name=search] {
+.create-post .create-post-contents input[name="enter-tag"], .gyde-search input[name=search] {
   border-style: none;
   border-color: #17223d;
   border-width: 0;
@@ -34,7 +34,46 @@
   background-color: #f0f0f0;
   font-size: 14px;
   outline: none; }
-  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .gyde .gyde-search input[name=search]::placeholder {
+  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .gyde-search input[name=search]::placeholder {
+    color: #919191; }
+
+.arrowhead {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent transparent #17223d;
+  border-width: 8px;
+  border-radius: 0;
+  display: inline-block; }
+
+.create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], .item .react button, .connect, .intro, .gyde {
+  border-style: none;
+  cursor: pointer;
+  outline: none; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+.create-post, .item {
+  background-color: white;
+  font-family: Roboto, Lato, sans-serif; }
+
+.create-post .create-post-contents input[name="enter-tag"], .gyde-search input[name=search] {
+  border-style: none;
+  border-color: #17223d;
+  border-width: 0;
+  border-radius: 2px;
+  display: block;
+  padding-left: 4px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  outline: none; }
+  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .gyde-search input[name=search]::placeholder {
     color: #919191; }
 
 ul.nav {
@@ -223,6 +262,86 @@ ul {
         display: none;
         cursor: pointer; }
 
+.arrowhead {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent transparent #17223d;
+  border-width: 8px;
+  border-radius: 0;
+  display: inline-block; }
+
+.create-post .post-tab, .create-post .post-btn, .create-post .privacy-btn, .create-post .create-post-contents label[for="upload-files"], .item .react button, .connect, .intro, .gyde {
+  border-style: none;
+  cursor: pointer;
+  outline: none; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+.create-post, .item {
+  background-color: white;
+  font-family: Roboto, Lato, sans-serif; }
+
+.create-post .create-post-contents input[name="enter-tag"], .gyde-search input[name=search] {
+  border-style: none;
+  border-color: #17223d;
+  border-width: 0;
+  border-radius: 2px;
+  display: block;
+  padding-left: 4px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  outline: none; }
+  .create-post .create-post-contents input[name="enter-tag"]::placeholder, .gyde-search input[name=search]::placeholder {
+    color: #919191; }
+
+.item {
+  margin-bottom: 15px;
+  min-height: 120px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 5px;
+  overflow: auto; }
+  .item .post-content {
+    margin: 25px 25px 0 25px;
+    position: relative;
+    display: block;
+    border-bottom-style: solid;
+    border-bottom-color: #17223d;
+    border-bottom-width: 2px;
+    border-bottom-radius: 0; }
+  .item .react {
+    text-align: right;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    border-bottom-width: 5px;
+    border-bottom-radius: 0;
+    padding: 0 25px 0 25px; }
+    .item .react button {
+      padding: 8px;
+      background-color: transparent; }
+    .item .react a {
+      padding: 8px;
+      height: 100%;
+      text-align: center;
+      line-height: 100%;
+      vertical-align: middle;
+      float: left; }
+    .item .react .endorse:hover {
+      background-color: #ffa8c6; }
+    .item .react .share:hover {
+      background-color: #d3d3d3; }
+    .item .react .liked {
+      background-color: #c43a3a; }
+    .item .react .liked {
+      color: white; }
+
 .banner-box {
   border-style: solid;
   border-color: #17223d;
@@ -252,16 +371,20 @@ ul {
   justify-content: center;
   align-items: center; }
   .picture-box #change-picture {
+    display: none; }
+  .picture-box label[for=change-picture] {
+    font-family: inherit;
+    font-size: 20px;
+    color: white;
     display: none;
-    width: 80%;
     position: absolute;
-    color: white; }
+    top: 8px;
+    right: 10px;
+    cursor: pointer; }
   .picture-box img {
     width: 100%;
     height: 100%;
     border-radius: 0; }
-    .picture-box img:hover {
-      filter: brightness(50%); }
 
 .button-row {
   display: flex;
@@ -304,7 +427,7 @@ ul {
   top: 7px;
   transition: transform 0.3s ease-in-out; }
 
-.user-connect, .tag {
+.user-connect, .tag, .category {
   padding: 10px;
   border-bottom-style: solid;
   border-bottom-color: #d3d3d3;
@@ -314,8 +437,17 @@ ul {
   font-size: 20px;
   color: inherit;
   cursor: pointer; }
-  .user-connect:hover, .tag:hover {
-    background-color: #d3d3d3; }
+  .user-connect.category, .tag.category, .category.category {
+    font-size: 16px;
+    text-align: left;
+    -webkit-touch-callout: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; }
+    .user-connect.category label, .tag.category label, .category.category label {
+      cursor: pointer; }
 
 .user-status-icon {
   width: 8px;
@@ -362,7 +494,15 @@ ul {
   .connect .connect-label:hover {
     background-color: #d3d3d3; }
 
-.intro, .gyde {
+.intro {
+  height: 250px;
+  top: 82px;
+  overflow: auto;
+  position: relative; }
+  .intro .intro-label {
+    font-weight: normal; }
+
+.gyde {
   height: 250px;
   top: 82px;
   overflow: auto;
@@ -370,9 +510,6 @@ ul {
 
 .intro {
   margin-bottom: 20px; }
-  .intro .intro-label {
-    text-align: center;
-    font-weight: normal; }
   .intro .intro-text {
     font-family: Roboto, Lato, sans-serif;
     font-size: 16px;
@@ -381,23 +518,20 @@ ul {
     padding: 0 10px;
     text-align: left; }
 
-.gyde .gyde-label {
-  text-align: center; }
-
-.gyde .gyde-search {
+.gyde-search {
   width: 100%;
   display: flex;
   position: absolute;
   bottom: 0; }
-  .gyde .gyde-search .filter {
+  .gyde-search .filter {
     flex-grow: 1;
     justify-content: center;
     background-color: rgba(63, 110, 186, 0.25); }
-    .gyde .gyde-search .filter > * {
+    .gyde-search .filter > * {
       margin-left: 0;
       position: relative;
       top: 12px; }
-  .gyde .gyde-search input[name=search] {
+  .gyde-search input[name=search] {
     flex-grow: 5;
     display: block;
     height: 35px;
@@ -441,3 +575,6 @@ ul {
   width: 100%;
   height: 25em;
   border: 1.5px solid #17223d; }
+
+.item {
+  font-family: Roboto, Lato, sans-serif; }
