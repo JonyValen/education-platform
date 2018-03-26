@@ -114,13 +114,7 @@ $(document).ready(function(){
     $(".selected-post").removeClass("selected-post")
     $(this).parent().addClass("selected-post")
     $(".tags").html("")
-    if($(".connect").children(".online-users").length){
-      $(".online-users").html("")
-    } else{
-      $(".arrowhead").addClass("rotate")
-      $(".connect").height($(".connect").parent().height())
-      $(".connect").append("<div class='online-users'></div>")
-    }
+    $(".online-users").html("")
     $.ajax(connectUsers)
     $.ajax(requestTags)
     j = 0

@@ -415,8 +415,7 @@ button.load-more {
     .item .react .share:hover {
       background-color: #d3d3d3; }
     .item .react .liked {
-      background-color: #c43a3a; }
-    .item .react .liked {
+      background-color: #c43a3a;
       color: white; }
 
 .filter-search {
