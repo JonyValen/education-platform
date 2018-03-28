@@ -33,15 +33,20 @@
       float: left;
     }
 
-    $hoverSelector: '.endorse:hover', '.share:hover', '.liked';
-    $hoverSelectorVals: #ffa8c6, $graySelect, #c43a3a;
-    @each $item in  $hoverSelector {
-      $i: index($hoverSelector, $item);
-      #{$item} {
-        background-color: nth($hoverSelectorVals, $i);
+    $hoverSelector: (
+      '.endorse:hover': #ffa8c6,
+      '.share:hover': $graySelect,
+      '.liked': #c43a3a
+    );
+
+    @each $key, $value in  $hoverSelector {
+      #{$key} {
+        background-color: $value;
+
+        @if $key == '.liked' {
+          color: white;
+        }
       }
     }
-
-    .liked {color: white;}
   }
 }

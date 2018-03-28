@@ -1,3 +1,0 @@
-First commit.
-
-Testing merge/cloning conflict with Windows and Git.

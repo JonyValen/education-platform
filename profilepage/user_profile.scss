@@ -75,20 +75,28 @@ $col1ShiftHeight: 82px;
   width: 100%;
   justify-content: space-between;
 
+  $num-cols: 2;
+  @for $i from 1 through $num-cols {
+    .col-#{$i} {
+      flex-grow: $i;
+      position: relative;
+    }
+  }
+
   .col-1 {
-    flex-grow: 1;
     max-width: 28%;
-    position: relative;
     margin-bottom: 20px;
 
     > div > a {text-decoration: none;}
   }
+
+  .col-2 {max-width: 68%;}
 }
 
 .arrowhead {
   @extend %arrow;
   //override default arrow border
-  @include border(border, solid, $brandColor transparent transparent transparent, 8px, 0);
+  @include border(border, solid, $brandColor transparent transparent transparent, 8px);
   margin-left: 7px;
   position: relative;
   top: 7px;
@@ -98,7 +106,7 @@ $col1ShiftHeight: 82px;
 .user-connect, .tag, .category {
   padding: 10px;
   @include border(border-bottom, solid, $graySelect, 1px, 0);
-  @include font('Montserrat, Roboto, Lato, sans-serif', 20px, inherit);
+  @include font($font-list, 20px, inherit);
   cursor: pointer;
 
   &.category {
@@ -220,41 +228,6 @@ $col-1-divs: '.connect', '.intro', '.gyde';
     color: gray;
   }
 
-}
-
-.col-2 {
-  flex-grow: 2;
-  max-width: 68%;
-  position: relative;
-}
-
-$tabHeight: 50px;
-.tabs {
-  @include dimensions(100%, $tabHeight);
-  display: flex;
-}
-
-.tab {
-  @include border(border, solid solid none none, $brandColor white $brandColor $brandColor, 1.5px);
-  @include font(Lato, inherit, white);
-  flex-grow: 1;
-  position: relative;
-  @include centerText($tabHeight);
-  background: $brandColor;
-  cursor: pointer;
-}
-
-#contributors {
-  border-left-style: solid;
-}
-
-#tags {
-  border-right-style: none;
-}
-
-.post-box {
-  @include dimensions(100%, 25em);
-  border: 1.5px solid #17223d;
 }
 
 .item {
