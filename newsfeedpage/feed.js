@@ -3,8 +3,7 @@ const numUsers = 3
 const numTags = 6
 
 $(document).ready(function(){
-  const connectLblHeight = $(".connect").height()
-  $(".connect").height(connectLblHeight) //not sure why this is needed? some css sizing issues?
+  let firstLoad = true
   /*ENDORSE BUTTON LISTENERS*/
   //Note: endorse comes from ajax call, so must use this particular listener
   endorseBtnListener()
@@ -15,22 +14,27 @@ $(document).ready(function(){
   /*END --- SHARE BUTTON LISTENERS --- END*/
 
   /*AJAX RETRIEVE POSTS ASYNCHRONOUSLY*/
-  var i = 0
+  let i = j = k = l = 0
   const requestPosts = {
     url: '../globals-html/post.html',
     async: true,
     type: 'get',
     success: data => updatePosts(data),
-    error: () => {
-      $(".feed").append('<div class="item">Could not load posts. Please try again later.</div>')
-    }
+    error: () => $(".feed").append('<div class="item">Could not load posts. Please try again later.</div>')
   }
 
   const updatePosts = data => {
-    if(i >= numPost) return
+    if(i >= numPost) {
+      if(firstLoad){
+        $("#i0").addClass("selected-post")
+        firstLoad = false
+        getUserTags()
+      }
+      return
+    }
     $(".feed").append(data)
-    $(".temp").attr("id", "i"+i)
-    $(".temp .topic").text("Sample Topic "+i)
+    $(".temp").attr("id", `i${i}`)
+    $(".temp .topic").text(`Sample Topic ${i}`)
     $(".temp").removeClass("temp")
     i++
     $.ajax(requestPosts);
@@ -45,7 +49,6 @@ $(document).ready(function(){
   /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
 
   /*CONNECT DIV LISTENER*/
-  var j = 0
   const getUsers = data => {
     if(j >= numUsers) return
     $(".online-users").append(data)
@@ -67,32 +70,16 @@ $(document).ready(function(){
       j++
     }
   }
-
-  $(".connect").click(function(){
-    if($(this).children(".online-users").length){
-      $(this).height(connectLblHeight)
-      $(".online-users").remove()
-      $(".connect .arrowhead").removeClass("rotate")
-    }  else {
-      $(this).height($(this).parent().height())
-      $(".connect .arrowhead").addClass("rotate")
-      $(this).append("<div class='online-users'></div>")
-      if($(".selected-post")[0]){
-          $.ajax(connectUsers)
-          j = 0
-      } else $(".online-users").append("<p class='post-notif'>Click on a post to view its contributors.</p>")
-    }
-  })
   /*END --- CONNECT DIV LISTENER --- END*/
 
   /*POST TAGS DIV LISTENER*/
-  var k = 0
   const getTags = data => {
     if(k >= numTags) return
     $(".tags").addClass("related-tags")
     $(".related-tags").append(data)
     const index = $(".selected-post").attr("id")[1]
-    $(" .related-tags .temp-tag .tag-name").text("Tag "+(index*numTags+k))
+    $(" .related-tags .temp-tag .tag-name").text(`Tag ${index*numTags+k}`)
+    $(".related-tags .temp-tag").append('<div class="arrowUp"></div><div class="arrowDown"></div>')
     $(".related-tags .temp-tag").removeClass("temp-tag")
     k++
     $.ajax(requestTags)
@@ -110,25 +97,20 @@ $(document).ready(function(){
   /*END --- POST TAGS DIV LISTENER -- END*/
 
   /*SELECT POST LISTENER*/
-  $(document).on("click", ".post-content", function(){
+  $(document).on("click", ".item", function(){
     $(".selected-post").removeClass("selected-post")
-    $(this).parent().addClass("selected-post")
-    $(".tags").html("")
-    $(".online-users").html("")
-    $.ajax(connectUsers)
-    $.ajax(requestTags)
-    j = 0
-    k = 0
+    $(this).addClass("selected-post")
+    getUserTags()
   })
   /*END --- SELECT POST LISTENER --- END*/
 
   /*FILTER SEARCH LISTENER*/
-  let l = 0
   const getFilterTags = data => {
     if(l >= numTags) return
+    $(".post-tags").css('max-height', `calc(95% - ${$(".filter-searchbar").height()}px)`)
     $(".tags:not('.related-tags')").addClass("filter-tags")
     $(".filter-tags").append(data)
-    $(".filter-tags .temp-tag .tag-name").text("Tag "+l)
+    $(".filter-tags .temp-tag .tag-name").html(`Tag ${l}`)
     $(".temp-tag").removeClass("temp-tag")
     l++
     $.ajax(requestFilterTags)
@@ -156,14 +138,20 @@ $(document).ready(function(){
 
   /*RETRIEVE NOTIFICATIONS*/
   /*END --- RETRIEVE NOTIFICATIONS --- END*/
+
+  const getUserTags = () => {
+    $(".tags").html("")
+    $(".online-users").html("")
+    $.ajax(connectUsers)
+    $.ajax(requestTags)
+    j = 0
+    k = 0
+  }
 })
 
 function endorseBtnListener(){
   $(document).on("click", ".endorse", function(){
-    if($(this).hasClass("liked"))
-      $(this).removeClass("liked")
-    else
-      $(this).addClass("liked")
+    $(this).hasClass("liked") ? $(this).removeClass("liked"): $(this).addClass("liked")
   })
 }
 

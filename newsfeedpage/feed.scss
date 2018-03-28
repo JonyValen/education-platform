@@ -17,80 +17,114 @@
   }
 }
 
+$box-height: calc(100vh - 130px);
+$box-label-padding-top: 12px;
+$box-label-padding-bottom: 15px;
+$box-label-line-height: 35px;
+$box-label-height: ($box-label-padding-top + $box-label-padding-bottom + $box-label-line-height);
+$box-margin: 20px;
+
+%box-children {
+  text-align: center;
+  font-size: 20px;
+  color: $brandColor;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+
+  %box-label {
+    @include border(border-bottom, solid, $brandColor, 3px, 0);
+    padding: $box-label-padding-top 20px $box-label-padding-bottom 20px;
+    line-height: $box-label-line-height;
+    font-family: $font-list;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+}
+
+%box-content-layout {
+  padding: 10px;
+  @include border(border-bottom, solid, $graySelect, 1px, 0);
+  font-family: $font-list;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $graySelect;
+  }
+}
+
 //LEFT
-$post-info-height: calc(100vh - 130px);
 .post-info {
-  @include dimensions(18vw, $post-info-height);
+  @include dimensions(18vw, $box-height);
   overflow: auto;
   position: fixed;
   margin-left: 0;
   left: 2vw;
 
-  $post-label-padding-top: 12px;
-  $post-label-padding-bottom: 15px;
-  $post-label-line-height: 35px;
-  $post-label-height: ($post-label-padding-top + $post-label-padding-bottom + $post-label-line-height);
-  $post-info-margin: 20px;
-  %post-info-children {
-    text-align: center;
-    font-size: 20px;
-    color: $brandColor;
-    background-color: white;
-    border-radius: 5px;
-    transition: all 0.2s ease;
-
-    %post-info-label {
-      @include border(border-bottom, solid, $brandColor, 3px, 0);
-      padding: $post-label-padding-top 20px $post-label-padding-bottom 20px;
-      line-height: $post-label-line-height;
-      font-family: $font-list;
-      border-top-right-radius: 5px;
-      border-top-left-radius: 5px;
-    }
-  }
-
   .connect {
-    @extend %button;
-    @extend %post-info-children;
-    width: 100%;
+    @extend %box-children;
+    @include dimensions(100%, 100%);
     position: absolute;
     z-index: 1;
-    background-color: $lightGray;
+    background-color: white;
 
     .connect-label {
-      @extend %post-info-label;
+      @extend %box-label;
+    }
 
-      &:hover {
-        background-color: $graySelect;
+    .user-connect {
+      @extend %box-content-layout;
+
+      .user-status-icon {
+        @include dimensions(8px, 8px);
+        //border color is replaced so doesn't matter
+        @include border(border, solid, inherit, 2px, 100%);
+        margin-right: 7px;
+        font-size: 10px;
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      .online {
+        background-color: green;
+        border-color: green;
       }
     }
   }
+}
 
-  .post-tags {
-    @extend %post-info-children;
-    $height: calc(#{$post-info-height} - (#{$post-label-height} + #{$post-info-margin}));
-    @include dimensions(inherit, $height);
-    top: ($post-label-height + $post-info-margin);
+$arrows: (
+  'Down': bottom,
+  'Right': right,
+  'Up': top,
+  'Left': left,
+);
 
-    .tags-label {
-      @extend %post-info-label;
+@each $key, $value in $arrows {
+  .arrow#{$key} {
+    $border-pattern: ();
+    @for $j from 1 through 4 {
+      @if $j == index($arrows, $key $value) {
+        $border-pattern: append($border-pattern, $brandColor);
+      } @else {
+        $border-pattern: append($border-pattern, transparent);
+      }
     }
-  }
 
-  .arrowhead {
     @extend %arrow;
     //override default arrow border
-    @include border(border, solid, $brandColor transparent transparent transparent, 8px, 0);
-    margin-left: 7px;
+    @include border(border, solid, $border-pattern, 8px, 0);
+    margin-left: 12px;
     position: relative;
-    top: 7px;
+    #{$value}: -4px;
     transition: transform 0.3s ease-in-out;
   }
+}
 
-  .online-users, .tags {
-    @include font(Roboto, 16px, black);
-    overflow: auto;
-  }
+.online-users, .tags {
+  @include font(Roboto, 16px, black);
+  overflow: auto;
 }
 
 .rotate {
@@ -102,32 +136,6 @@ $post-info-height: calc(100vh - 130px);
   padding: 10px 10px;
   font-size: 20px;
   background-color: #f9f9f9;
-}
-
-.user-connect, .tag {
-  padding: 10px;
-  @include border(border-bottom, solid, $graySelect, 1px, 0);
-  font-family: Montserrat;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $graySelect;
-  }
-}
-
-.user-status-icon {
-  @include dimensions(8px, 8px);
-  //border color is replaced so doesn't matter
-  @include border(border, solid, inherit, 2px, 100%);
-  margin-right: 7px;
-  font-size: 10px;
-  vertical-align: middle;
-  display: inline-block;
-}
-
-.online {
-  background-color: green;
-  border-color: green;
 }
 
 .post-tags {
@@ -193,27 +201,59 @@ button.load-more {
 
 //Right
 .filter-search {
-  @include dimensions(18vw, $post-info-height);
+  @include dimensions(18vw, $box-height);
   position: fixed;
   right: 2vw;
 
+  $lbl-fontsize: 20px;
+  $lbl-padding: 10px;
+  $lbl-height: ($lbl-fontsize+2*$lbl-padding);
+  $bar-height: 25px;
+  $padding-bottom: 15px;
+  $margin-bottom: 20px;
+  $total-height: ($lbl-height+$bar-height+$padding-bottom+$margin-bottom);
+  $placeholder-margin: 5%;
   .filter-searchbar {
     @extend %generic;
+    max-height: (50% - $placeholder-margin);
     border-radius: 5px;
     position: relative;
-    height: 100%;
+    padding-bottom: $padding-bottom;
+    margin-bottom: $margin-bottom;
+    overflow: auto;
 
     .filter-search-label {
       display: block;
       text-align: center;
-      @include font(Montserrat, 20px, $brandColor);
-      padding: 10px;
+      @include font($font-list, $lbl-fontsize, $brandColor);
+      padding: $lbl-fontsize;
     }
 
     input[name="filter-search-tags"] {
       @extend %std-searchbar;
-      @include dimensions(90%, 25px);
-      margin: auto;
+      @include dimensions(90%, $bar-height);
+      margin: auto auto 10px auto;
+    }
+
+    .filter-tags {
+      margin: 0 3px;
+
+      .tag {
+        @extend .pre-tag;
+      }
+    }
+  }
+
+  .post-tags {
+    @extend %box-children;
+    max-height: calc(100% - #{$placeholder-margin} - #{$total-height});
+
+    .tags-label {
+      @extend %box-label;
+    }
+
+    .tag {
+      @extend %box-content-layout;
     }
   }
 }

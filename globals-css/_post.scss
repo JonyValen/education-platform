@@ -1,7 +1,7 @@
 .item {
   @extend %generic;
   margin-bottom: 15px;
-  min-height: 120px;
+  @include minmax(120px, 240px);
   box-sizing: border-box;
   box-shadow: $boxShadow;
   border-radius: 5px;

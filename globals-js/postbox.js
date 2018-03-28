@@ -42,12 +42,12 @@ function postBoxListener(){
     $("#files-list").text("")
     let filesToUpload = this.files;
     for(let i = 0; i < filesToUpload.length; i++)
-      $("#files-list").append(filesToUpload[i].name+"<br/>")
+      $("#files-list").append(`${filesToUpload[i].name}<br/>`)
   })
   $("input[name='enter-tag']").keypress(function(e) {
     let key = e.which || e.keyCode
     if(key == 13){
-      $(".tag-list").append("<div class='pre-tag'>"+$(this).val()+" <i class='fa fa-times remove-tag'></i></i></div>")
+      $(".tag-list").append(`<div class='pre-tag'>${$(this).val()}<i class='fa fa-times remove-tag'></i></i></div>`)
       $(this).val("")
     }
   })

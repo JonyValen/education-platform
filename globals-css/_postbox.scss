@@ -120,20 +120,20 @@ $side-margin: 15px;
       width: calc(100% - 10px);
       display: inline-block;
     }
+  }
+}
 
-    .pre-tag {
-      @include font('Roboto, Lato, sans-serif', 14px, white);
-      display: inline-block;
-      margin-left: 4px;
-      margin-bottom: 4px;
-      border-radius: 5px;
-      background-color: gray;
-      padding: 6px;
+.pre-tag {
+  @include font('Roboto, Lato, sans-serif', 14px, white);
+  display: inline-block;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  background-color: gray;
+  padding: 6px;
 
-      i {
-        display: none;
-        cursor: pointer;
-      }
-    }
+  i {
+    display: none;
+    cursor: pointer;
   }
 }
