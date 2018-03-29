@@ -1,0 +1,139 @@
+$boxShadow: 1px 1px 2px gray;
+$navyBlue: #425d89;
+$height: 40px;
+$side-margin: 15px;
+
+.create-post {
+  @extend %generic;
+  width: 100%;
+  padding: 0 0 10px;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: $boxShadow;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .post-tabs {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .post-tab {
+    @extend %button;
+    height: $height;
+    @include font('Roboto, Lato, sans-serif', 18px, white);
+    border-bottom-width: 0;
+    @include centerText($height);
+    flex-grow: 1;
+    background-color: $brandColor;
+  }
+
+  $tab-list: '#contrib-tab', '#attach-tab', '#tags-tab';
+  @for $i from 1 through length($tab-list) {
+    $border-pattern: ();
+    $border-colors: ();
+
+    @if $i == length($tab-list) {
+      $border-pattern: solid none none none;
+      $border-colors: $brandColor;
+    } @else {
+      $border-pattern: solid solid none none;
+      $border-colors: $brandColor white $brandColor $brandColor;
+    }
+    #{nth($tab-list, $i)} {
+      @include border(border, $border-pattern, $border-colors, 1.5px);
+    }
+  }
+
+  .active {
+    background-color: white;
+    color: black;
+  }
+
+  textarea[name="write-post"] {
+    @include dimensions(calc(100% - #{$side-margin}), 35px);
+    border-radius: 3px;
+    padding: 8px;
+    line-height: 15px;
+    outline: none;
+    font-family: Roboto, Lato, sans-serif;
+    resize: none;
+    overflow: hidden;
+    margin: auto;
+    display: block;
+    box-sizing: inherit;
+
+    /* all style changes will ease-in-out for 0.2s */
+    transition: all 0.2s;
+
+    :focus {
+      overflow: auto;
+      height: 90px;
+      margin: 0 0 20px 0;
+    }
+  }
+
+  #post-button-options {
+    text-align: right;
+  }
+
+  %abstract-post-btn {
+    @extend %button;
+    @include dimensions(100px, 40px);
+    @include font('Montserrat, Roboto, Lato, sans-serif', 14px, white);
+    @include border(border, none, $brandColor, 0, 2px);
+    background-color: $brandColor;
+    display: inline-block;
+  }
+
+  .post-btn, .privacy-btn {
+    @extend %abstract-post-btn;
+    margin: 10px $side-margin auto auto;
+  }
+
+  .create-post-contents {
+    margin-left: $side-margin;
+    position: relative;
+    display: none;
+
+    #upload-files {
+      display: none;
+    }
+
+    label[for="upload-files"] {
+      @extend %abstract-post-btn;
+      @include centerText($height);
+    }
+
+    #files-list {
+      line-height: $height/1.5;
+    }
+
+    input[name="enter-tag"] {
+      @extend %std-searchbar;
+      @include dimensions(250px, 30px);
+    }
+
+    .tag-list {
+      margin-top: 5px;
+      width: calc(100% - 10px);
+      display: inline-block;
+    }
+  }
+}
+
+.pre-tag {
+  @include font('Roboto, Lato, sans-serif', 14px, white);
+  display: inline-block;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  border-radius: 5px;
+  background-color: gray;
+  padding: 6px;
+
+  i {
+    display: none;
+    cursor: pointer;
+  }
+}

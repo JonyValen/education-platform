@@ -1,0 +1,232 @@
+@import '../globals-css/global';
+@import '../globals-css/body';
+@import '../globals-css/navbar';
+
+.feed-btns {
+  margin: 0 auto auto auto;
+  background-color: white;
+  max-width: 93%;
+  border-radius: 2px;
+  font-family: Lato;
+
+  li {
+    display: inline-block;
+    padding: 10px;
+  }
+
+  a {
+    color: $brandColor;
+  }
+}
+
+.center-content {
+  @include minmax(width, 500px, 90%);
+  margin: 0 auto 10px auto;
+  position: relative;
+  /*background-color: #ededed;*/
+  padding: 0 0 20px 0;
+}
+
+article {
+  @include border(border, none, $brandColor, 5px, 0);
+  background-color: white;
+  margin-top: 20px;
+  position: relative;
+  padding: 30px;
+  color: #6d6d6d;
+  border-bottom-style: solid;
+  animation-duration: 0.6s !important;
+  font-family: Montserrat;
+
+  p {
+    font-family: Lato;
+  }
+}
+
+.selected-feed-type {
+  @include border(border-bottom, solid, $brandColor, 3px, 0);
+  padding-bottom: 7px;
+}
+
+.arrowhead {
+  @extend %arrow;
+}
+
+/*HOME*/
+div.banner {
+  @include dimensions(100%, 300px);
+  @include border(border, none, $brandColor, 5px, 0);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-style: solid;
+  padding: 0;
+}
+
+img[alt="ucla-banner"] {
+  width: 100%;
+  margin-top: -50px;
+  filter: brightness(50%);
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+h1.welcome-title {
+  @include font('Cedarville Cursive', 72px, white);
+  position: absolute;
+  bottom: 25px;
+}
+
+.intro {
+  text-align: center;
+
+  h1.intro-head {
+    @include font(inherit, 30px, inherit);
+    padding-top: 10px;
+    margin: 0;
+  }
+
+  p.intro-head {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .intro-body {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  .purpose {
+    flex-grow: 1;
+    max-width: 45%;
+    margin: 10px;
+    background-color: $brandColor;
+    border-radius: 3px;
+    color: white;
+    padding-bottom: 15px;
+  }
+}
+
+button {
+  @include border(border, solid, white, 2px, 2px);
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-family: Montserrat;
+}
+
+.intro button {
+  @include dimensions(100px, 25px);
+  border-color: white;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color:$brandColor;
+    font-weight: bolder;
+  }
+}
+
+.contact {
+  text-align: center;
+  animation-delay: 0.1s;
+
+  h1 {
+    @include font(inherit, 30px, inherit);
+  }
+}
+
+%contact-btns {
+  @include border(border, solid, $brandColor, 2px, 2px);
+  background-color: transparent;
+  font-weight: bolder;
+  color:$brandColor;
+  font-size: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color:$brandColor;
+    color: white;
+  }
+}
+
+#sign-up {
+  @extend %contact-btns;
+  @include dimensions(150px, 40px);
+}
+
+.contact i {
+  @extend %contact-btns;
+  @include dimensions(40px, 40px);
+  font-size: 25px;
+  line-height: 40px;
+  margin-right: 20px;
+}
+
+/*CSS FOR POSTS IN THE TRENDING/LATEST TAB*/
+img.profile-pic {
+  @include dimensions(30px, 30px);
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 5px;
+}
+
+.item {
+  background-color: white;
+  font-family: Roboto;
+  margin-bottom: 15px;
+  min-height: 120px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 2px gray;
+  border-radius: 5px;
+  overflow: auto;
+
+  > .post-content {
+    @include border(border-bottom, solid, $brandColor, 2px, inherit);
+    margin: 25px 25px 0 25px;
+    position: relative;
+    display: block;
+
+    .author, .date {
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .date {
+      float: right;
+      clear: both;
+    }
+
+    .topic {
+      font-size: 26px;
+    }
+
+    .abstract {
+      margin-left: 15px;
+    }
+  }
+
+  > .react {
+    @include border(border-bottom, solid, $brandColor, 5px, inherit);
+    text-align: right;
+    padding: 0 25px 0 25px;
+
+    button {
+      padding: 8px;
+      border-style: none;
+      cursor: pointer;
+      outline: none;
+      background-color: transparent;
+    }
+  }
+}

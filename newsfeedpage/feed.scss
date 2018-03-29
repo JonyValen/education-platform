@@ -1,0 +1,259 @@
+@import '../globals-css/global';
+@import '../globals-css/body';
+
+//CSS FOR NAVIGATION BAR
+@import '../globals-css/navbar';
+
+.center-content {
+  @include minmax(width, 90%, 500px);
+  margin: 0 auto 10px auto;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  padding: 30px 0 20px 0;
+
+  > div {
+    min-height: 300px;
+  }
+}
+
+$box-height: calc(100vh - 130px);
+$box-label-padding-top: 12px;
+$box-label-padding-bottom: 15px;
+$box-label-line-height: 35px;
+$box-label-height: ($box-label-padding-top + $box-label-padding-bottom + $box-label-line-height);
+$box-margin: 20px;
+
+%box-children {
+  text-align: center;
+  font-size: 20px;
+  color: $brandColor;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+
+  %box-label {
+    @include border(border-bottom, solid, $brandColor, 3px, 0);
+    padding: $box-label-padding-top 20px $box-label-padding-bottom 20px;
+    line-height: $box-label-line-height;
+    font-family: $font-list;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+}
+
+%box-content-layout {
+  padding: 10px;
+  @include border(border-bottom, solid, $graySelect, 1px, 0);
+  font-family: $font-list;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $graySelect;
+  }
+}
+
+//LEFT
+.post-info {
+  @include dimensions(18vw, $box-height);
+  overflow: auto;
+  position: fixed;
+  margin-left: 0;
+  left: 2vw;
+
+  .connect {
+    @extend %box-children;
+    @include dimensions(100%, 100%);
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+
+    .connect-label {
+      @extend %box-label;
+    }
+
+    .user-connect {
+      @extend %box-content-layout;
+
+      .user-status-icon {
+        @include dimensions(8px, 8px);
+        //border color is replaced so doesn't matter
+        @include border(border, solid, inherit, 2px, 100%);
+        margin-right: 7px;
+        font-size: 10px;
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      .online {
+        background-color: green;
+        border-color: green;
+      }
+    }
+  }
+}
+
+$arrows: (
+  'Down': bottom,
+  'Right': right,
+  'Up': top,
+  'Left': left,
+);
+
+@each $key, $value in $arrows {
+  .arrow#{$key} {
+    $border-pattern: ();
+    @for $j from 1 through 4 {
+      @if $j == index($arrows, $key $value) {
+        $border-pattern: append($border-pattern, $brandColor);
+      } @else {
+        $border-pattern: append($border-pattern, transparent);
+      }
+    }
+
+    @extend %arrow;
+    //override default arrow border
+    @include border(border, solid, $border-pattern, 8px, 0);
+    margin-left: 12px;
+    position: relative;
+    #{$value}: -4px;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.online-users, .tags {
+  @include font(Roboto, 16px, black);
+  overflow: auto;
+}
+
+.rotate {
+  transform: rotate(180deg) translate(0px, 10px);
+}
+
+.post-notif {
+  margin: 10px 10px;
+  padding: 10px 10px;
+  font-size: 20px;
+  background-color: #f9f9f9;
+}
+
+.post-tags {
+  @extend %generic;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+
+  .tags {
+    height: 60%;
+  }
+}
+
+//CENTER
+.center-feed {
+  width: 56vw;
+  background: transparent !important;
+  margin: auto;
+}
+
+@import '../globals-css/postbox';
+
+.selected-post {
+  @include border(border, solid, $brandColor, 3px, 3px);
+}
+
+.author, .date {
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.date {
+  float: right;
+  clear: both;
+}
+
+.topic {
+  font-size: 26px;
+}
+
+.abstract {
+  margin-left: 15px;
+}
+
+button.load-more {
+  @extend %button;
+  @include dimensions(90%, 40px);
+  @include font(Roboto, 20px, black);
+  border-radius: 2px;
+  background-color: $lightGray;
+  display: block;
+  margin: auto;
+  box-shadow: 1px 1px 1px gray;
+
+  &:hover {
+    background-color: $graySelect;
+    color: $lightGray;
+  }
+}
+
+@import '../globals-css/post';
+
+//Right
+.filter-search {
+  @include dimensions(18vw, $box-height);
+  position: fixed;
+  right: 2vw;
+
+  $lbl-fontsize: 20px;
+  $lbl-padding: 10px;
+  $lbl-height: ($lbl-fontsize+2*$lbl-padding);
+  $bar-height: 25px;
+  $padding-bottom: 15px;
+  $margin-bottom: 20px;
+  $total-height: ($lbl-height+$bar-height+$padding-bottom+$margin-bottom);
+  $placeholder-margin: 5%;
+  .filter-searchbar {
+    @extend %generic;
+    max-height: (50% - $placeholder-margin);
+    border-radius: 5px;
+    position: relative;
+    padding-bottom: $padding-bottom;
+    margin-bottom: $margin-bottom;
+    overflow: auto;
+
+    .filter-search-label {
+      display: block;
+      text-align: center;
+      @include font($font-list, $lbl-fontsize, $brandColor);
+      padding: $lbl-fontsize;
+    }
+
+    input[name="filter-search-tags"] {
+      @extend %std-searchbar;
+      @include dimensions(90%, $bar-height);
+      margin: auto auto 10px auto;
+    }
+
+    .filter-tags {
+      margin: 0 3px;
+
+      .tag {
+        @extend .pre-tag;
+      }
+    }
+  }
+
+  .post-tags {
+    @extend %box-children;
+    max-height: calc(100% - #{$placeholder-margin} - #{$total-height});
+
+    .tags-label {
+      @extend %box-label;
+    }
+
+    .tag {
+      @extend %box-content-layout;
+    }
+  }
+}

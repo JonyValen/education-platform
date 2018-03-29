@@ -1,0 +1,55 @@
+<head>
+<link rel="stylesheet" type="text/css" href="uu.css">
+<meta charset = "utf-8">
+
+</head>
+<!--above is just header-->
+
+<!--input tab is a click onkeyup button calling function that checks if key is
+"enter" key and if it is then it adds input to list-->
+
+<input type="text" id="newtag" onkeyup="changeText2(event)">
+<br>
+<!-- list starts empty but onkeyup enter click we add li elements-->
+<ol id="demo"></ol>
+
+<script>
+var list = document.getElementById('demo');
+
+function changeText2(e) {
+
+  e.which = e.which || e.keyCode;
+
+  if(e.which == 13) {
+      var newtag = document.getElementById('newtag').value;
+      var entry = document.createElement('li');
+      var subject = document.createElement('button');
+      var user = document.createElement("img");
+      var up = document.createElement("button");
+      var down = document.createElement("button");
+
+      user.src = "https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-9/15780931_1226914114013092_8130647129187188937_n.jpg?oh=22c85389f146787d4d702b5bb5698e81&oe=5A63E06B"
+      up.className = 'buttons-up'
+      down.className = 'buttons-down'
+
+      user.style.marginRight = "2em";
+      subject.style.marginRight = "2em";
+      up.style.marginRight = "2em";
+      down.style.marginRight = "2em";
+
+      subject.appendChild(document.createTextNode(newtag))
+      user.style.width = '4%';
+      user.style.height= 'auto';
+      user.onclick =
+
+      entry.appendChild(user);
+      entry.appendChild(subject)
+      entry.appendChild(up);
+      entry.appendChild(down);
+      list.appendChild(entry);
+      up.innerHTML = "up";
+      down.innerHTML = "down";
+      user.innerHTML = "user";
+  }
+}
+</script>

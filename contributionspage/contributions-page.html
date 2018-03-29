@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contributions Page</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/contributions.css">
+	<script type="text/javascript" src="contributions.js"></script>
+</head>
+	<body>
+	<!-- Navbar -->
+   		<ul class="nav">
+ 				<li class="logo-searchbar">
+      		<a class="logo" href="../homepage/homepage.html">gyde</a>
+      		<input type="text" name="search" placeholder="Search">
+    		</li>
+    		<li class="user-links">
+      		<div class="user">
+        			<img id="profile-pic" src="https://vinoo.co/assets/profile_default.png">
+       			<a class="profile-name">Firstname</a>
+      		</div>
+      		<i class="messenger fa fa-comments-o" aria-hidden="true"></i>
+      		<i class="notifs fa fa-bell" aria-hidden="true"></i>
+      		<i class="help fa fa-info-circle" aria-hidden="true"></i>
+    		</li>
+   		</ul>
+
+    <!-- Content -->
+   		<div class="center-content">
+
+			<div class="friend-list-invis"></div>
+			<div class="friend-list">
+				<ul class="friends">
+					<li class="friend">
+						<img class="friend-pic" src="https://vinoo.co/assets/profile_default.png">
+						<a class="friend-name" href="friend's profile page" target="_blank">Firstname Lastname</a>
+						<div class="status"></div>
+					</li>
+					<li class="friend">
+						<img class="friend-pic" src="https://vinoo.co/assets/profile_default.png">
+						<a class="friend-name" href="friend's profile page" target="_blank">Firstname Lastname</a>
+						<div class="status"></div>
+					</li>
+					<li class="friend">
+						<img class="friend-pic" src="https://vinoo.co/assets/profile_default.png">
+						<a class="friend-name" href="friend's profile page" target="_blank">Firstname Lastname</a>
+						<div class="status"></div>
+					</li>
+					<li class="friend">
+						<img class="friend-pic" src="https://vinoo.co/assets/profile_default.png">
+						<a class="friend-name" href="friend's profile page" target="_blank">Firstname Lastname</a>
+						<div class="status"></div>
+					</li>
+					<li class="friend">
+						<img class="friend-pic" src="https://vinoo.co/assets/profile_default.png">
+						<a class="friend-name" href="friend's profile page" target="_blank">Firstname Lastname</a>
+						<div class="status"></div>
+					</li>
+					<li class="friend">
+						<img class="friend-pic" src="https://vinoo.co/assets/profile_default.png">
+						<a class="friend-name" href="friend's profile page" target="_blank">Firstname Lastname</a>
+						<div class="status"></div>
+					</li>
+				</ul>
+			</div>
+
+
+			<div class="content-container">
+				<div class="document-container">
+					<div class="tabs">
+						<button class="tablinks" id="contributors" onclick="openTab(event, 'contributors')">Contributors</button>
+  						<button class="tablinks active" id="attachments" onclick="openTab(event, 'attachments')">Attachments</button>
+  						<button class="tablinks" id="tags" onclick="openTab(event, 'tags')">Tags</button>
+					</div>
+					<div class="document-header">
+						<div class="uploader-info">
+							<img class="uploader-pic" src="https://vinoo.co/assets/profile_default.png">
+							<a class="uploader-name" href="uploaderpage" target="_blank">Firstname Lastname</a>
+						</div>
+						<div class="uploader-date">MM/DD/YYYY</div>
+					</div>
+					<div class="document-content">
+						<ul class="tags-list" style="display: none;">
+							<li class="tag">
+								<a id="tag1" href="autosearch">tag</a>
+							</li>
+							<li class="tag">
+								<a id="tag1" href="autosearch">tag</a>
+							</li>
+							<li class="tag">
+								<a id="tag1" href="autosearch">tag</a>
+							</li>
+							<li class="tag">
+								<a id="tag1" href="autosearch">tag</a>
+							</li>
+							<li class="tag">
+								<a id="tag1" href="autosearch">tag</a>
+							</li>
+						</ul>
+						<ul class="contributor-list" style="display:none;">
+							<li class="contributor">
+								<img class="friend-pic" src="https://vinoo.co/assets/profile_default.png">
+								<a class="friend-name" href="friendpage" target="_blank">Firstname Lastname</a>
+							</li>
+						</ul>
+						<iframe id='doc1-document' class='document' src='http://docs.google.com/gview?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true' frameborder='0' ></iframe>
+						<ul class="list-of-doc"> <!-- Might need id tag for backend -->
+							<button id="doc1" class="uploaded-file">File 1 </button>
+							<button id="doc2" class="uploaded-file">File 1 </button>
+						</ul>
+					</div>
+					<div class="document-rating">
+						<div class="rating" id="logical">
+
+						</div>
+						<div class="rating" id="creative">
+
+						</div>
+						<div class="rating" id="practical">
+
+						</div>
+					</div>
+				</div>
+
+				<div class="new-comment">
+					<textarea name="styled-textarea" id="styled" placeholder="Enter your comment here..." ></textarea>
+					<button type="submit" id="submit-post">Post</button>
+				</div>
+
+				<div id="comments">
+				</div>
+			</div>
+
+		</div>
+
+		<a href="#top" id="to-top-or-comments">
+			<i id="top-down-navigate" class="fa fa-chevron-up" aria-hidden="true"></i>
+		</a>
+
+	</body>
+</html>

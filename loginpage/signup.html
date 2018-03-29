@@ -1,0 +1,43 @@
+<DOCTYPE html>
+  <html lang = "en">
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link rel="stylesheet" href = "css/signup.css">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset = "utf-8">
+    <title>Sign Up | Gyde</title>
+  </head>
+
+  <body>
+    <img alt="bg-image" class="noselect" src="https://assets7.irisreading.com/wp-content/uploads/2015/03/Biblioth%C3%A8que-Sainte-Genevi%C3%A8ve-Paris-France.jpg">
+    <div class="signup-page">
+    <div class="form">
+      <a class="logo noselect" href="../homepage/homepage.html">gyde</a>
+      <form class="signup-form" action="http://localhost:3090/signup" method="POST" >
+        <div class="field name-fields">
+          <input type="text" placeholder="First Name"/>
+          <input type="text" placeholder="M.I."/>
+          <input type="text" placeholder="Last Name"/>
+        </div>
+        <div class="field email-fields">
+          <input required type="text" name="username" placeholder="Email Address"/>
+          <input  required type="text" placeholder="Confirm Email Address"/>
+        </div>
+        <div class="field job-fields">
+          <input type="text" placeholder="University/Organization"/>
+          <input type="text" placeholder="Occupation"/>
+        </div>
+        <div class="field password-fields">
+          <input required type="password" name="password" placeholder="New password"/>
+          <input required type="password" placeholder="Confirm password"/>
+        </div>
+        <button>Create account</button>
+        <p class="message">Already registered? <a href="login.html">Log in</a></p>
+      </form>
+    </div>
+  </div>
+  </body>
+</html>

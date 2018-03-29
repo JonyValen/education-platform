@@ -1,0 +1,117 @@
+$brandColor: #17223d;
+$graySelect: #d3d3d3;
+$lightGray: #f0f0f0;
+$font-list: Montserrat, Roboto, Lato, sans-serif;
+
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin font($family, $size, $color) {
+  font-family: #{$family};
+  font-size: $size;
+  color: $color;
+}
+
+@mixin border($border, $style, $color, $width: 0, $radius: 0) {
+  #{$border}-style: $style;
+  #{$border}-color: $color;
+  #{$border}-width: $width;
+  #{$border}-radius: $radius;
+}
+
+@mixin minmax($type, $min, $max: 100%) {
+  min-#{$type}: $min;
+  max-#{$type}: $max;
+}
+
+%arrow {
+  @include dimensions(0, 0);
+  @include border(border, solid, transparent transparent transparent $brandColor, 8px, 0);
+  display: inline-block;
+}
+
+%button {
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+}
+
+@mixin userSelect($option) {
+  -webkit-touch-callout: $option;
+  user-select: $option;
+  -moz-user-select: $option;
+  -webkit-user-drag: $option;
+  -webkit-user-select: $option;
+  -ms-user-select: $option;
+}
+
+@mixin custom-link-layout($color: white) {
+  outline: none;
+  color: $color;
+}
+
+@mixin centerPos($isFlex: false, $justifyContent: false, $alignItems: false){
+  @if $isFlex {
+    @if $justifyContent { justify-content: center; }
+    @if $alignItems { align-items: center; }
+  } @else {
+    margin: auto;
+  }
+}
+
+@mixin centerText($line-height){
+  text-align: center;
+  line-height: $line-height;
+  vertical-align: middle;
+}
+
+.noselect {
+  @include userSelect(none);
+}
+
+%generic {
+  background-color: white;
+  font-family: Roboto, Lato, sans-serif;
+}
+
+%std-searchbar {
+  @include border(border, none, $brandColor, 0, 2px);
+  display: block;
+  padding-left: 4px;
+  background-color: $lightGray;
+  font-size: 14px;
+  outline: none;
+
+  &::placeholder {
+    color: #919191;
+  }
+}
+
+@function slice($list, $start: 1, $end: length($list)) {
+  $result: null;
+
+  @if type-of($start) != number or type-of($end) != number {
+    @warn "Either $start or $end are not a number for `slice`.";
+  }  @else if $start > $end {
+    @warn "The start index has to be lesser than or equals to the end index for `slice`.";
+  }  @else if $start < 1 or $end < 1 {
+    @warn "List indexes must be non-zero integers for `slice`.";
+  }  @else if $start > length($list) {
+    @warn "List index is #{$start} but list is only #{length($list)} item long for `slice`.";
+  }  @else if $end > length($list) {
+    @warn "List index is #{$end} but list is only #{length($list)} item long for `slice`.";
+  }  @else {
+    $result: ();
+    @for $i from $start through $end {
+      @if $i != $end {
+        $result: append($result, nth($list, $i)+',');
+      } @else {
+        $result: append($result, nth($list, $i));
+      }
+    }
+  }
+
+  @return $result;
+}

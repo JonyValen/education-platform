@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato";
+  background: black; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, white,white);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+  --darkBlue: #10172b;
+  --whiteGray: #ddd;
+}
+
+img[alt="bg-image"] {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: brightness(75%);
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.logo {
+  margin: 15px;
+  font-family: 'Cedarville Cursive';
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  position: relative;
+  background: var(--darkBlue);
+  max-width: 360px;
+  padding: 0 45px 0 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: ;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: var(--darkBlue);
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-style: solid;
+  border-color: white;
+  border-width: 1.5px;
+  border-radius: 2px;
+}
+.form button:hover {
+  background: var(--whiteGray);
+}
+.form .message {
+  margin: 15px 0 20px;
+  color: white;
+  font-size: 12px;
+}
+.form .message a {
+  color: white;
+}
+
+.message a:hover, i:hover {
+  color: var(--whiteGray);
+}
+
+i {
+  color: white;
+  margin: 0 5px;
+  cursor: pointer;
+}

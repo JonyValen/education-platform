@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/feed.css" type="text/css" rel="stylesheet">
+    <title>Gyde Feed</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="feed.js"></script>
+    <script src="../globals-js/postbox.js"></script>
+  </head>
+  <body>
+    <ul class="nav">
+      <li class="logo-searchbar">
+        <a class="logo" href="../newsfeedpage/feed.html">gyde</a>
+        <input type="text" name="search" placeholder="Search">
+      </li>
+      <li class="user-links">
+        <div class="user">
+          <img class="profile-pic" src="https://vinoo.co/assets/profile_default.png">
+          <a class="profile-name">Firstname</a>
+        </div>
+        <i class="messenger fa fa-comments-o" aria-hidden="true"></i>
+        <i class="notifs fa fa-bell" aria-hidden="true"></i>
+        <i class="help fa fa-info-circle" aria-hidden="true"></i>
+      </li>
+    </ul>
+    <!-- Div as placeholder for positioning -->
+    <div class="nav-sub"></div>
+    <!-- Webpage content -->
+    <div class="center-content">
+      <div class="post-info">
+        <div class="connect">
+          <div class="connect-label">Connect</div>
+          <div class='online-users'><p class="post-notif">Click on a post to view related users</p></div>
+        </div>
+      </div>
+      <div class="center-feed">
+        <!-- Post Box -->
+        <div class="create-post">
+          <div class="post-tabs">
+            <div class="post-tab active" id="contrib-tab">Contributions</div>
+            <div class="post-tab" id="attach-tab">Attachments</div>
+            <div class="post-tab" id="tags-tab">Tags</div>
+          </div>
+          <!-- Contributions tab -->
+          <textarea name="write-post" placeholder="Post Abstract Here..."></textarea>
+          <div id="post-button-options"></div>
+          <!-- Attachments tab -->
+          <div class="create-post-contents" id="attachments-section">
+            <input type="file" id="upload-files" name="upload-files" accept="application/pdf, application/msword, application/msexcel, image/*" multiple>
+            <label for="upload-files">Upload files</label>
+            <p id="files-list"></p>
+          </div>
+          <!-- Tags tab -->
+          <div class="create-post-contents" id="tags-section">
+            <input type="text" name="enter-tag" placeholder="Enter a tag" maxlength="25">
+            <div class="tag-list"></div>
+          </div>
+        </div>
+        <!-- End post box -->
+        <div class="feed"></div>
+        <button class="load-more">Load more</button>
+      </div>
+      <div class="filter-search">
+        <div class="filter-searchbar">
+          <div class="filter-search-label">Filter Feed by Tag</div>
+          <input type="text" name="filter-search-tags" placeholder="Enter a tag...">
+          <div class="filter-tags"></div>
+        </div>
+        <div class="post-tags">
+          <div class="tags-label">Related tags</div>
+          <div class="tags related-tags"><p class="post-notif">Click on a post to view its tags.</p></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

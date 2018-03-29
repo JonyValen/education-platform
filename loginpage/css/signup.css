@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e3e3e3; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style-type: none; }
+  ul a {
+    color: white;
+    margin-right: 25px; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+body {
+  font-family: "Lato";
+  background: linear-gradient(to left, white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden; }
+
+img[alt="bg-image"] {
+  width: 100%;
+  min-width: 1400px;
+  max-width: 100%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  filter: brightness(75%);
+  user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+.logo {
+  font-family: "Cedarville Cursive";
+  font-size: 30px;
+  color: white;
+  margin: 15px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block; }
+
+.signup-page {
+  min-width: 400px;
+  max-width: 600px;
+  padding: 8% 0 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.field {
+  display: flex; }
+
+.form {
+  position: relative;
+  background: #10172b;
+  flex-grow: 1;
+  padding: 0 45px 0 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
+  .form .message {
+    font-family: inherit;
+    font-size: 12px;
+    color: white;
+    margin: 15px 0 20px; }
+    .form .message a {
+      outline: none;
+      color: white; }
+
+.form input {
+  font-family: Roboto;
+  font-size: 14px;
+  color: inherit;
+  outline: none;
+  color: inherit;
+  width: 100%;
+  border: 0;
+  margin: 0 7px 15px 7px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: inline-block; }
+
+input[placeholder="M.I."] {
+  width: 50px; }
+
+.form button {
+  border-style: solid;
+  border-color: white;
+  border-width: 1.5px;
+  border-radius: 2px;
+  font-family: Roboto;
+  font-size: 14px;
+  color: #10172b;
+  text-transform: uppercase;
+  outline: 0;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  transition: all 0.3 ease;
+  cursor: pointer; }
+  .form button:hover {
+    background: #ddd; }
+
+.message a:hover, i:hover {
+  color: #ddd; }

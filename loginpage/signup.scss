@@ -1,0 +1,100 @@
+//@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import '../globals-css/body';
+@import '../globals-css/global';
+
+$dark: #10172b;
+$whiteGray: #ddd;
+
+body {
+  font-family: "Lato";
+  background: linear-gradient(to left, white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+
+img[alt="bg-image"] {
+  width: 100%;
+  @include minmax(width, 1400px);
+  position: absolute;
+  right: 0;
+  height: 100%;
+  filter: brightness(75%);
+  user-drag: none;
+  @include userSelect(none);
+}
+
+.logo {
+  @include font('Cedarville Cursive', 30px, white);
+  margin: 15px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.signup-page {
+  @include minmax(width, 400px, 600px);
+  padding: 8% 0 0;
+  margin: auto;
+  display: flex;
+  @include centerPos(true, true, true);
+}
+
+.field {
+  display: flex;
+}
+
+.form {
+  position: relative;
+  background: $dark;
+  flex-grow: 1;
+  padding: 0 45px 0 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+  .message {
+    @include font(inherit, 12px, white);
+    margin: 15px 0 20px;
+
+    a { @include custom-link-layout(); }
+  }
+}
+
+.form input {
+  @include font(Roboto, 14px, inherit);
+  @include custom-link-layout(inherit);
+  width: 100%;
+  border: 0;
+  margin: 0 7px 15px 7px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+input[placeholder="M.I."] {
+  width: 50px;
+}
+
+%hover {
+  background: $whiteGray;
+}
+
+.form button {
+  @include border(border, solid, white, 1.5px, 2px);
+  @include font(Roboto, 14px, $dark);
+  text-transform: uppercase;
+  outline: 0;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+
+  &:hover { @extend %hover; }
+}
+
+.message a:hover, i:hover {
+  @extend %hover;
+}

@@ -1,0 +1,423 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; }
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto; }
+
+/* Navigation Bar */
+/* IMPORTANT NEEDS TO BE CHANGED FOR PHONE SCREENS */
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+
+ul a {
+  color: white;
+  margin-right: 25px; }
+
+.nav {
+  background-color: #17223d;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+  padding: 0 40px 5px 40px;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 1;
+  opacity: 0.9;
+  position: fixed; }
+
+.logo-searchbar {
+  flex-grow: 2; }
+
+.user-links {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  line-height: 40px;
+  vertical-align: middle; }
+
+.logo {
+  padding: 0 0 0 10px;
+  font-family: 'Cedarville Cursive';
+  font-size: 30px;
+  user-select: none; }
+
+input[name="search"] {
+  min-width: 200px;
+  min-height: 30px;
+  margin-right: 50px;
+  padding-left: 4px;
+  background-color: #425d89;
+  border-style: none;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #D6D6D0; }
+
+input[name="search"]:focus {
+  color: #D6D6D0;
+  outline: none; }
+
+::-webkit-input-placeholder {
+  color: #D6D6D0; }
+
+:-moz-placeholder {
+  color: #D6D6D0; }
+
+::-moz-placeholder {
+  color: #D6D6D0; }
+
+:-ms-input-placeholder {
+  color: #D6D6D0; }
+
+li > div {
+  margin-right: 40px; }
+
+img#profile-pic, img.uploader-pic {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 5px; }
+
+.user {
+  cursor: pointer; }
+
+.profile-name, .uploader-name {
+  vertical-align: middle;
+  font-family: Montserrat; }
+
+li > i {
+  color: white;
+  font-size: 18px !important;
+  padding-top: 2px;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px !important;
+  margin-right: 40px; }
+
+/* End navigation bar */
+.center-content {
+  /* Contains all content on page */
+  width: 90%;
+  min-width: 500px;
+  margin: 0 auto 10px auto;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 60px;
+  background-color: #ededed; }
+
+.friend-list {
+  /* Friends list */
+  /* IMPORTANT NEEDS TO BE CHANGED FOR PHONE SCREENS */
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: left;
+  overflow: auto;
+  min-height: 80vh;
+  max-height: 80vh;
+  min-width: 250px;
+  max-width: 250px;
+  margin: 40px 20px 40px 20px;
+  border-radius: 5px;
+  position: fixed;
+  left: 5%;
+  z-index: 9999; }
+
+.friend-list-invis {
+  /* Necessary so that the actual friend list can be removed from flex */
+  background-color: #ededed;
+  display: flex;
+  justify-content: left;
+  overflow-y: auto;
+  min-height: 80vh;
+  max-width: 250px;
+  min-width: 250px;
+  margin: 40px 20px 40px 20px;
+  border-radius: 5px; }
+
+ul.friends {
+  padding: 0;
+  max-width: 100%;
+  min-width: 100%;
+  overflow-wrap: wrap;
+  display: inline-block; }
+
+.friend {
+  max-height: 30px;
+  min-height: 30px;
+  max-width: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: left;
+  border-radius: 50%;
+  padding-left: 15px;
+  padding-bottom: 15px; }
+
+img.friend-pic {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle; }
+
+.friend-name {
+  width: 80%;
+  max-height: 30px;
+  min-height: 30px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+  vertical-align: top;
+  padding-top: 5px;
+  padding-left: 10px;
+  font-family: Montserrat; }
+
+.status {
+  width: 10%;
+  max-height: 10px;
+  min-height: 10px;
+  max-width: 10px;
+  min-width: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin-top: 7px; }
+
+.content-container {
+  /* Contains documents and comments */
+  background-color: #FFFFFF;
+  justify-content: center;
+  display: flex;
+  width: 70%;
+  margin: 40px 20px 40px 5px;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px; }
+
+/* Contains all user-posted documents */
+.document-container {
+  background-color: #FFFFFF;
+  width: 99%;
+  /* So comment box and document container have matching widths */
+  flex-wrap: wrap vertical;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  /*overflow: auto;*/
+  min-height: 500px;
+  border: solid 1px;
+  border: 3px solid #cccccc; }
+
+div.tabs {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  min-height: 40px;
+  margin-bottom: 5px;
+  justify-content: space-between; }
+
+button.tablinks {
+  background-color: #425d89;
+  font-size: 15px;
+  color: white;
+  height: 40px;
+  width: 33%;
+  border: 0px; }
+
+#contributors {
+  border-radius: 7px 0px 0px 0px; }
+
+#tags {
+  border-radius: 0px 7px 0px 0px; }
+
+button.active {
+  background-color: #FFFFFF;
+  color: #000000; }
+
+.document-header {
+  min-height: 50px;
+  max-height: 50px;
+  max-width: 100%;
+  justify-content: space-between;
+  display: flex;
+  padding: 15px 15px 0px 15px; }
+
+.uploader-info {
+  /* img and text info are the same as profile pic and stuff in header */
+  min-width: 60%;
+  max-width: 85%; }
+
+a.uploader-name {
+  width: 80%;
+  height: 20px;
+  color: black;
+  margin: 0;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.uploader-date {
+  padding-top: 5px;
+  /* Hack to put date on same line as name */
+  font-family: Montserrat;
+  width: 15%;
+  min-width: 100px; }
+
+.document-content {
+  height: 100%;
+  max-width: 100%;
+  padding: 0px 15px 15px 15px; }
+
+.tags-list {
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+.tag {
+  padding-bottom: 10px; }
+
+#tag1 {
+  color: black;
+  font-family: Montserrat; }
+
+.contributor-list {
+  padding: 0;
+  margin: 0; }
+
+.contributor {
+  max-height: 30px;
+  min-height: 30px;
+  max-width: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: left;
+  border-radius: 50%;
+  padding-bottom: 15px; }
+
+ul.list-of-doc {
+  padding: 0;
+  margin: 0;
+  min-height: 100%; }
+
+button.uploaded-file {
+  min-width: 100%;
+  max-width: 100%;
+  border-style: none;
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-bottom: 10px;
+  font-family: Montserrat; }
+
+button.uploaded-file:hover {
+  font-weight: bold; }
+
+iframe.document {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  display: none;
+  overflow-y: hidden; }
+
+.document-rating {
+  height: 50px;
+  display: flex;
+  justify-content: space-between; }
+
+.rating {
+  height: 100%;
+  width: 33%;
+  margin: 0 2px 0 2px;
+  background-color: #425d89; }
+
+#logical {
+  border-radius: 0px 0px 0px 7px;
+  margin: 0 2px 0 0; }
+
+#practical {
+  border-radius: 0px 0px 7px 0px;
+  margin: 0 0 0 2px; }
+
+/* Ends all user-posted documents */
+/* Posting a comment */
+.new-comment {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  justify-content: left;
+  overflow-y: auto; }
+
+textarea#styled {
+  width: 100%;
+  min-height: 100px;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  font-family: Montserrat;
+  border-radius: 10px;
+  outline: none;
+  resize: vertical;
+  max-height: 300px; }
+
+#submit-post {
+  border: 3px solid #cccccc;
+  font-family: Montserrat;
+  border-radius: 10px;
+  margin-left: 10px;
+  height: 40px; }
+
+button:hover {
+  /* Affect all buttons */
+  cursor: pointer; }
+
+button#submit-post:active {
+  background-color: #425d89;
+  color: white; }
+
+button:focus {
+  /* Affect all buttons */
+  outline: 0; }
+
+/* End posting a comment */
+/* Back to top navigation */
+#to-top-or-comments {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0 15px 15px 0; }
+
+a#to-top-or-comments:link {
+  color: #a9a9a9; }
+
+a#to-top-or-comments:visited {
+  color: #a9a9a9; }
+
+a#to-top-or-comments:hover {
+  color: #17223d;
+  cursor: pointer; }
+
+a#to-top-or-comments:active {
+  color: #a9a9a9; }
+
+/*# sourceMappingURL=contributions.css.map */

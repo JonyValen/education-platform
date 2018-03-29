@@ -1,0 +1,234 @@
+body{
+  margin:none;
+  padding: none;
+  font-family:"Lato";
+}
+
+.nav{
+  background-color:black;
+  color:white;
+  list-style: none;
+  text-align: right;
+  padding:1.5em 0 1.25em 0px;
+  margin-top: -0.625em;
+
+}
+
+.nav > li{
+   display: inline-block;
+   padding-right:3.125em;
+   color: white;
+}
+
+.nav>li>a{
+  text-decoration: none;
+  color:white;
+}
+
+.nav > li >a:hover{
+  color:#c1c1c1;
+}
+
+input[type=text] {
+    width: 8.125em;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.search-bar{
+  float: left;
+  padding-left: 1.875em;
+  padding-top: 0.125em;
+}
+
+/* When the input field gets focus,
+change its width to 100% */
+input[type=text]:focus {
+    width: 100%;
+}
+
+.logo{
+  color:white;
+  float:left;
+  padding-left: 1.25em;
+  font-family:'Cedarville Cursive';
+  font-size: 1.875em;
+  font-weight:bold;
+  margin-top:-.85em;
+  font-weight: lighter;
+
+}
+
+.logo>a{
+  text-decoration: none;
+  color:white;
+}
+
+
+.button-row >li{
+  display: inline-block;
+  vertical-align: bottom;
+  padding-top: 17.5625em;
+  margin-right: -0.0625em;
+}
+
+.button-row>li>button{
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 0.9375em 1.8125em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.0em;
+  font-family: "Lato";
+  width: 200;
+}
+.box-upper-tab>li{
+  float: right;
+  padding-top: .8em;
+  display: inline-block;
+}
+.box-upper-tab>li>button{
+  background-color: #F5F5F5;
+  width: 5em;
+}
+.box-upper-tab>li>button:hover{
+  background-color: lightgrey;
+}
+.box-upper-tab>li>button:active {
+  background-color: lightgrey;
+  transform: translateY(.2em);
+  box-shadow: 0 5px #666;
+
+}
+.box-about>li{
+  display: inline-block;
+  vertical-align: bottom;
+  padding-top: 0.9375px;
+  margin-top: 0.625px;
+}
+
+.box-about>li>button{
+  background-color: white; /* Green */
+  margin-left: -2em;
+  margin-top: 1.18em;
+  color: black;
+  padding: 0.9375em 1.8125em;
+  text-align: center;
+  font-size: 1.0em;
+  font-family: "Lato";
+  width: 14em;
+}
+
+.box-about>li>button:hover{
+  background-color: #F5F5F5;
+}
+
+.box-about{
+  width: 12.5em;
+  height:37.5em;
+  border: 0.09375em solid black;
+  float:left;
+  margin-top: -37.6875em;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  margin-left: 4.6875em;
+  margin-right: 4.6875em;
+  padding-left: 2.1875em;
+  text-align: center;
+  text: bold;
+}
+
+.banner-box{
+  margin-right: 4.6875em;
+  margin-top: -1.25em;
+  width:auto;
+  height:20.625em;
+  padding-left: 0.625em;
+  border: 0.09375em solid black;
+  margin-left:4.6875em;
+  border-top: none;
+  position: relative;
+}
+
+.picture-box{
+  border: 0.09375em solid black;
+  height:12.5em;
+  width:12.5em;
+  position:relative;
+  top: -17.5em;
+  left:7.5em;
+}
+
+.intro{
+  text-align: center;
+  font-size: 1.5em;
+  text-decoration: underline;
+  font-family: 'Lato', serif;
+}
+
+.box-main{
+  width:68.75em;
+  height:37.5em;
+  border: 0.09375em solid black;
+  margin-left: 4.6875em;
+  margin-top: -11.25em;
+  margin-right: 4.6875em;
+}
+.box-upper-tab{
+  width: 66.5625em;
+  height:3.75em;
+  border: 0.09375em solid black;
+  border-top: none;
+  float:left;
+  margin-top: -37.5625em;
+  margin-left: 4.6875em;
+  margin-right: 4.6875em;
+  padding-left: 2.1875em;
+}
+
+
+.upload{
+  margin-top: 1em;
+}
+
+.education-row-info{
+  margin-top: -33em;
+  margin-left: 21.5em;
+  height: 2em;
+  border-bottom: 1px solid black;
+  width: 50em;
+}
+.education-row-outcome{
+  margin-top: -2.4em;
+  margin-left: 65em;
+}
+.add-general-courses{
+  height: 1.4em;
+  width: 22em;
+  margin-left: 21.5em;
+  margin-top: 3em;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.add-advanced-courses{
+  height: 1.4em;
+  width: 22em;
+  margin-left: 49.5em;
+  margin-top: -1.5em;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.add-button{
+  float: left;
+  margin-top: -29.25em;
+}
+.add-button{
+  float: left;
+  margin-top: -29.25em;
+}
+.add-button-click{
+  text-decoration: none;
+  color: black;
+}

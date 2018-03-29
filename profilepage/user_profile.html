@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="css/user_profile.css" type="text/css" rel="stylesheet">
+    <script src="../globals-js/postbox.js"></script>
+    <script src="user_profile.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <ul class="nav">
+      <li class="logo-searchbar">
+        <a class="logo" href="../newsfeedpage/feed.html">gyde</a>
+        <input type="text" name="search" placeholder="Search">
+      </li>
+      <li class="user-links">
+        <div class="user">
+          <img class="profile-pic" src="https://vinoo.co/assets/profile_default.png">
+          <a class="profile-name" onclick="window.location.reload()">Firstname</a>
+        </div>
+        <i class="messenger fa fa-comments-o" aria-hidden="true"></i>
+        <i class="notifs fa fa-bell" aria-hidden="true"></i>
+        <i class="help fa fa-info-circle" aria-hidden="true"></i>
+      </li>
+    </ul>
+    <div class="nav-sub"></div>
+    <!-- Body Content -->
+    <div class="center-content">
+      <!-- Banner, profile picture, links -->
+      <div class = "banner-box">
+        <div class = "picture-box">
+          <img class="profile-pic" src="https://vinoo.co/assets/profile_default.png">
+          <input type="file" id="change-picture" alt="change-picture" accept="image/*">
+          <label for="change-picture"><i class="fa fa-edit"></i></label>
+
+        </div>
+        <ul class = "button-row">
+          <li><button type="button">[Level]</button></li>
+          <li><button type="button" onclick="window.location.reload()">Gydeline</button></li>
+          <li><button type="button">About</button></li>
+          <li><button type="button">Network</button></li>
+          <li><button type="button">More</button></li>
+        </ul>
+      </div>
+
+      <div class="info-boxes">
+        <!-- Column 1 of boxes -->
+        <div class="col-1">
+          <!-- Connect box. -->
+          <div class="connect">
+            <div class="connect-label">Connect<div class="arrowhead"></div></div>
+          </div>
+          <!-- Intro box. -->
+          <div class="intro">
+            <div class="intro-label">Introduction</div>
+            <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget nulla a metus vehicula volutpat quis sit amet sapien. Suspendisse aliquam ac nisi non ullamcorper. Suspendisse pretium, nulla eget hendrerit lobortis, ante massa fermentum odio, vitae laoreet erat urna non nisl.</p>
+          </div>
+          <!-- Gyde box. -->
+          <div class = "gyde">
+            <div class="gyde-label">Gyde Filter</div>
+            <div class="category" id="paper-cat">
+              <input type="checkbox" id="paper-cat-box" name="paper-cat-box">
+              <label for="paper-cat-box">Research Paper</label>
+            </div>
+            <div class="category" id="video-cat">
+              <input type="checkbox" id="video-cat-box" name="video-cat-box">
+              <label for="video-cat-box">Video</label>
+            </div>
+            <div class="category" id="question-cat">
+              <input type="checkbox" id="question-cat-box" name="question-cat-box">
+              <label for="question-cat-box">Question</label>
+            </div>
+            <div class="gyde-search">
+              <!--<div class="filter"><div class="arrowhead"></div></div>-->
+              <input type="text" name="search" placeholder="Search..">
+            </div>
+          </div>
+        </div>
+        <!-- Column 2 of boxes -->
+        <div class="col-2">
+          <!-- Post box -->
+          <div class="create-post">
+            <div class="post-tabs">
+              <div class="post-tab active" id="contrib-tab">Contributions</div>
+              <div class="post-tab" id="attach-tab">Attachments</div>
+              <div class="post-tab" id="tags-tab">Tags</div>
+            </div>
+            <!-- Contributions tab -->
+            <textarea name="write-post" placeholder="Post Abstract Here..."></textarea>
+            <div id="post-button-options">
+            </div>
+            <!-- Attachments tab -->
+            <div class="create-post-contents" id="attachments-section">
+              <input type="file" id="upload-files" name="upload-files" accept="application/pdf, application/msword, application/msexcel, image/*" multiple>
+              <label for="upload-files">Upload files</label>
+              <p id="files-list"></p>
+            </div>
+            <!-- Tags tab -->
+            <div class="create-post-contents" id="tags-section">
+              <input type="text" name="enter-tag" placeholder="Enter a tag" maxlength="25">
+              <div class="tag-list"></div>
+            </div>
+          </div>
+          <div class="feed"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

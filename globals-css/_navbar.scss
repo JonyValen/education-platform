@@ -1,0 +1,86 @@
+ul.nav {
+  background-color: $brandColor;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+  padding: 0 40px 5px 40px;
+  box-sizing: border-box;
+  align-items: center;
+  z-index: 2;
+  opacity: 0.9;
+  position: fixed;
+  font-family: Montserrat, Lato, serif;
+
+  li > div {
+    margin-right: 40px;
+  }
+
+  .logo-searchbar {
+    flex-grow: 2;
+
+    .logo {
+      padding: 0 0 0 10px;
+      @include font('Cedarville Cursive', 30px, white);
+      user-select: none;
+    }
+
+    input[name="search"] {
+      @include border(border, none, inherit, inherit, 2px);
+      min-width: 200px;
+      min-height: 30px;
+      margin-right: 50px;
+      padding-left: 4px;
+      background-color: #425d89;
+      font-size: 14px;
+      color: $lightGray;
+
+      &:focus, &::placeholder {
+        color: $lightGray;
+        outline: none;
+      }
+    }
+  }
+
+  .user-links {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    line-height: 40px;
+    vertical-align: middle;
+
+    .user {
+      cursor: pointer;
+
+      .profile-name {
+        vertical-align: middle;
+        font-family: Montserrat, Lato, serif;
+      }
+    }
+
+    i {
+      color: white;
+      font-size: 18px !important;
+      padding-top: 2px;
+      cursor: pointer;
+      height: 40px;
+      line-height: 40px !important;
+      margin-right: 40px;
+
+    }
+  }
+}
+
+.nav-sub {
+  @include dimensions(100%, 62px);
+}
+
+img.profile-pic {
+  border-radius: 100%;
+  @include dimensions(30px, 30px);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 5px;
+}

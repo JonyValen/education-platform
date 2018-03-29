@@ -1,0 +1,52 @@
+.item {
+  @extend %generic;
+  margin-bottom: 15px;
+  @include minmax(120px, 240px);
+  box-sizing: border-box;
+  box-shadow: $boxShadow;
+  border-radius: 5px;
+  overflow: auto;
+
+  $margin: 25px 25px 0 25px;
+  .post-content {
+    margin: $margin;
+    position: relative;
+    display: block;
+    @include border(border-bottom, solid, $brandColor, 2px, 0);
+  }
+
+  .react {
+    text-align: right;
+    @include border(border-bottom, solid, gray, 5px, 0);
+    padding: 0 nth($margin, 1) 0 nth($margin, 1);
+
+    button {
+      @extend %button;
+      padding: 8px;
+      background-color: transparent;
+    }
+
+    a {
+      padding: 8px;
+      height: 100%;
+      @include centerText(100%);
+      float: left;
+    }
+
+    $hoverSelector: (
+      '.endorse:hover': #ffa8c6,
+      '.share:hover': $graySelect,
+      '.liked': #c43a3a
+    );
+
+    @each $key, $value in  $hoverSelector {
+      #{$key} {
+        background-color: $value;
+
+        @if $key == '.liked' {
+          color: white;
+        }
+      }
+    }
+  }
+}
