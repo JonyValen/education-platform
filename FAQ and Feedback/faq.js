@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $(".answer").hide();
-  $(".question").click(function(){
-    $(this).next().toggle(400);
+  $(".arrow").click(function(){
+    $(this).parent().next().toggle(400);
+    $(this).toggleClass("arrow-toggle");
   })
 })
