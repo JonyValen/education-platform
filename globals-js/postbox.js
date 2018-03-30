@@ -11,16 +11,14 @@ function postBoxListener(){
     $("#post-button-options").append("<button class='privacy-btn'>Privacy</button>")
     $("#post-button-options").append("<button class='post-btn'>Create Post</button>")
     for(let i = 0; i < numPosts; i++)
-      $("#i"+i).css("opacity", "0.5")
+      $(`#i${i}`).css("opacity", "0.5")
   })
   $("textarea").focusout(function(){
     let numPosts = $(".feed").children().length
-    $(".post-btn").remove()
-    $(".privacy-btn").remove()
+    $(".post-btn, .privacy-btn").remove()
     $(this).height($(this).height() - 100)
-
     for(let i = 0; i < numPosts; i++)
-      $("#i"+i).css("opacity", "1")
+      $(`#i${i}`).css("opacity", "1")
   })
   $(".post-tab").click(function(){
     let activeId = $(".active").attr("id")
@@ -34,9 +32,7 @@ function postBoxListener(){
     $(this).addClass("active");
   })
   $("#contrib-tab").click(() => $("textarea[name='write-post']").show())
-  $("#attach-tab").click(() => {
-    $("#attachments-section").show()
-  })
+  $("#attach-tab").click(() => $("#attachments-section").show())
   $("#tags-tab").click(() => $("#tags-section").show())
   $("#upload-files").change(function(){
     $("#files-list").text("")
@@ -47,8 +43,8 @@ function postBoxListener(){
   $("input[name='enter-tag']").keypress(function(e) {
     let key = e.which || e.keyCode
     if(key == 13){
-      $(".tag-list").append(`<div class='pre-tag'>${$(this).val()}<i class='fa fa-times remove-tag'></i></i></div>`)
-      $(this).val("")
+      $(".tag-list").append(`<div class='pre-tag'>${$(this).val()}<i class='fa fa-times remove-tag'></i></i></div>`) //add tag to list
+      $(this).val("") //clear search bar
     }
   })
   $(document).on("mouseenter", ".pre-tag", function(){

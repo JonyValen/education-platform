@@ -1,17 +1,14 @@
-var numPost = 4
+let numPost = 4
 const numUsers = 3
 const numTags = 6
+const brandColor = "#17223d"
 
 $(document).ready(function(){
   let firstLoad = true
-  /*ENDORSE BUTTON LISTENERS*/
   //Note: endorse comes from ajax call, so must use this particular listener
   endorseBtnListener()
-  /*END --- ENDORSE BUTTON LISTENERS --- END*/
-
-  /*SHARE BUTTON LISTENERS*/
   shareBtnListener()
-  /*END --- SHARE BUTTON LISTENERS --- END*/
+  tagVoteListener()
 
   /*AJAX RETRIEVE POSTS ASYNCHRONOUSLY*/
   let i = j = k = l = 0
@@ -37,14 +34,14 @@ $(document).ready(function(){
     $(".temp .topic").text(`Sample Topic ${i}`)
     $(".temp").removeClass("temp")
     i++
-    $.ajax(requestPosts);
+    $.ajax(requestPosts)
   }
 
-  $.ajax(requestPosts);
+  $.ajax(requestPosts)
 
   $("button.load-more").click(() => {
     numPost += 4
-    $.ajax(requestPosts);
+    $.ajax(requestPosts)
   })
   /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
 
@@ -79,7 +76,7 @@ $(document).ready(function(){
     $(".related-tags").append(data)
     const index = $(".selected-post").attr("id")[1]
     $(" .related-tags .temp-tag .tag-name").text(`Tag ${index*numTags+k}`)
-    $(".related-tags .temp-tag").append('<div class="arrowUp"></div><div class="arrowDown"></div>')
+    $(".related-tags .temp-tag").append('<div class="vote-tag"><div class="arrow arrowUp"></div><div class="arrow arrowDown"></div></div>')
     $(".related-tags .temp-tag").removeClass("temp-tag")
     k++
     $.ajax(requestTags)
@@ -157,5 +154,24 @@ function endorseBtnListener(){
 
 function shareBtnListener(){
   $(document).on("click", ".share", function(){
+  })
+}
+
+function tagVoteListener(){
+  const green = "rgb(0, 128, 0)"
+  const red = "rgb(200, 0, 0)"
+  $(document).on("click", ".arrow", function(){
+    if($(this).hasClass("arrowUp")){
+      if($(this).css("border-bottom-color") == green)
+        $(this).css("border-bottom-color", brandColor)
+      else
+        $(this).css("border-bottom-color", green)
+    }
+    else if($(this).hasClass("arrowDown")){
+      if($(this).css("border-top-color") == red)
+        $(this).css("border-top-color", brandColor)
+      else
+        $(this).css("border-top-color", red)
+    }
   })
 }

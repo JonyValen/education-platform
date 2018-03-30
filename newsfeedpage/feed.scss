@@ -94,6 +94,10 @@ $box-margin: 20px;
   }
 }
 
+.vote-tag {
+  float: right;
+}
+
 $arrows: (
   'Down': bottom,
   'Right': right,
@@ -254,6 +258,7 @@ button.load-more {
 
     .tag {
       @extend %box-content-layout;
+      text-align: left;
     }
   }
 }

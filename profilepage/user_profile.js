@@ -1,5 +1,5 @@
-var numUsers = 4;
-var numPost = 4;
+let numUsers = 4;
+let numPost = 4;
 
 $(document).ready(function(){
   /*CHANGE PROFILE PIC LISTENER*/
@@ -11,15 +11,13 @@ $(document).ready(function(){
   /*END -- CHECKBOX LISTENER -- END*/
 
   /*AJAX RETRIEVE POSTS ASYNCHRONOUSLY*/
-  var i = 0
+  let i = j = 0
   const requestPosts = {
     url: '../globals-html/post.html',
     async: true,
     type: 'get',
     success: data => updatePosts(data),
-    error: () => {
-      $(".feed").append(`<div class="item">Could not load posts. Please try again later.</div>`)
-    }
+    error: () => $(".feed").append(`<div class="item">Could not load posts. Please try again later.</div>`)
   }
 
   const updatePosts = data => {
@@ -45,7 +43,6 @@ $(document).ready(function(){
   $(".connect").height(connectLblHeight) //not sure why this is needed? some css sizing issues?
   $(".col-1").height($(".col-1").height() + 82)
 
-  var j = 0;
   const getUsers = data => {
     if(j >= numUsers) return
     $(".online-users").append(data)

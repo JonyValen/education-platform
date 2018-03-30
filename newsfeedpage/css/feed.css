@@ -192,6 +192,9 @@ img.profile-pic {
       background-color: green;
       border-color: green; }
 
+.vote-tag {
+  float: right; }
+
 .arrowDown {
   border-style: solid;
   border-color: #17223d transparent transparent transparent;
@@ -473,3 +476,5 @@ button.load-more {
       margin: 0 3px; }
   .filter-search .post-tags {
     max-height: calc(100% - 5% - 100px); }
+    .filter-search .post-tags .tag {
+      text-align: left; }

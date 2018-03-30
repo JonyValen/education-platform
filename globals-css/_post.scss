@@ -12,12 +12,12 @@
     margin: $margin;
     position: relative;
     display: block;
-    @include border(border-bottom, solid, $brandColor, 2px, 0);
+    @include border(border-bottom, solid, $brandColor, 2px);
   }
 
   .react {
     text-align: right;
-    @include border(border-bottom, solid, gray, 5px, 0);
+    @include border(border-bottom, solid, gray, 5px);
     padding: 0 nth($margin, 1) 0 nth($margin, 1);
 
     button {
