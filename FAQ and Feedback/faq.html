@@ -4,42 +4,73 @@
   <head>
     <meta charset="UTF-8">
     <title>FAQ and Feedback</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <link href="faq.css" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="faq.js"></script>
   </head>
 
   <body>
+
+
+    <ul class="nav">
+        <li class="logo-searchbar">
+          <a class="logo noselect" href="#">gyde</a>
+          <input type="text" name="search" placeholder="Search">
+          <a href = "#" id="questions">Questions</a>
+        </li>
+        <li id="login"><a href="../loginpage/login.html">Sign up/Log in</a></li>
+      </ul>
+      <div class="nav-sub"></div>
+      <ul class="feed-btns">
+        <li><a href="#" class="selected-feed-type" id="home-btn">Home</a></li>
+        <li><a href="#" id="latest-btn">Latest</a></li>
+        <li><a href="#" id="feedback-btn">Feedback</a></li>
+      </ul>
+
+
+    <!-- Above is the common nav bar -->
+<br> <br>
+
+
     <div class="faq">
       <h1> FAQ </h1>
-      <h3 class="question"> Question 1 </h3>
+      <h3 class="question"> Question 1 <div class="arrow"> </div> </h3>
+
 
       <p class="answer"> Answer to Question 1 </p>
 
-      <h3 class="question"> Question 2 </h3>
+      <h3 class="question"> Question 2 <div class="arrow"> </div></h3>
 
       <p class="answer"> Answer to Question 2 </p>
 
-      <h3 class="question"> Question 3 </h3>
+      <h3 class="question"> Question 3 <div class="arrow"> </div></h3>
 
       <p class="answer"> Answer to Question 3 </p>
 
-      <h3 class="question"> Question 4 </h3>
+      <h3 class="question"> Question 4 <div class="arrow"> </div></h3>
 
       <p class="answer"> Answer to Question 4 </p>
 
-      <h3 class="question"> Question 5 </h3>
+      <h3 class="question"> Question 5 <div class="arrow"> </div></h3>
 
       <p class="answer"> Answer to Question 5 </p>
 
-      <h3 class="question"> Question 6 </h3>
+      <h3 class="question"> Question 6 <div class="arrow"> </div></h3>
 
       <p class="answer"> Answer to Question 6 </p>
 
-      <h3 class="question"> Question 7 </h3>
+      <h3 class="question"> Question 7 <div class="arrow"> </div></h3>
 
       <p class="answer"> Answer to Question 7 </p>
     </div>
+
+<br> <br>
 
     <div class="feedback">
       <h1> Feedback </h1>
@@ -47,12 +78,25 @@
       <p> Enter any feedback you have for Gyde, or enter any suggestions or even creative ideas that you have!  </p>
 
       <form>
-        <textarea name="message" rows="10" cols="30"></textarea>
+        <textarea name="message" rows="10" cols="80"></textarea>
         <br>
-      <input type="submit">
+      <input type="submit" class="the-submit-button">
 
       </form>
     </div>
+
+<!-- Logos  -->
+
+<div class="center-content">
+  <article class="contact animated fadeInUp">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+    <i class="fa fa-github" aria-hidden="true"></i>
+  </article>
+</div>
+
+
+
 
   </body>
 
