@@ -1,3 +1,4 @@
+//temporary variables for sample front end functionality
 let numPost = 4
 const numUsers = 3
 const numTags = 6
@@ -10,7 +11,7 @@ $(document).ready(function(){
   shareBtnListener()
   tagVoteListener()
 
-  /*AJAX RETRIEVE POSTS ASYNCHRONOUSLY*/
+  /*AJAX RETRIEVE POSTS*/
   let i = j = k = l = 0
   const requestPosts = {
     url: '../globals-html/post.html',
@@ -43,7 +44,7 @@ $(document).ready(function(){
     numPost += 4
     $.ajax(requestPosts)
   })
-  /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
+  /*END --- AJAX RETRIEVE POSTS --- END*/
 
   /*CONNECT DIV LISTENER*/
   const getUsers = data => {
@@ -70,27 +71,28 @@ $(document).ready(function(){
   /*END --- CONNECT DIV LISTENER --- END*/
 
   /*POST TAGS DIV LISTENER*/
-  const getTags = data => {
-    if(k >= numTags) return
-    $(".tags").addClass("related-tags")
-    $(".related-tags").append(data)
-    const index = $(".selected-post").attr("id")[1]
-    $(" .related-tags .temp-tag .tag-name").text(`Tag ${index*numTags+k}`)
-    $(".related-tags .temp-tag").append('<div class="vote-tag"><div class="arrow arrowUp"></div><div class="arrow arrowDown"></div></div>')
-    $(".related-tags .temp-tag").removeClass("temp-tag")
-    k++
-    $.ajax(requestTags)
-  }
-
-  const requestTags = {
-    type: 'get',
-    url: 'tags.html',
-    success: data => getTags(data),
-    error: () => {
-      $(".related-tags").append("<p>Error: Could not load user</p>")
+    const getTags = data => {
+      if(k >= numTags) return
+      $(".tags").addClass("related-tags")
+      $(".related-tags").append(data)
+      const index = $(".selected-post").attr("id")[1]
+      const tempTag = ".related-tags .temp-tag"
+      $(`${tempTag} .tag-name`).text(`Tag ${index*numTags+k}`)
+      $(tempTag).append('<div class="vote-tag"><div class="arrow arrowUp"></div><div class="arrow arrowDown"></div></div>')
+      $(tempTag).removeClass("temp-tag")
       k++
+      $.ajax(requestTags)
     }
-  }
+
+    const requestTags = {
+      type: 'get',
+      url: 'tags.html',
+      success: data => getTags(data),
+      error: () => {
+        $(".related-tags").append("<p>Error: Could not load user</p>")
+        k++
+      }
+    }
   /*END --- POST TAGS DIV LISTENER -- END*/
 
   /*SELECT POST LISTENER*/
@@ -102,35 +104,37 @@ $(document).ready(function(){
   /*END --- SELECT POST LISTENER --- END*/
 
   /*FILTER SEARCH LISTENER*/
-  const getFilterTags = data => {
-    if(l >= numTags) return
-    $(".post-tags").css('max-height', `calc(95% - ${$(".filter-searchbar").height()}px)`)
-    $(".tags:not('.related-tags')").addClass("filter-tags")
-    $(".filter-tags").append(data)
-    $(".filter-tags .temp-tag .tag-name").html(`Tag ${l}`)
-    $(".temp-tag").removeClass("temp-tag")
-    l++
-    $.ajax(requestFilterTags)
-  }
-
-  const requestFilterTags = {
-    type: 'get',
-    url: 'tags.html',
-    success: data => getFilterTags(data),
-    error: () => {
-      $(".filter-tags").append("<p>Error: Could not load tags</p>")
+  {
+    const getFilterTags = data => {
+      if(l >= numTags) return
+      $(".post-tags").css('max-height', `calc(95% - ${$(".filter-searchbar").height()}px)`)
+      $(".tags:not('.related-tags')").addClass("filter-tags")
+      $(".filter-tags").append(data)
+      $(".filter-tags .temp-tag .tag-name").html(`Tag ${l}`)
+      $(".temp-tag").removeClass("temp-tag")
       l++
-    }
-  }
-
-  $(".filter-search").keypress(e => {
-    let key = e.which || e.keyCode;
-    if(key == 13){
-      $(".filter-tags").html("");
-      l = 0
       $.ajax(requestFilterTags)
     }
-  })
+
+    const requestFilterTags = {
+      type: 'get',
+      url: 'tags.html',
+      success: data => getFilterTags(data),
+      error: () => {
+        $(".filter-tags").append("<p>Error: Could not load tags</p>")
+        l++
+      }
+    }
+
+    $(".filter-search").keypress(e => {
+      let key = e.which || e.keyCode;
+      if(key == 13){
+        $(".filter-tags").html("");
+        l = 0
+        $.ajax(requestFilterTags)
+      }
+    })
+  }
   /*END --- FILTER SEARCH LISTENER --- END*/
 
   /*RETRIEVE NOTIFICATIONS*/
@@ -158,6 +162,8 @@ function shareBtnListener(){
 }
 
 function tagVoteListener(){
+  //when you click on a voting arrow, it should light up green if voted up
+  //or light up red if voted down
   const green = "rgb(0, 128, 0)"
   const red = "rgb(200, 0, 0)"
   $(document).on("click", ".arrow", function(){

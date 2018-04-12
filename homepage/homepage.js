@@ -1,7 +1,10 @@
+//temp variable just for front end sample functionality
 let numPost = 4
 
 $(document).ready(function(){
   const homeHTML = $(".center-content").html()
+
+  //listens for the click of the buttons below the navbar
   feedBtnsListener(homeHTML)
 
   $(".purpose > button").click(function() {
