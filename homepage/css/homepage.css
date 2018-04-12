@@ -9,18 +9,11 @@
 
 .noselect {
   -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
   user-select: none;
-  /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */ }
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
 
 body {
   margin: 0;
@@ -50,31 +43,32 @@ ul.nav {
   z-index: 2;
   opacity: 0.9;
   position: fixed;
-  font-family: Montserrat; }
+  font-family: Montserrat, Lato, serif; }
   ul.nav li > div {
     margin-right: 40px; }
   ul.nav .logo-searchbar {
     flex-grow: 2; }
     ul.nav .logo-searchbar .logo {
       padding: 0 0 0 10px;
-      font-family: 'Cedarville Cursive';
+      font-family: Cedarville Cursive;
       font-size: 30px;
+      color: white;
       user-select: none; }
     ul.nav .logo-searchbar input[name="search"] {
+      border-style: none;
+      border-color: inherit;
+      border-width: inherit;
+      border-radius: 2px;
       min-width: 200px;
       min-height: 30px;
       margin-right: 50px;
       padding-left: 4px;
       background-color: #425d89;
-      border-style: none;
-      border-radius: 2px;
       font-size: 14px;
       color: #f0f0f0; }
-      ul.nav .logo-searchbar input[name="search"]:focus {
+      ul.nav .logo-searchbar input[name="search"]:focus, ul.nav .logo-searchbar input[name="search"]::placeholder {
         color: #f0f0f0;
         outline: none; }
-      ul.nav .logo-searchbar input[name="search"]::placeholder {
-        color: #f0f0f0; }
   ul.nav .user-links {
     display: flex;
     justify-content: flex-end;
@@ -83,17 +77,9 @@ ul.nav {
     vertical-align: middle; }
     ul.nav .user-links .user {
       cursor: pointer; }
-      ul.nav .user-links .user img.profile-pic {
-        border-radius: 100%;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        vertical-align: middle;
-        position: relative;
-        right: 5px; }
       ul.nav .user-links .user .profile-name {
         vertical-align: middle;
-        font-family: Montserrat; }
+        font-family: Montserrat, Lato, serif; }
     ul.nav .user-links i {
       color: white;
       font-size: 18px !important;
@@ -106,6 +92,15 @@ ul.nav {
 .nav-sub {
   width: 100%;
   height: 62px; }
+
+img.profile-pic {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  right: 5px; }
 
 .feed-btns {
   margin: 0 auto auto auto;
@@ -178,7 +173,7 @@ img[alt="ucla-banner"] {
   -ms-user-select: none; }
 
 h1.welcome-title {
-  font-family: "Cedarville Cursive";
+  font-family: Cedarville Cursive;
   font-size: 72px;
   color: white;
   position: absolute;
@@ -206,7 +201,8 @@ h1.welcome-title {
     background-color: #17223d;
     border-radius: 3px;
     color: white;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    transition: width 2s; }
 
 button {
   border-style: solid;

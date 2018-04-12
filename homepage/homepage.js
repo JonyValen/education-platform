@@ -1,13 +1,28 @@
-const numPost = 4;
+let numPost = 4
 
 $(document).ready(function(){
-  const homeHTML = $(".center-content").html();
+  const homeHTML = $(".center-content").html()
+  feedBtnsListener(homeHTML)
 
+  $(".purpose > button").click(function() {
+    let $parent = $(this).parent()
+    if($parent.hasClass("purpose-vertical")){
+      $parent.width($parent.css("max-width"))
+      $(".purpose-horizontal").hide(250, () => {
+        $(".purpose-vertical").css("max-width", "100%")
+        $(".purpose-vertical").css("width", "100%")
+        $("#vert-btn").hide()
+      })
+    }
+  })
+})
+
+function feedBtnsListener(homeHTML) {
   $("#home-btn").click(function(){
     $(".center-content").css("padding", "0 0 20px 0")
     $(".selected-feed-type").removeClass("selected-feed-type");
-    $(this).addClass("selected-feed-type");
-    $(".center-content").html(homeHTML);
+    $(this).addClass("selected-feed-type")
+    $(".center-content").html(homeHTML)
   });
 
   $("#latest-btn").click(function(){
@@ -32,17 +47,17 @@ $(document).ready(function(){
         $(".temp .topic").text("Sample Topic "+i)
         $(".temp").removeClass("temp")
         i++
-        $.ajax(requestPosts);
+        $.ajax(requestPosts)
       }
-      $.ajax(requestPosts);
+      $.ajax(requestPosts)
       /*END --- AJAX RETRIEVE POSTS ASYNCHRONOUSLY --- END*/
     }
-  });
+  })
 
   $("#feedback-btn").click(function(){
     $(".center-content").css("padding", "0 0 20px 0")
-    $(".selected-feed-type").removeClass("selected-feed-type");
-    $(this).addClass("selected-feed-type");
-    $(".center-content").html("");
-  });
-});
+    $(".selected-feed-type").removeClass("selected-feed-type")
+    $(this).addClass("selected-feed-type")
+    $(".center-content").html("")
+  })
+}
